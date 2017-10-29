@@ -1,0 +1,27 @@
+@font-face {
+    font-family: $font-stem-bold;
+    src: url($font-path + $font-stem-bold + '.eot');
+    src: url($font-path + $font-stem-bold + '.eot') format('embedded-opentype'), url($font-path + $font-stem-bold + '.woff') format('woff'), url($font-path + $font-stem-bold + '.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: $font-stem-medium;
+    src: url($font-path + $font-stem-medium + '.eot');
+    src: url($font-path + $font-stem-medium + '.eot') format('embedded-opentype'), url($font-path + $font-stem-medium + '.woff') format('woff'), url($font-path + $font-stem-medium + '.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: $font-stem-regular;
+    src: url($font-path + $font-stem-regular + '.eot');
+    src: url($font-path + $font-stem-regular + '.eot') format('embedded-opentype'), url($font-path + $font-stem-regular + '.woff') format('woff'), url($font-path + $font-stem-regular + '.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: $font-stem-light;
+    src: url($font-path + $font-stem-light + '.eot');
+    src: url($font-path + $font-stem-light + '.eot') format('embedded-opentype'), url($font-path + $font-stem-light + '.woff') format('woff'), url($font-path + $font-stem-light + '.ttf') format('truetype');
+    font-weight: normal;
+}

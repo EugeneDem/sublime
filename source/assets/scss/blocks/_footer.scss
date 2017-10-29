@@ -1,0 +1,107 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+
+    &__list {
+        width: 100%;
+        max-width: 1060px;
+        padding: 20px 10px;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+
+    &__brand {
+        width: 94px;
+        position: absolute;
+        left: 0;
+        top: 18px;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-left: -10px;
+        margin-right: -10px;
+        padding-left: percentage(1 / 6);
+        padding-right: percentage(1 / 6);
+        box-sizing: border-box;
+    }
+
+    &__nav-list {
+        max-width: percentage(1 / 6);
+        list-style: none;
+        margin: 0;
+        flex: 0 0 percentage(1 / 6);
+        padding-left: 10px;
+        padding-right: 10px;
+        box-sizing: border-box;
+    }
+
+    &__nav-list-item {
+        margin-bottom: 8px;
+    }
+
+    &__nav-title {
+        font-size: 13px;
+        text-transform: uppercase;
+        color: #d0ac80;
+        transition: color 0.3s ease 0s;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+            color: lighten(#d0ac80, 8%);
+        }
+    }
+
+    &__nav-item {
+        line-height: 20px;
+    }
+
+    &__nav-link {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 12px;
+        color: #d0ac80;
+        opacity: 0.5;
+        transition: opacity 0.3s ease 0s;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+            opacity: 1;
+            color: lighten(#d0ac80, 8%);
+        }
+    }
+
+    &__social {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    &__social-link {
+        margin-left: rem(44);
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        svg {
+            height: 18px;
+            width: 24px;
+            fill: #d0ac80;
+        }
+    }
+}

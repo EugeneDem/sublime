@@ -1,0 +1,30 @@
+.section {
+
+    &__title {
+        text-align: center;
+        color: #000;
+        text-transform: uppercase;
+        font-size: rem(36);
+        line-height: rem(38);
+        font-weight: normal;
+        font-family: $font-stem-medium;
+        margin-bottom: rem(57);
+    }
+
+    &__content {
+        max-width: 1060px;
+        padding-top: rem(11);
+        margin: 0 auto;
+    }
+
+    &_border-top &__content {
+        border-top: 1px solid rgba(#d0ac80, 0.5);
+        padding-top: rem(46);
+    }
+
+    &__group-btn {
+        text-align: center;
+        padding-bottom: rem(49);
+        padding-top: rem(56);
+    }
+}

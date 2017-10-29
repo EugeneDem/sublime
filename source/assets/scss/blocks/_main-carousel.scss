@@ -1,0 +1,77 @@
+.main-carousel {
+    &__state {
+
+        &.slick-slider {
+            margin-bottom: 20px;
+        }
+
+        .slick-arrow {
+            z-index: 1;
+        }
+
+        .slick-prev,
+        .slick-next {
+            width: 17px;
+            height: 36px;
+
+            &:before {
+                background-repeat: no-repeat;
+                background-position: 0 0;
+                background-size: cover;
+                width: 17px;
+                height: 36px;
+                content: "";
+                display: inline-block;
+            }
+        }
+        
+        .slick-prev {
+            left: 30px;
+
+            &:before {
+                background-image: url("arrow-left.svg#datauri");
+            }
+        }
+
+        .slick-next {
+            right: 30px;
+
+            &:before {
+                background-image: url("arrow-right.svg#datauri");
+            }
+        }
+    }
+
+    .slick-dots {
+        bottom: 33px;
+        
+        li {
+            button:before {
+                border-radius: 50%;
+                border: 1px solid #fff;
+                width: 10px;
+                height: 10px;
+                content: "";
+                opacity: 1;
+                box-sizing: border-box;
+            }
+
+            &.slick-active {
+                button:before {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+
+    &__state-item {
+        height: 580px;
+        background-size: cover;
+        background-position: center top;
+        position: relative;
+
+        &:focus {
+          outline: 0 none;
+        }
+    }
+}

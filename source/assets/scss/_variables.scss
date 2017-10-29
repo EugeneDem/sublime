@@ -1,0 +1,33 @@
+// media queries
+$screen-xs-min: 576px !default;
+$screen-sm-min: 768px !default;
+$screen-md-min: 992px !default;
+$screen-lg-min: 1200px !default;
+
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+
+//== Typography
+$font-path: "../fonts/" !default;
+$font-stem-bold: "Stem-Bold" !default;
+$font-stem-medium: "Stem-Medium" !default;
+$font-stem-regular: "Stem-Regular" !default;
+$font-stem-light: "Stem-Light" !default;
+
+$font-family-default: "Stem-Regular", Helvetica, Arial, sans-serif !default;
+$font-size-base: 16px !default;
+
+//Colors
+$color-black: #000 !default;
+$color-white: #fff;
+$color-brown: #5c3b2d !default;
+$color-terracotta: #8c3813 !default;
+$color-terracottaDark: #813700 !default;
+$color-beige: #d0ac80 !default;
+$color-beigeLight: #ead4a4 !default;
+$color-pearly: #fff6dd !default;
+$color-pearlyLight: #fef7d9 !default;
+$color-milky: #fffcdf !default;
+$color-gray: #bdbdbd !default;
+$color-grayDark: #8d8d8d !default;

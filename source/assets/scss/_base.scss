@@ -1,0 +1,50 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    font-size: $font-size-base;
+}
+
+body {
+    color: $color-black;
+    direction: ltr;
+    overflow-x: hidden;
+    height: 100%;
+    font-family: $font-family-default;
+    padding: 0;
+    margin: 0;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+.app {
+    height: auto;
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    &_navbar-fixed {
+        @media (min-width: $screen-md-min) {
+          padding-top: 99px;
+        }
+    }
+
+    &__content {
+        height: 100%;
+        margin: 0 auto;
+        @include clearfix();
+    }
+
+    &__footer {
+        background-color: #813700;
+        min-height: 220px;
+    }
+
+    &__footer-inner {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}

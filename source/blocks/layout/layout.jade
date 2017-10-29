@@ -1,0 +1,80 @@
+include ../mixins/svg
+include ../mixins/scripts
+
+doctype html
+html(lang='ru')
+	block analitics
+		-var connonicalPage = '';
+	include ../head/head
+	body
+		.app.app_navbar-fixed
+			.app__content
+				// top navbar
+				header.navbar.navbar-default.navbar-toggleable-sm
+					// navbar-header
+					.navbar__header
+						a.sidebar-mobile-toggler.hidden-lg-up(href="#" data-toggle-class="app-slide-off" data-toggle-target="#app" data-toggle-click-outside="#sidebar")
+							i.ti-align-justify
+						a.navbar-brand(href="#")
+							img(src="assets/images/brand.svg" alt="Sublime by BOSCO")
+					// end navbar header
+					nav#navbar-collapse.navbar__nav.navbar-collapse.collapse(aria-expanded="false" role="navigation" aria-label="first navbar")
+						ul.navbar-nav
+							li.nav-item
+								a.nav-link(href="#") Каталог
+								.navbar-nav__subnav
+									.navbar-nav__subnav-container
+										.navbar-nav__subnav-listgroup
+											.navbar-nav__subnav-list
+												each value in submenuList
+													.navbar-nav__subnav-list-item
+										
+							li.nav-item
+								a.nav-link(href="#") бренды
+							li.nav-item
+								a.nav-link(href="#") бутики
+					.navbar__form
+						.navbar__form-item
+							a.navbar__phone(href="callto:+78005004436") +7 (800) 500-44-36
+						.navbar__form-item
+							.navbar__search.js-search
+								i.navbar__search-icon
+									+svg('search')
+						.navbar__form-item
+							a.navbar__wishlist(href="#")
+								span.navbar__wishlist-badge 12
+								i.navbar__wishlist-icon
+									+svg('wishlist')
+
+				// end top navbar
+				block content
+			footer.app__footer
+				.app__footer-inner
+					.footer
+						.footer__list
+							a.footer__brand(href="#")
+								img(src="assets/images/brand-footer.svg" alt="Sublime by BOSCO")
+							nav.footer__nav
+								each value in footerNav
+									ul.footer__nav-list
+										li.footer__nav-list-item
+											a.footer__nav-title(href=value.url)!= value.title
+										if(value.list)
+											li.footer__nav-list-item
+												each itemList in value.list
+													.footer__nav-item
+														a.footer__nav-link(href=itemList.url)!= itemList.text
+						.footer__social
+							a.footer__social-link(href="#")
+								+svg("social-fb")
+							a.footer__social-link(href="#")
+								+svg("social-vk")
+							a.footer__social-link(href="#")
+								+svg("social-tweet")
+							a.footer__social-link(href="#")
+								+svg("social-pint")
+							a.footer__social-link(href="#")
+								+svg("social-inst")
+		+scripts(['vendor/jquery.js', 'vendor/tether.min.js', 'vendor/bootstrap.min.js', 'vendor/jquery.nicescroll.min.js', 'vendor/slick.js', 'vendor/svg4everybody.js'])
+		block scripts
+		script(src="assets/js/main.js")
