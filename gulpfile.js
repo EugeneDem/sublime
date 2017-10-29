@@ -86,7 +86,7 @@ const dest = {
   content: 'html/content'
 };
 
-const devBuild = true;
+let devBuild = true;
 const spa = false;
 
 // browser sync
@@ -422,6 +422,6 @@ gulp.task('deploy', ['clean'], () => {
   devBuild = false;
   $.runSequence(
     'img', 'pngSprite', 'svgSprite', /*'favicons',*/
-    ['css', 'scss', 'jade', 'contents', 'fonts', 'vendorjs', 'userjs']
+    ['scss', 'css', 'jade', 'contents', 'fonts', 'vendorjs', 'userjs']
   );
 });
