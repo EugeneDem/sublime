@@ -14,6 +14,11 @@
         left: 30px;
         top: 50%;
         transform: translateY(-50%);
+
+        @media (max-width: $screen-sm-max) {
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
 
     .navbar-brand {
@@ -33,42 +38,56 @@
 
         .nav-item {
             height: 99px;
-            line-height: 99px;
+            display: inline-block;
+            vertical-align: middle;
             padding-left: 0;
             padding-right: 0;
             margin-left: rem(29);
             margin-right: rem(29);
-            position: relative;
-
-            &:after {
-                background-color: $color-beige;
-                width: 0;
-                height: 5px;
-                content: "";
-                transition: width 0.3s ease 0s;
-                position: absolute;
-                left: 0;
-                right: auto;
-                bottom: 0;
-            }
 
             > .nav-link {
+                display: inline-block;
+                line-height: 99px;
                 color: $color-beige;
                 font-size: rem(16);
                 text-transform: uppercase;
                 padding-top: 0;
                 padding-bottom: 0;
                 transition: color 0.3s ease 0s;
+                position: relative;
+
+                &:after {
+                    background-color: $color-beige;
+                    width: 0;
+                    height: 5px;
+                    content: "";
+                    transition: width 0.3s ease 0s;
+                    position: absolute;
+                    left: 0;
+                    right: auto;
+                    bottom: 0;
+                }
+
+                &:hover {
+                    &:after {
+                        width: 100%;
+                    }
+                }
             }
 
             &:hover,
             .active {
-                &:after {
-                    width: 100%;
+                .navbar-nav__subnav {
+                    display: block;
+                    opacity: 1;
                 }
 
                 > .nav-link {
                     color: $color-white;
+
+                    &:after {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -84,6 +103,14 @@
     &__form-item {
         display: inline-flex;
         margin-left: rem(40);
+
+        @media (max-width: $screen-md-max) {
+            margin-left: rem(26);
+        }
+
+        @media (max-width: $screen-sm-max) {
+            margin-left: rem(20);
+        }
     }
 
     &__phone {
@@ -94,6 +121,10 @@
         font-size: rem(16);
         color: $color-pearlyLight;
         white-space: nowrap;
+
+        @media (max-width: $screen-sm-max) {
+            display: none;
+        }
 
         &:hover {
             text-decoration: none;
@@ -174,5 +205,81 @@
         left: 0;
         right: 0;
         top: 100%;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease 0s;
+    }
+
+    &__subnav-container {
+        max-width: 1060px;
+        margin: 0 auto;
+        padding: rem(29) 0 rem(10);
+    }
+
+    &__subnav-listgroup {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: -10px;
+        margin-right: -10px;
+        padding-bottom: rem(24);
+    }
+
+    &__subnav-listgroup-item {
+        padding: 0 10px;
+    }
+
+    @for $i from 1 through 4 {
+        &__subnav-listgroup-item_col-#{$i} {
+            flex: 0 0 percentage(1 / ($i));
+        }
+    }
+
+    &__subnav-list {
+        border-top: 1px solid #d0ac80;
+        list-style: none;
+        margin: 0;
+        padding: rem(16) 0;
+    }
+
+    &__subnav-list-item {
+        margin-bottom: rem(5);
+    }
+
+    &__subnav-link-title {
+        color: #d0ac80;
+        font-size: rem(20);
+        line-height: rem(22);
+        text-transform: uppercase;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+            color: darken(#d0ac80, 8%);
+        }
+    }
+
+    &__subnav-item {
+        .navbar-nav__subnav-listgroup-item_col-1 & {
+            width: percentage(1 / 6);
+            &:nth-child(8n) {
+                float: left;
+            }
+        }
+    }
+
+    &__subnav-link {
+        color: #000;
+        font-size: rem(14);
+        line-height: rem(16);
+        display: inline-block;
+        vertical-align: top;
+        padding: 5px 0;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+            color: lighten(#000000, 40%);
+        }
     }
 }

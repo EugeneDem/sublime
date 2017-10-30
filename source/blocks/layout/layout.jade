@@ -24,10 +24,28 @@ html(lang='ru')
 								a.nav-link(href="#") Каталог
 								.navbar-nav__subnav
 									.navbar-nav__subnav-container
-										.navbar-nav__subnav-listgroup
-											.navbar-nav__subnav-list
-												each value in submenuList
-													.navbar-nav__subnav-list-item
+										each value in submenuList
+											if(value.listGroup)
+												.navbar-nav__subnav-listgroup
+													each links in value.listGroup
+														.navbar-nav__subnav-listgroup-item(class="navbar-nav__subnav-listgroup-item_col-" + value.listGroup.length)
+															ul.navbar-nav__subnav-list
+																li.navbar-nav__subnav-list-item
+																	a.navbar-nav__subnav-link-title(href=links.link)!= links.title
+																if (links.list)
+																	if (value.listGroup.length === 1)
+																		//- li.navbar-nav__subnav-list-item
+																			each itemList, index in links.list
+																				if (index % (links.list.length / 6) === 0)
+																					.navbar-nav__subnav-groupitem
+																						- for(var i = index; i <= index+5; i++)
+																							.navbar-nav__subnav-item
+																								a.navbar-nav__subnav-link(href=links.list[i].link)!= links.list[i].title
+																	else
+																		li.navbar-nav__subnav-list-item
+																			each itemList in links.list
+																				.navbar-nav__subnav-item
+																					a.navbar-nav__subnav-link(href=itemList.link)!= itemList.title
 										
 							li.nav-item
 								a.nav-link(href="#") бренды

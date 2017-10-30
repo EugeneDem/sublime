@@ -4,13 +4,26 @@
     align-items: center;
     position: relative;
 
+    @media (max-width: $screen-md-max) {
+        flex-direction: column;
+    }
+
+    @media (max-width: $screen-xs-max) {
+        height: 108px;
+    }
+
     &__list {
         width: 100%;
         max-width: 1060px;
-        padding: 20px 10px;
+        padding: 12px 10px;
         margin-left: auto;
         margin-right: auto;
         box-sizing: border-box;
+
+        @media (max-width: $screen-xs-max) {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 
     &__brand {
@@ -18,6 +31,10 @@
         position: absolute;
         left: 0;
         top: 18px;
+
+        @media (max-width: $screen-md-max) {
+            display: none;
+        }
 
         img {
             max-width: 100%;
@@ -34,20 +51,42 @@
         padding-left: percentage(1 / 6);
         padding-right: percentage(1 / 6);
         box-sizing: border-box;
+
+        @media (max-width: $screen-sm-max) {
+            max-width: 750px;
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 
     &__nav-list {
-        max-width: percentage(1 / 6);
+        width: percentage(1 / 4);
         list-style: none;
         margin: 0;
-        flex: 0 0 percentage(1 / 6);
+        flex: 0 0 percentage(1 / 4);
         padding-left: 10px;
         padding-right: 10px;
         box-sizing: border-box;
+
+        @media (max-width: $screen-xs-max) {
+            width: auto;
+            flex: 0 0 auto;
+            justify-content: space-between;
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 
     &__nav-list-item {
         margin-bottom: 8px;
+
+        &:not(:first-child) {
+            @media (max-width: $screen-xs-max) {
+                display: none;
+            }
+        }
     }
 
     &__nav-title {
@@ -55,6 +94,10 @@
         text-transform: uppercase;
         color: #d0ac80;
         transition: color 0.3s ease 0s;
+
+        @media (max-width: $screen-xs-min) {
+            font-size: 12px;
+        }
 
         &:hover,
         &:focus {
@@ -89,10 +132,19 @@
         position: absolute;
         right: 0;
         top: 0;
+
+        @media (max-width: $screen-md-max) {
+            position: relative;
+        }
+
+        @media (max-width: $screen-xs-min) {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
     }
 
     &__social-link {
-        margin-left: rem(44);
+        margin-left: rem(30);
 
         &:first-child {
             margin-left: 0;

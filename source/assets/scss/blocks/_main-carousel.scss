@@ -46,14 +46,30 @@
         bottom: 33px;
         
         li {
-            button:before {
-                border-radius: 50%;
-                border: 1px solid #fff;
+            width: 10px;
+            height: 10px;
+            margin-left: 15px;
+            margin-right: 15px;
+
+            @media (max-width: $screen-xs-max) {
+                margin-left: 11px;
+                margin-right: 11px;
+            }
+
+            button {
                 width: 10px;
                 height: 10px;
-                content: "";
-                opacity: 1;
                 box-sizing: border-box;
+
+                &:before {
+                    border-radius: 50%;
+                    border: 1px solid #fff;
+                    width: 10px;
+                    height: 10px;
+                    content: "";
+                    opacity: 1;
+                    box-sizing: border-box;
+                }
             }
 
             &.slick-active {
@@ -65,7 +81,9 @@
     }
 
     &__state-item {
-        height: 580px;
+        min-height: 226px;
+        height: 40vw;
+        max-height: 580px;
         background-size: cover;
         background-position: center top;
         position: relative;

@@ -1,12 +1,34 @@
 .promo-box {
     margin-bottom: rem(30);
 
+    @media (max-width: $screen-xs-max) {
+        margin-bottom: 0;
+    }
+
     &__list {
         max-width: 740px;
         margin: 0 auto;
 
         @media (min-width: $screen-lg-min) {
             max-width: 1060px;
+        }
+
+        &.slick-dotted {
+            padding-bottom: 46px;
+            margin-bottom: 0;
+
+            &:after {
+                width: 300%;
+                max-width: 1060px;
+                content: "";
+                display: block;
+                border-top: 1px solid rgba(#d0ac80, 0.5);
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+            }
+
         }
     }
 
@@ -20,13 +42,22 @@
 
     &__item {
         width: 340px;
-        height: 340px;
         display: block;
         position: relative;
         color: inherit;
         text-decoration: none;
         overflow: hidden;
         margin: 0 auto;
+
+        @media (max-width: $screen-xs-max) {
+            width: 290px;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+        }
     }
 
     &__item:hover &__bg {
@@ -61,5 +92,43 @@
         left: 0;
         bottom: 0;
         right: 0;
+    }
+
+    .slick-dots {
+        bottom: 15px;
+        
+        li {
+            width: 10px;
+            height: 10px;
+            margin-left: 15px;
+            margin-right: 15px;
+
+            @media (max-width: $screen-xs-max) {
+                margin-left: 11px;
+                margin-right: 11px;
+            }
+
+            button {
+                width: 10px;
+                height: 10px;
+                box-sizing: border-box;
+
+                &:before {
+                    border-radius: 50%;
+                    border: 1px solid #d0ac80;
+                    width: 10px;
+                    height: 10px;
+                    content: "";
+                    opacity: 1;
+                    box-sizing: border-box;
+                }
+            }
+
+            &.slick-active {
+                button:before {
+                    background-color: #d0ac80;
+                }
+            }
+        }
     }
 }

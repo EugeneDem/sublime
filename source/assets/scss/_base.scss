@@ -46,5 +46,10 @@ body {
     &__footer-inner {
         padding-left: 30px;
         padding-right: 30px;
+
+        @media (max-width: $screen-xs-min) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
     }
 }

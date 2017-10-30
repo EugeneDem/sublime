@@ -39,13 +39,14 @@ var promoBox = {
 				settings: {
 					variableWidth: false,
 					slidesToShow: 2,
+					slidesToScroll: 1,
 					dots: true
 				}
 			}, {
 				breakpoint: 767,
 				settings: {
 					slidesToShow: 1,
-					centerMode: true,
+					slidesToScroll: 1, // centerMode: true,
 					variableWidth: false,
 					dots: true
 				}
@@ -110,19 +111,10 @@ var brandsCarousel = {
 			slidesToScroll: 1,
 			infinite: true,
 			focusOnSelect: false,
-			variableWidth: true,
+			variableWidth: false,
 			arrows: false,
 			dots: true,
-			speed: 500,
-			responsive: [{
-				breakpoint: 575,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					variableWidth: false,
-					dots: true
-				}
-			}]
+			speed: 500
 		};
 	},
 	init: function init() {
@@ -135,6 +127,9 @@ var brandsCarousel = {
 					brandsCarousel.slider.slick('unslick');
 				}
 			} else {
+				if (brandsCarousel.slider.hasClass('slick-initialized')) {
+					brandsCarousel.slider.slick('unslick');
+				}
 				brandsCarousel.slider.slick(brandsCarousel.sliderSettings());
 			}
 		});
@@ -147,3 +142,5 @@ $(function() {
 	productCarousel.init();
 	brandsCarousel.init();
 });
+
+//# sourceMappingURL=main.js.map
