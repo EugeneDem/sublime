@@ -142,5 +142,3 @@ $(function() {
 	productCarousel.init();
 	brandsCarousel.init();
 });
-
-//# sourceMappingURL=main.js.map
