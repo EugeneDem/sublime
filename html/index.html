@@ -19,65 +19,157 @@
       <div class="app__content">
         <!-- top navbar-->
         <header class="navbar navbar-default navbar-toggleable-sm">
-          <!-- navbar-header-->
-          <div class="navbar__header"><a href="#" data-toggle-class="app-slide-off" data-toggle-target="#app" data-toggle-click-outside="#sidebar" class="sidebar-mobile-toggler hidden-lg-up"><i class="ti-align-justify"></i></a><a href="#" class="navbar-brand"><img src="assets/images/brand.svg" alt="Sublime by BOSCO"></a></div>
+          <!-- navbar-header--><a href="#" data-toggle-class="app-slide-off" data-toggle-target="#app" data-toggle-click-outside="#navbar-collapse" class="navbar-toggler navbar-toggler-left js-sidebar-mobile-toggler"><span class="navbar-toggler-icon"></span></a>
+          <div class="navbar__header"><a href="#" class="navbar-brand"><img src="assets/images/brand.svg" alt="Sublime by BOSCO"></a></div>
           <!-- end navbar header-->
-          <nav id="navbar-collapse" aria-expanded="false" role="navigation" aria-label="first navbar" class="navbar__nav navbar-collapse collapse">
+          <nav id="navbar-collapse" aria-expanded="false" role="navigation" aria-label="first navbar" class="navbar__nav navbar-collapse"><a href="#" class="navbar__close"><span class="navbar__close-icon"></span></a>
+            <div class="navbar-nav__phone"><a href="callto:+78005004436" class="navbar-nav__phone-link">+7 (800) 500-44-36</a></div>
             <ul class="navbar-nav">
               <li class="nav-item"><a href="#" class="nav-link">Каталог</a>
                 <div class="navbar-nav__subnav">
-                  <div class="navbar-nav__subnav-container">
-                    <div class="navbar-nav__subnav-listgroup">
-                      <div class="navbar-nav__subnav-listgroup-item navbar-nav__subnav-listgroup-item_col-3">
-                        <ul class="navbar-nav__subnav-list">
-                          <li class="navbar-nav__subnav-list-item"><a href="#" class="navbar-nav__subnav-link-title">Ювелирные украшения</a></li>
-                          <li class="navbar-nav__subnav-list-item">
-                            <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Кольца</a></div>
-                            <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Браслеты</a></div>
-                            <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Колье</a></div>
-                            <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Серьги</a></div>
-                            <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Броши</a></div>
-                            <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Брелоки</a></div>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="navbar-nav__subnav-listgroup-item navbar-nav__subnav-listgroup-item_col-3">
-                        <ul class="navbar-nav__subnav-list">
-                          <li class="navbar-nav__subnav-list-item"><a href="#" class="navbar-nav__subnav-link-title">Часы</a></li>
-                          <li class="navbar-nav__subnav-list-item">
-                            <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Мужские часы</a></div>
-                            <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Женские часы</a></div>
-                            <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Детские часы</a></div>
-                            <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Ремешки</a></div>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="navbar-nav__subnav-listgroup-item navbar-nav__subnav-listgroup-item_col-3">
-                        <ul class="navbar-nav__subnav-list">
-                          <li class="navbar-nav__subnav-list-item"><a href="#" class="navbar-nav__subnav-link-title">Аксессуары</a></li>
-                          <li class="navbar-nav__subnav-list-item">
-                            <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Пишущие инструменты</a></div>
-                            <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Запонки</a></div>
-                            <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Зажигалки</a></div>
-                            <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Кольца для ключей</a></div>
-                            <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Зажимы для денег</a></div>
-                            <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Предметы интерьера</a></div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="navbar-nav__subnav-listgroup">
-                      <div class="navbar-nav__subnav-listgroup-item navbar-nav__subnav-listgroup-item_col-1">
-                        <ul class="navbar-nav__subnav-list">
-                          <li class="navbar-nav__subnav-list-item"><a href="#" class="navbar-nav__subnav-link-title">Бренды</a></li>
-                        </ul>
+                  <div class="navbar-nav__subnav-wrap">
+                    <div class="navbar-nav__subnav-container">
+                      <div class="navbar-nav__subnav-listgroup">
+                        <div class="navbar-nav__subnav-listgroup-item navbar-nav__subnav-listgroup-item_col-3">
+                          <ul class="navbar-nav__subnav-list">
+                            <li class="navbar-nav__subnav-list-item"><a href="#" class="navbar-nav__subnav-link-title">Ювелирные украшения</a></li>
+                            <li class="navbar-nav__subnav-list-item">
+                              <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Кольца</a></div>
+                              <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Браслеты</a></div>
+                              <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Колье</a></div>
+                              <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Серьги</a></div>
+                              <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Броши</a></div>
+                              <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Брелоки</a></div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="navbar-nav__subnav-listgroup-item navbar-nav__subnav-listgroup-item_col-3">
+                          <ul class="navbar-nav__subnav-list">
+                            <li class="navbar-nav__subnav-list-item"><a href="#" class="navbar-nav__subnav-link-title">Часы</a></li>
+                            <li class="navbar-nav__subnav-list-item">
+                              <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Мужские часы</a></div>
+                              <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Женские часы</a></div>
+                              <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Детские часы</a></div>
+                              <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Ремешки</a></div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="navbar-nav__subnav-listgroup-item navbar-nav__subnav-listgroup-item_col-3">
+                          <ul class="navbar-nav__subnav-list">
+                            <li class="navbar-nav__subnav-list-item"><a href="#" class="navbar-nav__subnav-link-title">Аксессуары</a></li>
+                            <li class="navbar-nav__subnav-list-item">
+                              <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Пишущие инструменты</a></div>
+                              <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Запонки</a></div>
+                              <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Зажигалки</a></div>
+                              <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Кольца для ключей</a></div>
+                              <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Зажимы для денег</a></div>
+                              <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Предметы интерьера</a></div>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </li>
-              <li class="nav-item"><a href="#" class="nav-link">бренды</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">бутики</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">бренды</a>
+                <div class="navbar-nav__subnav">
+                  <div class="navbar-nav__subnav-wrap">
+                    <div class="navbar-nav__subnav-container">
+                      <div class="navbar-nav__subnav-listgroup">
+                        <div class="navbar-nav__subnav-listgroup-item navbar-nav__subnav-listgroup-item_col-1">
+                          <ul class="navbar-nav__subnav-list">
+                            <li class="navbar-nav__subnav-list-item"><a href="#" class="navbar-nav__subnav-link-title">Бренды</a></li>
+                            <li class="navbar-nav__subnav-list-item">
+                              <div class="navbar-nav__subnav-groupitem">
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">A. Lange & Sohne</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Audemars Piguet</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Aviator</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Axenoff Jewellery</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Baume & Mercier</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Blancpain</a></div>
+                              </div>
+                              <div class="navbar-nav__subnav-groupitem">
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Carrera y Carrera</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Chanel</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">CORUM</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Damiani</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Dario&Peter</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Deakin & Francis</a></div>
+                              </div>
+                              <div class="navbar-nav__subnav-groupitem">
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Gellner</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Glashutte Original</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Gourji</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Herzog</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Ilgiz F.</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">IWC</a></div>
+                              </div>
+                              <div class="navbar-nav__subnav-groupitem">
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Le Gioie</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Longines</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Luca Carati</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">MILUS</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Montegrappa</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Omega</a></div>
+                              </div>
+                              <div class="navbar-nav__subnav-groupitem">
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Perrelet</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Pesavento</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Rado</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Raketa</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Roberto Coin</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Shaun Leane</a></div>
+                              </div>
+                              <div class="navbar-nav__subnav-groupitem">
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Ulysse Nardin</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Underwood</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Vacheron Constantin</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Vhernier</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Zenith</a></div>
+                                <div class="navbar-nav__subnav-item"><a href="#" class="navbar-nav__subnav-link">Zoccai</a></div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item"><a href="#" class="nav-link">бутики</a>
+                <div class="navbar-nav__subnav">
+                  <div class="navbar-nav__subnav-wrap">
+                    <div class="navbar-nav__subnav-container">
+                      <div class="navbar-nav__subnav-listgroup">
+                        <div class="navbar-nav__subnav-listgroup-item navbar-nav__subnav-listgroup-item_col-3 navbar-nav__subnav-listgroup-item_col-sm-1">
+                          <div class="navbar-nav__subnav-info">Ювелирно-часовые бутики Sublime by&nbsp;BOSCO представлены в&nbsp;ГУМе, ВЕСНЕ на&nbsp;Новом Арбате и&nbsp;в&nbsp;Сочи: на&nbsp;Морвокзале и&nbsp;в&nbsp;Красной Поляне. Приходите, мы&nbsp;всегда вам рады!</div>
+                        </div>
+                        <div class="navbar-nav__subnav-listgroup-item navbar-nav__subnav-listgroup-item_col-3 navbar-nav__subnav-listgroup-item_col-sm-2">
+                          <div class="navbar-nav__subnav-boutique">
+                            <div class="navbar-nav__subnav-boutique-title">Гум</div>
+                            <div class="navbar-nav__subnav-boutique-text">Москва, Красная площадь,&nbsp;3<span class="navbar-nav__subnav-boutique-phone">+7 (495) 620-3390</span></div><a href="#" class="navbar-nav__subnav-boutique-link">Схема проезда</a>
+                          </div>
+                          <div class="navbar-nav__subnav-boutique">
+                            <div class="navbar-nav__subnav-boutique-title">Сочи</div>
+                            <div class="navbar-nav__subnav-boutique-text">Сочи, ул. Войкова,&nbsp;1<span class="navbar-nav__subnav-boutique-phone">+7 (8622) 41-8167</span></div><a href="#" class="navbar-nav__subnav-boutique-link">Схема проезда</a>
+                          </div>
+                        </div>
+                        <div class="navbar-nav__subnav-listgroup-item navbar-nav__subnav-listgroup-item_col-3 navbar-nav__subnav-listgroup-item_col-sm-2">
+                          <div class="navbar-nav__subnav-boutique">
+                            <div class="navbar-nav__subnav-boutique-title">Весна</div>
+                            <div class="navbar-nav__subnav-boutique-text">Москва, Новый Арбат,&nbsp;19<span class="navbar-nav__subnav-boutique-phone">+7 (495) 789-9879</span></div><a href="#" class="navbar-nav__subnav-boutique-link">Схема проезда</a>
+                          </div>
+                          <div class="navbar-nav__subnav-boutique">
+                            <div class="navbar-nav__subnav-boutique-title">Красная Поляна</div>
+                            <div class="navbar-nav__subnav-boutique-text">Сочи, набережная Времена Года,&nbsp;1<span class="navbar-nav__subnav-boutique-phone">+7 (862) 241-8159</span></div><a href="#" class="navbar-nav__subnav-boutique-link">Схема проезда</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
             </ul>
           </nav>
           <div class="navbar__form">
