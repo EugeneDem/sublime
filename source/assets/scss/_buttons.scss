@@ -6,11 +6,13 @@
     text-transform: uppercase;
     font-size: 14px;
     line-height: 16px;
+    box-sizing: border-box;
 
     &:hover,
     &:focus {
         color: darken(#d0ac80, 8%);
         border-color: darken(#d0ac80, 8%);
-        box-shadow: 0 0 0 2px rgba(197, 153, 98, .25);
+        box-shadow: none;
+        // box-shadow: 0 0 0 2px rgba(197, 153, 98, .25);
     }
 }

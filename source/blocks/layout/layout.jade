@@ -7,19 +7,19 @@ html(lang='ru')
 		-var connonicalPage = '';
 	include ../head/head
 	body
-		.app.app_navbar-fixed
+		#app.app
 			.app__content
 				// top navbar
-				header.navbar.navbar-default.navbar-toggleable-sm
+				header.navbar.navbar-default.navbar-toggleable-md
 					// navbar-header
-					a.navbar-toggler.navbar-toggler-left.js-sidebar-mobile-toggler(href="#" data-toggle-class="app-slide-off" data-toggle-target="#app" data-toggle-click-outside="#navbar-collapse")
+					a.navbar-toggler.navbar-toggler-left(href="#" data-toggle-class="app-navbar-off" data-toggle-target="#app" data-toggle-click-outside="#navbar-collapse")
 						span.navbar-toggler-icon
 					.navbar__header
 						a.navbar-brand(href="#")
 							img(src="assets/images/brand.svg" alt="Sublime by BOSCO")
 					// end navbar header
-					nav#navbar-collapse.navbar__nav.navbar-collapse(aria-expanded="false" role="navigation" aria-label="first navbar")
-						a.navbar__close(href="#")
+					nav#navbar-collapse.navbar__nav(aria-expanded="false" role="navigation" aria-label="first navbar")
+						a.navbar__close(href="#" data-toggle-class="app-navbar-off" data-toggle-target="#app" data-toggle-click-outside="#navbar-collapse")
 							span.navbar__close-icon
 						.navbar-nav__phone
 							a.navbar-nav__phone-link(href="callto:+78005004436") +7 (800) 500-44-36
@@ -95,7 +95,7 @@ html(lang='ru')
 						.navbar__form-item
 							a.navbar__phone(href="callto:+78005004436") +7 (800) 500-44-36
 						.navbar__form-item
-							.navbar__search.js-search
+							.navbar__search.js-modal-search
 								i.navbar__search-icon
 									+svg('search')
 						.navbar__form-item
@@ -133,6 +133,20 @@ html(lang='ru')
 								+svg("social-pint")
 							a.footer__social-link(href="#")
 								+svg("social-inst")
+			.modal-search
+				.modal-search__close.js-modal-search-close
+				.modal-search__content
+					.container
+						.modal-search__wrap
+							form(action="" metod="get")
+								.input-group(role="search")
+									input.form-control(type="search" name="text" placeholder="Поиск")
+									.input-group-btn
+										button.btn.btn-outline-gold(type="submit") Найти
+
+
+
+
 		+scripts(['vendor/jquery.js', 'vendor/tether.min.js', 'vendor/bootstrap.min.js', 'vendor/jquery.nicescroll.min.js', 'vendor/slick.js', 'vendor/svg4everybody.js'])
 		block scripts
 		script(src="assets/js/main.js")

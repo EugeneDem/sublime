@@ -1,16 +1,29 @@
+.app-navbar-off {
+    .navbar__nav {
+        transition: transform 300ms ease 0s;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
 .navbar {
     background-color: $color-terracottaDark;
     width: 100%;
     height: 99px;
     border: medium none;
-    padding: 0 30px;
+    padding: 0;
     box-sizing: border-box;
     position: absolute;
     top: 0;
-    z-index: 1080;
+    z-index: 1040;
+
+    @media (max-width: $screen-sm-max) {
+        height: 91px;
+    }
 
     .navbar-toggler-icon {
         background: url("toggle-navbar.svg#datauri") no-repeat 0 0;
+        background-size: cover;
         width: 20px;
         height: 18px;
     }
@@ -19,6 +32,10 @@
         left: 15px;
         top: 50%;
         transform: translateY(-50%);
+
+        @media (max-width: $screen-xs-min) {
+            left: 0;
+        }
     }
 
     &__close {
@@ -28,6 +45,7 @@
         position: absolute;
         right: rem(11);
         top: rem(16);
+        z-index: 1;
         display: none;
 
         @media (max-width: $screen-sm-max) {
@@ -60,6 +78,10 @@
         height: 60px;
         line-height: 60px;
 
+        @media (max-width: $screen-xs-min) {
+            margin-left: rem(16);
+        }
+
         img {
             max-width: 100%;
             height: auto;
@@ -69,12 +91,17 @@
     }
 
     &__nav {
+        width: 100%;
+        display: flex;
         justify-content: center;
+        flex-direction: row;
 
         @media (max-width: $screen-sm-max) {
             background-color: #000;
             flex-direction: column;
             position: absolute;
+            transition: transform 300ms ease 0s;
+            transform: translate3d(-100%, 0, 0);
             left: 0;
             top: 0;
             right: 0;
@@ -159,9 +186,13 @@
 
     &__form {
         position: absolute;
-        right: 30px;
+        right: rem(30);
         top: 50%;
         transform: translateY(-50%);
+
+        @media (max-width: $screen-xs-min) {
+            right: rem(15);
+        }
     }
 
     &__form-item {
@@ -174,6 +205,10 @@
 
         @media (max-width: $screen-sm-max) {
             margin-left: rem(20);
+        }
+
+        @media (max-width: $screen-xs-min) {
+            margin-left: rem(10);
         }
     }
 
@@ -266,6 +301,7 @@
     @media (max-width: $screen-sm-max) {
         flex-direction: row;
         justify-content: space-between;
+        margin-top: 63px;
     }
 
     &__phone {
@@ -273,6 +309,10 @@
         justify-content: center;
         margin-top: rem(23);
         margin-bottom: rem(23);
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
 
         @media (max-width: $screen-sm-max) {
             display: flex;
@@ -303,8 +343,6 @@
         overflow: hidden;
         opacity: 0;
         visibility: hidden;
-        // display: none;
-        // opacity: 0;
 
         &:after {
             background-color: rgba(#ead4a4, 0.9);
@@ -391,6 +429,12 @@
     &__subnav-listgroup-item_col-sm-2 {
         @media (max-width: $screen-sm-max) {
             flex: 0 0 percentage(1 / 2);
+        }
+
+        @media (max-width: $screen-xs-min) {
+            width: 100%;
+            flex: 0 0 auto;
+            box-sizing: border-box;
         }
     }
 
@@ -496,10 +540,24 @@
 
     &__subnav-boutique {
         margin-top: rem(19);
+
+        @media (max-width: $screen-xs-max) {
+            padding-left: rem(15);
+            padding-right: rem(15);
+            margin-top: rem(10);
+        }
     }
 
     &__subnav-boutique + &__subnav-boutique {
         margin-top: rem(52);
+
+        @media (max-width: $screen-xs-max) {
+            margin-top: rem(26);
+        }
+
+        @media (max-width: $screen-xs-min) {
+            margin-top: rem(10);
+        }
     }
 
     &__subnav-boutique-title {
@@ -507,6 +565,11 @@
         line-height: rem(22);
         text-transform: uppercase;
         margin-bottom: rem(5);
+
+        @media (max-width: $screen-xs-max) {
+            font-size: rem(16);
+            line-height: rem(18);
+        }
     }
 
     &__subnav-boutique-text {
@@ -514,6 +577,11 @@
         font-size: rem(16);
         line-height: rem(18);
         margin-bottom: rem(3);
+
+        @media (max-width: $screen-xs-max) {
+            font-size: rem(14);
+            line-height: rem(16);
+        }
     }
 
     &__subnav-boutique-phone {

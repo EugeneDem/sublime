@@ -1,0 +1,117 @@
+.modal-search {
+    background-color: rgba(#813700, 0.98);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    overflow: hidden;
+    outline: 0;
+    display: none;
+    transition: opacity .3s .3s;
+    visibility: hidden;
+    opacity: 0;
+
+    &.fade {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+    }
+
+    &__close {
+        background: url("close-modal.svg#datauri") no-repeat 0 0;
+        background-size: cover;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-top: rem(38);
+        margin-right: rem(32);
+        cursor: pointer;
+
+        @media (max-width: $screen-xs-min) {
+            margin-top: rem(20);
+            margin-right: rem(15);
+        }
+    }
+
+    &__content {
+        margin-top: rem(285);
+
+        @media (max-width: $screen-xs-min) {
+            margin-top: rem(200);
+        }
+    }
+
+    &__wrap {
+        max-width: 592px;
+        margin: 0 auto;
+    }
+
+    .input-group {
+        @media (max-width: $screen-xs-min) {
+            flex-direction: column;
+        }
+    }
+
+    .form-control {
+        height: 32px;
+        border-radius: 0;
+        border: medium none;
+        background: none;
+        border-bottom: 1px solid #d0ac80;
+        color: #fff;
+        padding-left: 2px;
+        padding-right: 30px;
+        margin-right: 10px;
+
+        @media (max-width: $screen-xs-min) {
+            width: 100%;
+            flex-direction: row;
+            margin-right: 0;
+        }
+
+        &::-webkit-input-placeholder {
+            color: #d0ac80;
+            opacity: 1;
+        }
+          
+        &::-moz-placeholder {
+            color: #d0ac80;
+            opacity: 1;
+        }
+          
+        &:-ms-input-placeholder {
+            color: #d0ac80;
+            opacity: 1;
+        }
+          
+        &::placeholder {
+            color: #d0ac80;
+            opacity: 1;
+        }
+    }
+
+    .input-group-btn {
+        width: 108px;
+        height: 32px;
+        align-items: center;
+
+        @media (max-width: $screen-xs-min) {
+            flex-direction: row;
+            width: 100%;
+            margin-top: rem(50);
+        }
+
+        .btn {
+            width: 100%;
+            cursor: pointer;
+
+            @media (max-width: $screen-xs-min) {
+                max-width: 108px;
+            }
+        }
+    }
+}
