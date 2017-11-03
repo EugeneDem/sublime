@@ -1,5 +1,5 @@
 block page
-	-var page = "login";
+	-var page = "index";
 
 extends ../blocks/layout/layout
 
@@ -56,7 +56,7 @@ block content
 							if (index % 6 === 0)
 								.brands-carousel__group(data-group=len)
 									- for(var i = index; i <= index+5; i++)
-										.brands-carousel__item
+										a.brands-carousel__item(href="#")
 											img.brands-carousel__img(src="content/images/brands/" + brandsList[i].title + ".png" srcset="content/images/brands/" + brandsList[i].title + "2x.png 2x" alt="")
 			.section__group-btn
 				a.btn.btn-outline-gold(href="#") Все бренды

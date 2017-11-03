@@ -1,0 +1,376 @@
+{
+	"submenuCatalog": [
+		{
+			"title": "Ювелирные украшения",
+			"link": "#",
+			"list": [
+				{
+					"title": "Кольца",
+					"link": "#"
+				},
+				{
+					"title": "Браслеты",
+					"link": "#"
+				},
+				{
+					"title": "Колье",
+					"link": "#"
+				},
+				{
+					"title": "Серьги",
+					"link": "#"
+				},
+				{
+					"title": "Броши",
+					"link": "#"
+				},
+				{
+					"title": "Брелоки",
+					"link": "#"
+				}
+			]
+		},
+		{
+			"title": "Часы",
+			"link": "#",
+			"list": [
+				{
+					"title": "Мужские часы",
+					"link": "#"
+				},
+				{
+					"title": "Женские часы",
+					"link": "#"
+				},
+				{
+					"title": "Детские часы",
+					"link": "#"
+				},
+				{
+					"title": "Ремешки",
+					"link": "#"
+				}
+			]
+		},
+		{
+			"title": "Аксессуары",
+			"link": "#",
+			"list": [
+				{
+					"title": "Пишущие инструменты",
+					"link": "#"
+				},
+				{
+					"title": "Запонки",
+					"link": "#"
+				},
+				{
+					"title": "Зажигалки",
+					"link": "#"
+				},
+				{
+					"title": "Кольца для ключей",
+					"link": "#"
+				},
+				{
+					"title": "Зажимы для денег",
+					"link": "#"
+				},
+				{
+					"title": "Предметы интерьера",
+					"link": "#"
+				}
+			]
+		}
+	],
+	"submenuBrands": [
+		{
+			"title": "Бренды",
+			"link": "#",
+			"list": [
+				{
+					"title": "A. Lange & Sohne",
+					"link": "#"
+				},
+				{
+					"title": "Audemars Piguet",
+					"link": "#"
+				},
+				{
+					"title": "Aviator",
+					"link": "#"
+				},
+				{
+					"title": "Axenoff Jewellery",
+					"link": "#"
+				},
+				{
+					"title": "Baume & Mercier",
+					"link": "#"
+				},
+				{
+					"title": "Blancpain",
+					"link": "#"
+				},
+				{
+					"title": "Buben&Zorweg",
+					"link": "#"
+				},
+				{
+					"title": "Buccellati",
+					"link": "#"
+				},
+				{
+					"title": "Carrera y Carrera",
+					"link": "#"
+				},
+				{
+					"title": "Chanel",
+					"link": "#"
+				},
+				{
+					"title": "CORUM",
+					"link": "#"
+				},
+				{
+					"title": "Damiani",
+					"link": "#"
+				},
+				{
+					"title": "Dario&Peter",
+					"link": "#"
+				},
+				{
+					"title": "Deakin & Francis",
+					"link": "#"
+				},
+				{
+					"title": "Encelade",
+					"link": "#"
+				},
+				{
+					"title": "Frederique Constant",
+					"link": "#"
+				},
+				{
+					"title": "Gellner",
+					"link": "#"
+				},
+				{
+					"title": "Glashutte Original",
+					"link": "#"
+				},
+				{
+					"title": "Gourji",
+					"link": "#"
+				},
+				{
+					"title": "Herzog",
+					"link": "#"
+				},
+				{
+					"title": "Ilgiz F.",
+					"link": "#"
+				},
+				{
+					"title": "IWC",
+					"link": "#"
+				},
+				{
+					"title": "Jaeger-LeCoultre",
+					"link": "#"
+				},
+				{
+					"title": "Jaquet Droz",
+					"link": "#"
+				},
+				{
+					"title": "Le Gioie",
+					"link": "#"
+				},
+				{
+					"title": "Longines",
+					"link": "#"
+				},
+				{
+					"title": "Luca Carati",
+					"link": "#"
+				},
+				{
+					"title": "MILUS",
+					"link": "#"
+				},
+				{
+					"title": "Montegrappa",
+					"link": "#"
+				},
+				{
+					"title": "Omega",
+					"link": "#"
+				},
+				{
+					"title": "Panerai",
+					"link": "#"
+				},
+				{
+					"title": "Pearl Style by Gellner",
+					"link": "#"
+				},
+				{
+					"title": "Perrelet",
+					"link": "#"
+				},
+				{
+					"title": "Pesavento",
+					"link": "#"
+				},
+				{
+					"title": "Rado",
+					"link": "#"
+				},
+				{
+					"title": "Raketa",
+					"link": "#"
+				},
+				{
+					"title": "Roberto Coin",
+					"link": "#"
+				},
+				{
+					"title": "Shaun Leane",
+					"link": "#"
+				},
+				{
+					"title": "Tag Heuer",
+					"link": "#"
+				},
+				{
+					"title": "TF",
+					"link": "#"
+				},
+				{
+					"title": "Ulysse Nardin",
+					"link": "#"
+				},
+				{
+					"title": "Underwood",
+					"link": "#"
+				},
+				{
+					"title": "Vacheron Constantin",
+					"link": "#"
+				},
+				{
+					"title": "Vhernier",
+					"link": "#"
+				},
+				{
+					"title": "Zenith",
+					"link": "#"
+				},
+				{
+					"title": "Zoccai",
+					"link": "#"
+				},
+				{
+					"title": "",
+					"link": "#"
+				},
+				{
+					"title": "",
+					"link": "#"
+				}
+			]
+		}
+	],
+	"footerNav": [
+		{
+			"title": "Sublime",
+			"url": "index.html",
+			"list": [
+				{
+					"url": "about.html",
+					"text": "О&nbsp;нас"
+				},
+				{
+					"url": "brands.html",
+					"text": "Бренды"
+				},
+				{
+					"url": "contacts.html",
+					"text": "Контакты"
+				}
+			]
+		},
+		{
+			"title": "Каталог",
+			"url": "catalog.html",
+			"list": [
+				{
+					"url": "#",
+					"text": "Ювелирные украшения"
+				},
+				{
+					"url": "watch.html",
+					"text": "Часы"
+				},
+				{
+					"url": "accessories.html",
+					"text": "Аксессуары"
+				},
+				{
+					"url": "offers.html",
+					"text": "Скидки"
+				}
+			]
+		},
+		{
+			"title": "Бутики",
+			"url": "butics.html",
+			"list": [
+				{
+					"url": "gum.html",
+					"text": "ГУМ"
+				},
+				{
+					"url": "vesna.html",
+					"text": "Весна"
+				},
+				{
+					"url": "sochi.html",
+					"text": "Сочи"
+				},
+				{
+					"url": "polyana.html",
+					"text": "Красная Поляна"
+				}
+			]
+		},
+		{
+			"title": "Контакты",
+			"url": "contacts.html"
+		}
+	],
+	"catalogNavbar": [
+		{
+			"url": "#",
+			"title": "Кольца"
+		},
+		{
+			"url": "#",
+			"title": "Серьги"
+		},
+		{
+			"url": "#",
+			"title": "Колье"
+		},
+		{
+			"url": "#",
+			"title": "Браслеты"
+		},
+		{
+			"url": "#",
+			"title": "Броши"
+		}
+	]
+}

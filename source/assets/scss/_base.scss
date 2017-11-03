@@ -25,11 +25,10 @@ body {
     position: relative;
     width: 100%;
     overflow: hidden;
+    padding-top: 99px;
 
-    &_navbar-fixed {
-        @media (min-width: $screen-md-min) {
-          padding-top: 99px;
-        }
+    @media (max-width: $screen-sm-max) {
+        padding-top: 91px;
     }
 
     &__content {
@@ -51,5 +50,11 @@ body {
             padding-left: 15px;
             padding-right: 15px;
         }
+    }
+}
+
+.container {
+    @media (min-width: $screen-lg-min) {
+        width: 1090px;
     }
 }
