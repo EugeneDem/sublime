@@ -3,7 +3,9 @@
 var gulp = require('gulp'),
     del = require('del'),
     data = require('gulp-data'),
+    mergeJson = require('gulp-merge-json'),
     path = require('path'),
+    fs = require('fs'),
     sass = require('gulp-sass'),
     sassGlob = require('gulp-sass-glob'),
     autoprefixer = require('autoprefixer'),
@@ -223,7 +225,26 @@ gulp.task('html', () => {
 
 // jade
 
-gulp.task('jade', () => {
+gulp.task('jade:data', () => {
+  return gulp.src([
+      './source/pages/**/*.json',
+      './source/blocks/Widgets/**/*.json'
+    ])
+    .pipe($.mergeJson({
+      fileName: 'data.json',
+      edit: (json, file) => {
+        let filename = path.basename(file.path),
+            primaryKey = filename.replace(path.extname(filename), '');
+        let data = {};
+            data[primaryKey.toUpperCase()] = json;
+
+        return data;
+      },
+    }))
+    .pipe(gulp.dest('./temp'));
+});
+
+gulp.task('jade', ['jade:data'], () => {
   return gulp.src(paths.source+'/**/*.jade')
     .pipe($.plumber({ errorHandler: onError }))
     .pipe(changed(dest.source, {extension: '.html'}))
@@ -235,13 +256,14 @@ gulp.task('jade', () => {
     .pipe(debug({title: 'debug-after-filter'}))
     .pipe(data((file) => {
       try {
-        return require('./source/pages/' + path.basename(file.path, '.jade') + '.json');
+        return JSON.parse(fs.readFileSync('./temp/data.json'))
       } catch (err) {
         return;
       }
     }))
     .pipe(jade({
-      pretty: true
+      pretty: true,
+      basedir: './'
     }))
     .pipe(rename({dirname: '.'}))
     .pipe(gulp.dest(dest.source))

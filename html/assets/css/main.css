@@ -308,6 +308,23 @@ body {
   padding-left: 30px;
 }
 
+.row {
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
+.col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12,.col,.col-sm-1,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm,.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12,.col-md,.col-lg-1,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg,.col-xl-1,.col-xl-2,.col-xl-3,.col-xl-4,.col-xl-5,.col-xl-6,.col-xl-7,.col-xl-8,.col-xl-9,.col-xl-10,.col-xl-11,.col-xl-12,.col-xl {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.currency:after {
+  display: inline-block;
+  margin-left: 4px;
+  content: "₽";
+  font-size: 100%;
+}
+
 .btn-outline-gold {
   box-sizing: border-box;
   border-color: #d0ac80;
@@ -1158,7 +1175,7 @@ body {
   position: relative;
   overflow: hidden;
   max-height: 280px;
-  height: 15vw;
+  height: 40vw;
   background-color: #000;
 }
 
@@ -1175,7 +1192,7 @@ body {
 }
 
 .catalog-frame__title {
-  margin: 0 auto 2.3125rem;
+  margin: 0 auto;
   max-width: 420px;
   color: #fff;
   text-align: center;
@@ -1186,8 +1203,15 @@ body {
 }
 
 .catalog-frame__navbar {
-  padding-top: 1.625rem;
-  padding-bottom: 1.625rem;
+  display: flex;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding-bottom: 1.375rem;
+  min-height: 105px;
+  max-width: 560px;
+
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .catalog-frame__navbar-list {
@@ -1197,13 +1221,11 @@ body {
   padding: 0;
   list-style: none;
 
-  flex-wrap: nowrap;
-  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .catalog-frame__navbar-list-item {
-  padding-right: 1rem;
-  padding-left: 1rem;
+  padding: 0.25rem 1rem;
   text-transform: uppercase;
   font-size: 14px;
   line-height: 16px;
@@ -1270,6 +1292,127 @@ body {
 .catalog-frame .breadcrumb-item + .breadcrumb-item:before {
   color: #d0ac80;
   content: "—";
+}
+
+.filters {
+  min-height: 40px;
+  background-color: #fcf6e4;
+}
+
+.catalog__content {
+  padding-top: 0.9375rem;
+  padding-bottom: 4.375rem;
+}
+
+.catalog__title {
+  margin-top: 0.75rem;
+  margin-bottom: 2.5625rem;
+  color: #000;
+  text-align: center;
+  font-size: 2.75rem;
+  line-height: 2.875rem;
+}
+
+.catalog-list {
+  margin: 0 auto;
+  max-width: 1060px;
+}
+
+.catalog-item {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  max-width: 340px;
+  height: 490px;
+  border: 1px solid transparent;
+  text-align: center;
+  text-decoration: none;
+  transition: border 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+}
+
+.catalog-item:hover {
+  border-color: #d0ac80;
+}
+
+.catalog-item:hover .catalog-item__wishlist-icon svg {
+  visibility: visible;
+  opacity: 1;
+}
+
+.catalog-item:hover,.catalog-item:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+.catalog-item__wishlist {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.catalog-item__wishlist-icon svg {
+  display: inline-block;
+  visibility: hidden;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+
+  fill: none;
+  stroke: #d2af84;
+}
+
+.catalog-item__wishlist.is-active .catalog-item__wishlist-icon svg {
+  fill: #d2af84;
+}
+
+.catalog-item__media {
+  max-height: 332px;
+}
+
+.catalog-item__media img {
+  max-width: 100%;
+  height: auto;
+}
+
+.catalog-item__content {
+  padding-top: 1.1875rem;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+}
+
+.catalog-item__title {
+  margin-bottom: 2px;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  font-family: "Stem-Medium";
+  line-height: 1.25rem;
+}
+
+.catalog-item__subtitle {
+  margin-bottom: 5px;
+  color: #000;
+  font-size: 0.875rem;
+  line-height: 1rem;
+}
+
+.catalog-item__description {
+  color: #d0ac80;
+  font-size: 0.875rem;
+  font-family: "Stem-Italic";
+  line-height: 1rem;
+}
+
+.catalog-item__price {
+  margin-top: 10px;
+  color: #000;
+  font-size: 1.125rem;
+  font-family: "Stem-Bold";
+  line-height: 1.25rem;
 }
 
 .footer {
@@ -1398,6 +1541,14 @@ body {
   font-family:"Stem-Light";src:url("../fonts/Stem-Light.eot");src:url("../fonts/Stem-Light.eot") format("embedded-opentype"), url("../fonts/Stem-Light.woff") format("woff"), url("../fonts/Stem-Light.ttf") format("truetype");
 }
 
+@font-face {font-weight:normal;
+  font-family:"Stem-Italic";src:url("../fonts/Stem-Italic.eot");src:url("../fonts/Stem-Italic.eot") format("embedded-opentype"), url("../fonts/Stem-Italic.woff") format("woff"), url("../fonts/Stem-Italic.ttf") format("truetype");
+}
+
+@font-face {font-weight:normal;
+  font-family:"PTRoubleSans";src:url("../fonts/PTRoubleSans.eot");src:url("../fonts/PTRoubleSans.eot") format("embedded-opentype"), url("../fonts/PTRoubleSans.woff") format("woff"), url("../fonts/PTRoubleSans.ttf") format("truetype");
+}
+
 @font-face {font-weight:normal;font-style:normal;
   font-family:"slick";src:url("../fonts/slick.eot");src:url("../fonts/slick.eot?#iefix") format("embedded-opentype"), url("../fonts/slick.woff") format("woff"), url("../fonts/slick.ttf") format("truetype"), url("../fonts/slick.svg#slick") format("svg");
 }
@@ -1408,9 +1559,55 @@ body {
   }
 }
 
+@media (min-width: 576px) {
+  .row {
+    margin-right: -10px;
+    margin-left: -10px;
+  }
+
+  .col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12,.col,.col-sm-1,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm,.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12,.col-md,.col-lg-1,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg,.col-xl-1,.col-xl-2,.col-xl-3,.col-xl-4,.col-xl-5,.col-xl-6,.col-xl-7,.col-xl-8,.col-xl-9,.col-xl-10,.col-xl-11,.col-xl-12,.col-xl {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .row {
+    margin-right: -10px;
+    margin-left: -10px;
+  }
+
+  .col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12,.col,.col-sm-1,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm,.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12,.col-md,.col-lg-1,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg,.col-xl-1,.col-xl-2,.col-xl-3,.col-xl-4,.col-xl-5,.col-xl-6,.col-xl-7,.col-xl-8,.col-xl-9,.col-xl-10,.col-xl-11,.col-xl-12,.col-xl {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .row {
+    margin-right: -10px;
+    margin-left: -10px;
+  }
+
+  .col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12,.col,.col-sm-1,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm,.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12,.col-md,.col-lg-1,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg,.col-xl-1,.col-xl-2,.col-xl-3,.col-xl-4,.col-xl-5,.col-xl-6,.col-xl-7,.col-xl-8,.col-xl-9,.col-xl-10,.col-xl-11,.col-xl-12,.col-xl {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
 @media (min-width: 1200px) {
   .container {
     width: 1090px;
+  }
+
+  .row {
+    margin-right: -10px;
+    margin-left: -10px;
+  }
+
+  .col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12,.col,.col-sm-1,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm,.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12,.col-md,.col-lg-1,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg,.col-xl-1,.col-xl-2,.col-xl-3,.col-xl-4,.col-xl-5,.col-xl-6,.col-xl-7,.col-xl-8,.col-xl-9,.col-xl-10,.col-xl-11,.col-xl-12,.col-xl {
+    padding-right: 10px;
+    padding-left: 10px;
   }
 
   .promo-box__list {

@@ -1,0 +1,70 @@
+{
+	"footerNav": [
+		{
+			"title": "Sublime",
+			"url": "index.html",
+			"list": [
+				{
+					"url": "about.html",
+					"text": "О&nbsp;нас"
+				},
+				{
+					"url": "brands.html",
+					"text": "Бренды"
+				},
+				{
+					"url": "contacts.html",
+					"text": "Контакты"
+				}
+			]
+		},
+		{
+			"title": "Каталог",
+			"url": "catalog.html",
+			"list": [
+				{
+					"url": "#",
+					"text": "Ювелирные украшения"
+				},
+				{
+					"url": "watch.html",
+					"text": "Часы"
+				},
+				{
+					"url": "accessories.html",
+					"text": "Аксессуары"
+				},
+				{
+					"url": "offers.html",
+					"text": "Скидки"
+				}
+			]
+		},
+		{
+			"title": "Бутики",
+			"url": "butics.html",
+			"list": [
+				{
+					"url": "gum.html",
+					"text": "ГУМ"
+				},
+				{
+					"url": "vesna.html",
+					"text": "Весна"
+				},
+				{
+					"url": "sochi.html",
+					"text": "Сочи"
+				},
+				{
+					"url": "polyana.html",
+					"text": "Красная Поляна"
+				}
+			]
+		},
+		{
+			"title": "Контакты",
+			"url": "contacts.html"
+		}
+    ]
+}

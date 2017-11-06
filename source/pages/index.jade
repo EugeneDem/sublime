@@ -52,11 +52,11 @@ block content
 			.section__slider
 				.brands-carousel
 					.brands-carousel__state.js-brands-carousel
-						each value, index in brandsList
+						each value, index in INDEX.brandsList
 							if (index % 6 === 0)
 								.brands-carousel__group(data-group=len)
 									- for(var i = index; i <= index+5; i++)
 										a.brands-carousel__item(href="#")
-											img.brands-carousel__img(src="content/images/brands/" + brandsList[i].title + ".png" srcset="content/images/brands/" + brandsList[i].title + "2x.png 2x" alt="")
+											img.brands-carousel__img(src="content/images/brands/" + INDEX.brandsList[i].title + ".png" srcset="content/images/brands/" + INDEX.brandsList[i].title + "2x.png 2x" alt="")
 			.section__group-btn
 				a.btn.btn-outline-gold(href="#") Все бренды

@@ -25,3 +25,17 @@
     src: url($font-path + $font-stem-light + '.eot') format('embedded-opentype'), url($font-path + $font-stem-light + '.woff') format('woff'), url($font-path + $font-stem-light + '.ttf') format('truetype');
     font-weight: normal;
 }
+
+@font-face {
+    font-family: $font-stem-italic;
+    src: url($font-path + $font-stem-italic + '.eot');
+    src: url($font-path + $font-stem-italic + '.eot') format('embedded-opentype'), url($font-path + $font-stem-italic + '.woff') format('woff'), url($font-path + $font-stem-italic + '.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: $font-PTRoubleSans;
+    src: url($font-path + $font-PTRoubleSans + '.eot');
+    src: url($font-path + $font-PTRoubleSans + '.eot') format('embedded-opentype'), url($font-path + $font-PTRoubleSans + '.woff') format('woff'), url($font-path + $font-PTRoubleSans + '.ttf') format('truetype');
+    font-weight: normal;
+}

@@ -1,7 +1,7 @@
 .catalog-frame {
     background-color: #000;
     position: relative;
-    height: 15vw;
+    height: 40vw;
     max-height: 280px;
     overflow: hidden;
 
@@ -24,19 +24,24 @@
         color: #fff;
         text-transform: uppercase;
         text-align: center;
-        margin: 0 auto rem(37);
+        margin: 0 auto;
     }
 
     &__navbar {
-        padding-bottom: rem(26);
-        padding-top: rem(26);
+        max-width: 560px;
+        min-height: 105px;
+        padding-bottom: rem(22);
+        margin: 0 auto;
+        display: flex;
+        align-items: flex-end;
+        box-sizing: border-box;
+        justify-content: center;
     }
 
     &__navbar-list {
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
+        flex-wrap: wrap;
         list-style: none;
         padding: 0;
         margin: 0;
@@ -46,8 +51,7 @@
         font-size: 14px;
         line-height: 16px;
         text-transform: uppercase;
-        padding-left: rem(16);
-        padding-right: rem(16);
+        padding: rem(4) rem(16) ;
     }
 
     &__navbar-list-item + &__navbar-list-item:before {

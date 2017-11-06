@@ -5,7 +5,7 @@ footer.app__footer
 				a.footer__brand(href="#")
 					img(src="assets/images/brand-footer.svg" alt="Sublime by BOSCO")
 				nav.footer__nav
-					each value in footerNav
+					each value in FOOTER.footerNav
 						ul.footer__nav-list
 							li.footer__nav-list-item
 								a.footer__nav-title(href=value.url)!= value.title

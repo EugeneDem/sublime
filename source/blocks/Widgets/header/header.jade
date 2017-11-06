@@ -18,8 +18,8 @@ header.navbar.navbar-default.navbar-toggleable-md
 					.navbar-nav__subnav-wrap
 						.navbar-nav__subnav-container
 							.navbar-nav__subnav-listgroup
-								each value in submenuCatalog
-									.navbar-nav__subnav-listgroup-item(class="navbar-nav__subnav-listgroup-item_col-" + submenuCatalog.length)
+								each value in HEADER.submenuCatalog
+									.navbar-nav__subnav-listgroup-item(class="navbar-nav__subnav-listgroup-item_col-" + HEADER.submenuCatalog.length)
 										ul.navbar-nav__subnav-list
 											li.navbar-nav__subnav-list-item
 												a.navbar-nav__subnav-link-title(href=value.link)!= value.title
@@ -34,9 +34,9 @@ header.navbar.navbar-default.navbar-toggleable-md
 				.navbar-nav__subnav
 					.navbar-nav__subnav-wrap
 						.navbar-nav__subnav-container
-							each value in submenuBrands
+							each value in HEADER.submenuBrands
 								.navbar-nav__subnav-listgroup
-									.navbar-nav__subnav-listgroup-item(class="navbar-nav__subnav-listgroup-item_col-" + submenuBrands.length)
+									.navbar-nav__subnav-listgroup-item(class="navbar-nav__subnav-listgroup-item_col-" + HEADER.submenuBrands.length)
 										ul.navbar-nav__subnav-list
 											li.navbar-nav__subnav-list-item
 												a.navbar-nav__subnav-link-title(href=value.link)!= value.title

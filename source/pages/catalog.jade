@@ -17,14 +17,30 @@ block content
 						h1.catalog-frame__title Ювелирные украшения
 						.catalog-frame__navbar
 							ul.catalog-frame__navbar-list
-								each value in catalogNavbar
+								each value in CATALOG.catalogNavbar
 									li.catalog-frame__navbar-list-item
 										a.catalog-frame__navbar-link(href=value.url)!= value.title
 			.catalog-frame__mask
 			img.catalog-frame__bg(src="content/images/catalog/frame-bg-1.jpg" alt="")
-	.filter
-		.filter__wrap
-			.container
-	.section
-		.section__content
-			h2.section__title Коллекция
+	.catalog
+		.filters
+			.filters__wrap
+				.container
+		.catalog__content
+			h2.catalog__title Мужские часы
+			.catalog-list
+				.row
+					each value in CATALOG.catalogList
+						.catalog-list__item.col.col-sm-6.col-md-4
+							a.catalog-item(href=value.url)
+								.catalog-item__wishlist
+									i.catalog-item__wishlist-icon
+										+svg('wishlist')
+								.catalog-item__media
+									img(src=value.src alt="")
+								.catalog-item__content
+									.catalog-item__title!= value.title
+									.catalog-item__subtitle!= value.subtitle
+									.catalog-item__description!= value.description
+									.catalog-item__price!= value.price
+										span.currency

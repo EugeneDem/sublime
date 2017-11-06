@@ -1,0 +1,118 @@
+.catalog {
+    &__content {
+        padding-top: rem(15);
+        padding-bottom: rem(70);
+    }
+
+    &__title {
+        font-size: rem(44);
+        line-height: rem(46);
+        color: #000;
+        text-align: center;
+        margin-top: rem(12);
+        margin-bottom: rem(41);
+    }
+}
+.catalog-list {
+    max-width: 1060px;
+    margin: 0 auto;
+}
+
+.catalog-item {
+    border: 1px solid transparent;
+    transition: border 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+    height: 490px;
+    max-width: 340px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+
+    &:hover {
+        border-color: #d0ac80;
+    }
+
+    &:hover &__wishlist-icon svg {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    &__wishlist {
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1;
+    }
+
+    &__wishlist-icon {
+        svg {
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            vertical-align: middle;
+            fill: none;
+            stroke: #d2af84;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+            opacity: 0;
+        }
+    }
+
+    &__wishlist.is-active &__wishlist-icon svg {
+        fill: #d2af84;
+    }
+
+    &__media {
+        max-height: 332px;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__content {
+        padding-top: rem(19);
+        padding-left: rem(10);
+        padding-right: rem(10);
+    }
+
+    &__title {
+        font-family: $font-stem-medium;
+        text-transform: uppercase;
+        font-size: rem(18);
+        line-height: rem(20);
+        color: #000;
+        margin-bottom: 2px;
+    }
+
+    &__subtitle {
+        font-size: rem(14);
+        line-height: rem(16);
+        color: #000;
+        margin-bottom: 5px;
+    }
+
+    &__description {
+        color: #d0ac80;
+        font-size: rem(14);
+        line-height: rem(16);
+        font-family: $font-stem-italic;
+    }
+
+    &__price {
+        color: #000;
+        font-family: $font-stem-bold;
+        font-size: rem(18);
+        line-height: rem(20);
+        margin-top: 10px;
+    }
+}
