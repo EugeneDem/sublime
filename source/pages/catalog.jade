@@ -23,24 +23,83 @@ block content
 			.catalog-frame__mask
 			img.catalog-frame__bg(src="content/images/catalog/frame-bg-1.jpg" alt="")
 	.catalog
-		.filters
-			.filters__wrap
-				.container
+		.filter.is-active
+			.filter__wrap
+				.filter__handler
+					i.filter__handler-icon
+						+svg('filters')
+					span Фильтры
+				.filter__tags
+					input(type="hidden" value="chanel, кольца, серьги, желтое золото, белое золото, бриллианты, изысканный стиль")
+					.filter__tags-inner
+						.filter__entry-field(data-value="chanel")
+							span chanel
+							i.filter__entry-field-close
+						.filter__entry-field(data-value="кольца")
+							span кольца
+							i.filter__entry-field-close
+						.filter__entry-field(data-value="серьги")
+							span серьги
+							i.filter__entry-field-close
+						.filter__entry-field(data-value="желтое золото")
+							span желтое золото
+							i.filter__entry-field-close
+						.filter__entry-field(data-value="белое золото")
+							span белое золото
+							i.filter__entry-field-close
+						.filter__entry-field(data-value="бриллианты")
+							span бриллианты
+							i.filter__entry-field-close
+						.filter__entry-field(data-value="изысканный стиль")
+							span изысканный стиль
+							i.filter__entry-field-close
+						.filter__entry-field(data-value="серьги")
+							span серьги
+							i.filter__entry-field-close
+						.filter__entry-field(data-value="желтое золото")
+							span желтое золото
+							i.filter__entry-field-close
+						.filter__entry-field(data-value="белое золото")
+							span белое золото
+							i.filter__entry-field-close
+						.filter__entry-field(data-value="бриллианты")
+							span бриллианты
+							i.filter__entry-field-close
+						.filter__entry-field(data-value="изысканный стиль")
+							span изысканный стиль
+							i.filter__entry-field-close
 		.catalog__content
 			h2.catalog__title Мужские часы
 			.catalog-list
 				.row
 					each value in CATALOG.catalogList
-						.catalog-list__item.col.col-sm-6.col-md-4
-							a.catalog-item(href=value.url)
+						.catalog-list__item.col-12.col-sm-6.col-lg-4
+							.catalog-item
+								a.catalog-item__link(href=value.url)
+									.catalog-item__media
+										img(src=value.src alt="")
+									.catalog-item__content
+										.catalog-item__title!= value.title
+										.catalog-item__subtitle!= value.subtitle
+										.catalog-item__description!= value.description
+										.catalog-item__price!= value.price
+											span.currency
 								.catalog-item__wishlist
 									i.catalog-item__wishlist-icon
 										+svg('wishlist')
-								.catalog-item__media
-									img(src=value.src alt="")
-								.catalog-item__content
-									.catalog-item__title!= value.title
-									.catalog-item__subtitle!= value.subtitle
-									.catalog-item__description!= value.description
-									.catalog-item__price!= value.price
-										span.currency
+		.catalog__footer
+			a.btn.btn-outline-gold(href="#") Показать еще
+			nav(aria-label="catalog pagination")
+				ul.pagination.justify-content-center
+					li.page-item.active
+						a.page-link(href="#") 1
+					li.page-item
+						a.page-link(href="#") 2
+					li.page-item
+						a.page-link(href="#") 3
+					li.page-item
+						a.page-link(href="#") 4
+					li.page-item.next
+						a.page-link(href="#") 5
+					li.page-item
+						a.page-link(href="#") 12

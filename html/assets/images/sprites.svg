@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg">
+<symbol id="filters" viewBox="0 0 21.125 21">
+    <path fill="none" stroke="#181716" stroke-linecap="round" stroke-miterlimit="10" d="M12.54 10.625h7.811M.812 10.625h7.812M7.554 2.869h12.797M.812 2.869h2.825"/>
+    <circle fill="none" stroke="#181716" stroke-linecap="round" stroke-miterlimit="10" cx="5.595" cy="2.869" r="1.958"/>
+    <circle fill="none" stroke="#181716" stroke-linecap="round" stroke-miterlimit="10" cx="10.582" cy="10.625" r="1.958"/>
+    <path fill="none" stroke="#181716" stroke-linecap="round" stroke-miterlimit="10" d="M17.527 18.381h2.824M.812 18.381H13.61"/>
+    <circle fill="none" stroke="#181716" stroke-linecap="round" stroke-miterlimit="10" cx="15.569" cy="18.381" r="1.958"/>
+</symbol>
 <symbol id="search" viewBox="0 0 23.833 23.667">
     <circle cx="10.578" cy="10.578" r="9.578"/>
     <path d="M22.771 22.771L17.54 17.54"/>

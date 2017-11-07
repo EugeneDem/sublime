@@ -2,6 +2,57 @@
     &__content {
         padding-top: rem(15);
         padding-bottom: rem(70);
+
+        @media (max-width: $screen-sm-max) {
+            padding-top: 0;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+
+    &__footer {
+        text-align: center;
+
+        .pagination {
+            margin-top: rem(40);
+        }
+
+        .page-item.active {
+            .page-link {
+                background: none;
+                color: #000;
+            }
+        }
+
+        .page-item.next {
+            .page-link {
+                margin-right: rem(16);
+                padding-right: rem(16);
+
+                &:after {
+                    content: "...";
+                    color: #d0ac80;
+                    display: inline-block;
+                    position: absolute;
+                    bottom: rem(8);
+                    right: -1 * rem(16);
+                    pointer-events: none;
+                }
+            }
+        }
+
+        .page-link {
+            border: medium none;
+            font-size: rem(18);
+            font-family: $font-stem-bold;
+            color: #d0ac80;
+
+            &:hover,
+            &:focus {
+                background: none;
+                color: #000;
+            }
+        }
     }
 
     &__title {
@@ -11,11 +62,36 @@
         text-align: center;
         margin-top: rem(12);
         margin-bottom: rem(41);
+
+        @media (max-width: $screen-xs-max) {
+            font-size: rem(22);
+            line-height: rem(23);
+            margin-top: rem(6);
+            margin-bottom: rem(20);
+        }
     }
 }
 .catalog-list {
     max-width: 1060px;
     margin: 0 auto;
+
+    &__item {
+        &:nth-child(2n) {
+            @media (max-width: $screen-sm-max) {
+                border-left: 1px solid #f6eee6;
+            }
+
+            @media (max-width: $screen-xs-min) {
+                border-left: medium none;
+            }
+        }
+
+        &:nth-child(n-1) {
+            @media (max-width: $screen-sm-max) {
+                border-bottom: 1px solid #f6eee6;
+            }
+        }
+    }
 }
 
 .catalog-item {
@@ -24,32 +100,49 @@
     height: 490px;
     max-width: 340px;
     text-align: center;
-    text-decoration: none;
     margin: 0 auto;
-    display: block;
     position: relative;
+
+    @media (max-width: $screen-sm-max) {
+        border: medium none;
+        height: 350px;
+    }
 
     &:hover {
         border-color: #d0ac80;
     }
 
-    &:hover &__wishlist-icon svg {
+    &:hover &__wishlist {
         visibility: visible;
         opacity: 1;
     }
 
-    &:hover,
-    &:focus {
+    &__link {
+        height: 100%;
         text-decoration: none;
-        color: inherit;
+        display: block;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+            color: inherit;
+        }
     }
 
     &__wishlist {
         cursor: pointer;
+        visibility: hidden;
+        transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+        opacity: 0;
         position: absolute;
         top: 20px;
         right: 20px;
         z-index: 1;
+
+        @media (max-width: $screen-sm-max) {
+            visibility: visible;
+            opacity: 1;
+        }
     }
 
     &__wishlist-icon {
@@ -60,9 +153,6 @@
             vertical-align: middle;
             fill: none;
             stroke: #d2af84;
-            visibility: hidden;
-            transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
-            opacity: 0;
         }
     }
 
@@ -71,11 +161,15 @@
     }
 
     &__media {
-        max-height: 332px;
+        height: calc(100% - 165px);
+
+        @media (max-width: $screen-sm-min) {
+            height: calc(100% - 125px);
+        }
 
         img {
             max-width: 100%;
-            height: auto;
+            max-height: 100%;
         }
     }
 
@@ -92,6 +186,11 @@
         line-height: rem(20);
         color: #000;
         margin-bottom: 2px;
+
+        @media (max-width: $screen-sm-min) {
+            font-size: rem(14);
+            line-height: rem(16);
+        }
     }
 
     &__subtitle {
@@ -99,6 +198,11 @@
         line-height: rem(16);
         color: #000;
         margin-bottom: 5px;
+
+        @media (max-width: $screen-sm-min) {
+            font-size: rem(12);
+            line-height: rem(14);
+        }
     }
 
     &__description {
@@ -106,6 +210,11 @@
         font-size: rem(14);
         line-height: rem(16);
         font-family: $font-stem-italic;
+
+        @media (max-width: $screen-sm-min) {
+            font-size: rem(12);
+            line-height: rem(14);
+        }
     }
 
     &__price {
@@ -114,5 +223,10 @@
         font-size: rem(18);
         line-height: rem(20);
         margin-top: 10px;
+
+        @media (max-width: $screen-sm-min) {
+            font-size: rem(14);
+            line-height: rem(16);
+        }
     }
 }
