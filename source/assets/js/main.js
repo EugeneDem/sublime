@@ -14,11 +14,11 @@ let Main = function () {
         phone: 480
     };
 
-    let navbarHandler = function() {
+    let navbarHandler = () => {
         let elem = $('.navbar-nav'),
             $this;
     
-        elem.on('click', '.nav-link', function(e) {
+        elem.on('click', '.nav-link', (e) => {
             $this = $(this);
 
             if (isSmallDevice() && !$this.parent().hasClass('active')) {
@@ -28,11 +28,11 @@ let Main = function () {
             }
         });
 
-        navbar.on('mouseleave', function(e) {
+        navbar.on('mouseleave', (e) => {
             $('.active', navbar).removeClass('active');
         });
 
-        $win.on('resize', function () {
+        $win.on('resize', () => {
             if (!isSmallDevice()) {
                 $('.active', navbar).removeClass('active');
             }
@@ -88,7 +88,47 @@ let Main = function () {
             elem.removeClass('fade').find('.form-control').val('');
             $('body').removeClass('modal-open');
         });
-    }
+    };
+
+    let modalFilter = () => {
+        let elem = $('.modal-filter');
+        
+        $(document).on('click', '.js-modal-filter', () => {
+            $('body').addClass('modal-open');
+            elem.addClass('fade');
+        });
+
+        $(document).on('click', '.js-modal-filter-close', () => {
+            elem.removeClass('fade');
+            $('body').removeClass('modal-open');
+        });
+    };
+
+    let spollerMobile = () => {
+        function hiddenSpoller() {
+            if (!isSmallDevice()) {
+                $('.js-drop-mobile-content').removeAttr('style');
+                $('.js-drop-mobile-handler').removeClass('is-opened');
+            } else {
+                if(!$('.js-drop-mobile-handler').hasClass('is-opened') && $('.js-drop-mobile-content').is(':visible')){
+                    $('.js-drop-mobile-handler').closest('.js-drop-mobile').find('.js-drop-mobile-content').hide();
+                }
+            }
+        }
+
+        hiddenSpoller();
+
+        $(document).on('click', '.js-drop-mobile-handler', () => {
+            if (isSmallDevice()) {
+                var parentEl = $(this).closest('.js-drop-mobile');
+                $(this).toggleClass('is-opened').closest('.js-drop-mobile').toggleClass('is-opened').find('.js-drop-mobile-content').filter(':first').stop().slideToggle(200);
+            }
+        });
+
+        $win.on('resize', () => {
+            hiddenSpoller();
+        });
+    };
 
     function navbarLeave() {
         navbar.trigger('mouseleave');
@@ -107,6 +147,8 @@ let Main = function () {
             navbarHandler();
             toggleClassOnElement();
             modalSearch();
+            modalFilter();
+            spollerMobile();
         }
     }
 }();

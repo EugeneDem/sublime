@@ -1,0 +1,309 @@
+{
+	"filterBrands": [
+		{
+			"title": "Бренд",
+			"list": [
+				{
+					"name": "Все бренды"
+				},
+				{
+					"name": "A. Lange & Sohne"
+				},
+				{
+					"name": "Audemars Piguet"
+				},
+				{
+					"name": "Aviator"
+				},
+				{
+					"name": "Axenoff Jewellery"
+				},
+				{
+					"name": "Baume & Mercier"
+				},
+				{
+					"name": "Blancpain"
+				},
+				{
+					"name": "Buben&Zorweg"
+				},
+				{
+					"name": "Buccellati"
+				},
+				{
+					"name": "Carrera y Carrera"
+				},
+				{
+					"name": "Chanel"
+				},
+				{
+					"name": "CORUM"
+				},
+				{
+					"name": "Damiani"
+				},
+				{
+					"name": "Dario&Peter"
+				},
+				{
+					"name": "Deakin & Francis"
+				},
+				{
+					"name": "Encelade"
+				},
+				{
+					"name": "Frederique Constant"
+				},
+				{
+					"name": "Gellner"
+				},
+				{
+					"name": "Glashutte Original"
+				},
+				{
+					"name": "Gourji"
+				},
+				{
+					"name": "Herzog"
+				},
+				{
+					"name": "Ilgiz F."
+				},
+				{
+					"name": "IWC"
+				},
+				{
+					"name": "Jaeger-LeCoultre"
+				},
+				{
+					"name": "Jaquet Droz"
+				},
+				{
+					"name": "Le Gioie"
+				},
+				{
+					"name": "Longines"
+				},
+				{
+					"name": "Luca Carati"
+				},
+				{
+					"name": "MILUS"
+				},
+				{
+					"name": "Montegrappa"
+				},
+				{
+					"name": "Omega"
+				},
+				{
+					"name": "Panerai"
+				},
+				{
+					"name": "Pearl Style by Gellner"
+				},
+				{
+					"name": "Perrelet"
+				},
+				{
+					"name": "Pesavento"
+				},
+				{
+					"name": "Rado"
+				},
+				{
+					"name": "Raketa"
+				},
+				{
+					"name": "Roberto Coin"
+				},
+				{
+					"name": "Shaun Leane"
+				},
+				{
+					"name": "Tag Heuer"
+				},
+				{
+					"name": "TF"
+				},
+				{
+					"name": "Ulysse Nardin"
+				},
+				{
+					"name": "Underwood"
+				},
+				{
+					"name": "Vacheron Constantin Vhernier"
+				},
+				{
+					"name": "Zenith"
+				},
+				{
+					"name": "Zoccai"
+				}
+			]
+		}
+	],
+	"filterCategories": [
+		{
+			"title": "Категория",
+			"list": [
+				{
+					"name": "Все ювелирные изделия"
+				},
+				{
+					"name": "Браслеты"
+				},
+				{
+					"name": "Броши"
+				},
+				{
+					"name": "Запонки"
+				},
+				{
+					"name": "Кулоны"
+				},
+				{
+					"name": "Кольца"
+				},
+				{
+					"name": "Колье"
+				},
+				{
+					"name": "Ручки"
+				},
+				{
+					"name": "Серьги"
+				},
+				{
+					"name": "Табакерки"
+				},
+				{
+					"name": "Все часы"
+				}
+			]
+		}
+	],
+	"filterAdvanced": [
+		{
+			"title": "Материал",
+			"list": [
+				{
+					"name": "Все материалы"
+				},
+				{
+					"name": "Золото желтое"
+				},
+				{
+					"name": "Золото белое"
+				},
+				{
+					"name": "Керамика"
+				},
+				{
+					"name": "Платина"
+				},
+				{
+					"name": "Серебро"
+				},
+				{
+					"name": "Сталь"
+				},
+				{
+					"name": "Титан"
+				}
+			]
+		},
+		{
+			"title": "Стиль",
+			"list": [
+				{
+					"name": "Все стили"
+				},
+				{
+					"name": "Веселый"
+				},
+				{
+					"name": "Изысканный"
+				},
+				{
+					"name": "Классика"
+				},
+				{
+					"name": "Модерн"
+				},
+				{
+					"name": "Скромный"
+				},
+				{
+					"name": "Современный"
+				},
+				{
+					"name": "Строгий"
+				}
+			]
+		},
+		{
+			"title": "Отделка",
+			"list": [
+				{
+					"name": "Все варианты"
+				},
+				{
+					"name": "Агаты"
+				},
+				{
+					"name": "Аметисты"
+				},
+				{
+					"name": "Брилианты"
+				},
+				{
+					"name": "Жемчуг"
+				},
+				{
+					"name": "Изумруды"
+				},
+				{
+					"name": "Оникс"
+				},
+				{
+					"name": "Рубины"
+				},
+				{
+					"name": "Сапфиры"
+				}
+			]
+		},
+		{
+			"title": "Вид",
+			"list": [
+				{
+					"name": "Все товары"
+				},
+				{
+					"name": "Новинки"
+				},
+				{
+					"name": "Раритеты"
+				},
+				{
+					"name": "Скидки"
+				},
+				{
+					"name": "Хиты продаж"
+				}
+			]
+		}
+	],
+	"filterPrice": [
+		{
+			"title": "Цена",
+			"list": [
+				{
+					"name": ""
+				}
+			]
+		}
+	]
+}

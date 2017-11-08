@@ -221,7 +221,7 @@
         <div class="catalog">
           <div class="filter is-active">
             <div class="filter__wrap">
-              <div class="filter__handler"><i class="filter__handler-icon">
+              <div class="filter__handler js-modal-filter"><i class="filter__handler-icon">
                   <svg>
                     <use xlink:href="assets/images/sprites.svg#filters"></use>
                   </svg></i><span>Фильтры</span></div>
@@ -423,6 +423,335 @@
                   </div>
                 </div>
               </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-filter">
+        <div class="modal-filter__close js-modal-filter-close"></div>
+        <div class="modal-filter__title">Фильтры</div>
+        <div class="modal-filter__container">
+          <div class="modal-filter__content">
+            <ul class="modal-filter__column">
+              <li class="modal-filter__column-group modal-filter__column-group_brands">
+                <div class="modal-filter__column-item js-drop-mobile">
+                  <div class="modal-filter__column-title js-drop-mobile-handler">Бренд</div>
+                  <div class="modal-filter__column-list js-drop-mobile-content">
+                    <div class="modal-filter__column-list-item">
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input js-reset-checks"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Все бренды</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">A. Lange & Sohne</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Audemars Piguet</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Aviator</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Axenoff Jewellery</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Baume & Mercier</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Blancpain</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Buben&Zorweg</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Buccellati</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Carrera y Carrera</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Chanel</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">CORUM</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Damiani</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Dario&Peter</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Deakin & Francis</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Encelade</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Frederique Constant</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Gellner</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Glashutte Original</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Gourji</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Herzog</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Ilgiz F.</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">IWC</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Jaeger-LeCoultre</span>
+                      </label>
+                    </div>
+                    <div class="modal-filter__column-list-item">
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Jaquet Droz</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Le Gioie</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Longines</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Luca Carati</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">MILUS</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Montegrappa</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Omega</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Panerai</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Pearl Style by Gellner</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Perrelet</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Pesavento</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Rado</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Raketa</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Roberto Coin</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Shaun Leane</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Tag Heuer</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">TF</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Ulysse Nardin</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Underwood</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Vacheron Constantin Vhernier</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Zenith</span>
+                      </label>
+                      <label class="checkbox-line">
+                        <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Zoccai</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="modal-filter__column-group modal-filter__column-group_categories">
+                <div class="modal-filter__column-item js-drop-mobile">
+                  <div class="modal-filter__column-title js-drop-mobile-handler">Категория</div>
+                  <div class="modal-filter__column-list js-drop-mobile-content">
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input js-reset-checks"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Все ювелирные изделия</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Браслеты</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Броши</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Запонки</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Кулоны</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Кольца</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Колье</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Ручки</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Серьги</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Табакерки</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Все часы</span>
+                    </label>
+                  </div>
+                </div>
+              </li>
+              <li class="modal-filter__column-group modal-filter__column-group_advanced">
+                <div class="modal-filter__column-item js-drop-mobile">
+                  <div class="modal-filter__column-title js-drop-mobile-handler">Материал</div>
+                  <div class="modal-filter__column-list js-drop-mobile-content">
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input js-reset-checks"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Все материалы</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Золото желтое</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Золото белое</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Керамика</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Платина</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Серебро</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Сталь</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Титан</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="modal-filter__column-item js-drop-mobile">
+                  <div class="modal-filter__column-title js-drop-mobile-handler">Стиль</div>
+                  <div class="modal-filter__column-list js-drop-mobile-content">
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input js-reset-checks"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Все стили</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Веселый</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Изысканный</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Классика</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Модерн</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Скромный</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Современный</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Строгий</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="modal-filter__column-item js-drop-mobile">
+                  <div class="modal-filter__column-title js-drop-mobile-handler">Отделка</div>
+                  <div class="modal-filter__column-list js-drop-mobile-content">
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input js-reset-checks"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Все варианты</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Агаты</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Аметисты</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Брилианты</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Жемчуг</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Изумруды</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Оникс</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Рубины</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Сапфиры</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="modal-filter__column-item js-drop-mobile">
+                  <div class="modal-filter__column-title js-drop-mobile-handler">Вид</div>
+                  <div class="modal-filter__column-list js-drop-mobile-content">
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input js-reset-checks"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Все товары</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Новинки</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Раритеты</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Скидки</span>
+                    </label>
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Хиты продаж</span>
+                    </label>
+                  </div>
+                </div>
+              </li>
+              <li class="modal-filter__column-group modal-filter__column-group_price">
+                <div class="modal-filter__column-item js-drop-mobile">
+                  <div class="modal-filter__column-title js-drop-mobile-handler">Цена</div>
+                  <div class="modal-filter__column-list js-drop-mobile-content">
+                    <label class="checkbox-line">
+                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input js-reset-checks"><i class="checkbox-line__icon"></i><span class="checkbox-line__text"></span>
+                    </label>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="modal-filter__footer">
+            <div class="modal-filter__item">
+              <div class="btn btn-outline-gold">Сбросить фильтры</div>
+            </div>
+            <div class="modal-filter__item">
+              <div class="btn btn-outline-gold">Показать <span>126</span> товаров</div>
             </div>
           </div>
         </div>

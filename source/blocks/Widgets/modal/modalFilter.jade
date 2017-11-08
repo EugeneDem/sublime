@@ -1,0 +1,61 @@
+.modal-filter
+	.modal-filter__close.js-modal-filter-close
+	.modal-filter__title Фильтры
+	.modal-filter__container
+		.modal-filter__content
+			ul.modal-filter__column
+				each value in MODALFILTER.filterBrands
+					li.modal-filter__column-group.modal-filter__column-group_brands
+						.modal-filter__column-item.js-drop-mobile
+							.modal-filter__column-title.js-drop-mobile-handler!= value.title
+							.modal-filter__column-list.js-drop-mobile-content
+								if (value.list.length)
+									.modal-filter__column-list-item
+										- for(var i = 0; i <= (value.list.length / 2); i++)
+											label.checkbox-line
+												input.checkbox-line__input(class=(i === 0 ) ? "js-reset-checks" : "" type="checkbox" onchange="smartFilter.click(this)")
+												i.checkbox-line__icon
+												span.checkbox-line__text!= value.list[i].name
+									.modal-filter__column-list-item
+										- for(var i = (value.list.length / 2) + 1; i <= value.list.length-1; i++)
+											label.checkbox-line
+												input.checkbox-line__input(class=(i === 0 ) ? "js-reset-checks" : "" type="checkbox" onchange="smartFilter.click(this)")
+												i.checkbox-line__icon
+												span.checkbox-line__text!= value.list[i].name
+				each value in MODALFILTER.filterCategories
+					li.modal-filter__column-group.modal-filter__column-group_categories
+						.modal-filter__column-item.js-drop-mobile
+							.modal-filter__column-title.js-drop-mobile-handler!= value.title
+							.modal-filter__column-list.js-drop-mobile-content
+								each item, index in value.list
+									label.checkbox-line
+										input.checkbox-line__input(class=(index === 0 ) ? "js-reset-checks" : "" type="checkbox" onchange="smartFilter.click(this)")
+										i.checkbox-line__icon
+										span.checkbox-line__text!= item.name
+				if (MODALFILTER.filterAdvanced.length > 1)
+					li.modal-filter__column-group.modal-filter__column-group_advanced
+						each value in MODALFILTER.filterAdvanced
+							.modal-filter__column-item.js-drop-mobile
+								.modal-filter__column-title.js-drop-mobile-handler!= value.title
+								.modal-filter__column-list.js-drop-mobile-content
+									each item, index in value.list
+										label.checkbox-line
+											input.checkbox-line__input(class=(index === 0 ) ? "js-reset-checks" : "" type="checkbox" onchange="smartFilter.click(this)")
+											i.checkbox-line__icon
+											span.checkbox-line__text!= item.name
+				each value in MODALFILTER.filterPrice
+					li.modal-filter__column-group.modal-filter__column-group_price
+						.modal-filter__column-item.js-drop-mobile
+							.modal-filter__column-title.js-drop-mobile-handler!= value.title
+							.modal-filter__column-list.js-drop-mobile-content
+								each item, index in value.list
+									label.checkbox-line
+										input.checkbox-line__input(class=(index === 0 ) ? "js-reset-checks" : "" type="checkbox" onchange="smartFilter.click(this)")
+										i.checkbox-line__icon
+										span.checkbox-line__text!= item.name
+
+		.modal-filter__footer
+			.modal-filter__item
+				.btn.btn-outline-gold Сбросить фильтры
+			.modal-filter__item
+				.btn.btn-outline-gold Показать <span>126</span> товаров
