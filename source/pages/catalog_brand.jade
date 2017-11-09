@@ -1,0 +1,75 @@
+block page
+	-var page = "Коллекции";
+
+extends ../blocks/layout/layout
+
+block content
+	.jumbotron-fluid
+		.catalog-frame
+			.container
+				.catalog-frame__wrap
+					ol.breadcrumb
+						li.breadcrumb-item
+							a(href="catalog.html") Каталог
+						li.breadcrumb-item
+							a(href="#") Бренды
+						li.breadcrumb-item.active
+							span Cartier
+					.catalog-frame__content
+						h1.catalog-frame__title.catalog-frame__title_brand Cartier
+							img(src="content/images/catalog/brand/logo-cartier.png")
+						.catalog-frame__navbar
+							ul.catalog-frame__navbar-list
+								each value in CATALOG_BRAND.catalogNavbar
+									if(page === value.title)
+										li.catalog-frame__navbar-list-item.is-active
+											span.catalog-frame__navbar-link!= value.title
+									else
+										li.catalog-frame__navbar-list-item
+											a.catalog-frame__navbar-link(href=value.url)!= value.title
+			.catalog-frame__mask
+			img.catalog-frame__bg(src="content/images/catalog/frame-bg-2.jpg" alt="")
+	.catalog
+		.filter
+			.filter__wrap
+				.filter__handler.js-modal-filter
+					i.filter__handler-icon
+						+svg('filters')
+					span Фильтры
+				.filter__tags
+					input(type="hidden" value="")
+					.filter__tags-inner
+		.catalog__content
+			.catalog-list
+				.row
+					each value in CATALOG_BRAND.catalogList
+						.catalog-list__item.col-12.col-sm-6.col-lg-4
+							.catalog-item
+								a.catalog-item__link(href=value.url)
+									.catalog-item__media
+										img(src=value.src alt="")
+									.catalog-item__content
+										.catalog-item__title!= value.title
+										.catalog-item__subtitle!= value.subtitle
+										.catalog-item__description!= value.description
+										.catalog-item__price!= value.price
+											span.currency
+								.catalog-item__wishlist
+									i.catalog-item__wishlist-icon
+										+svg('wishlist')
+		.catalog__footer
+			a.btn.btn-outline-gold(href="#") Показать еще
+			nav(aria-label="catalog pagination")
+				ul.pagination.justify-content-center
+					li.page-item.active
+						a.page-link(href="#") 1
+					li.page-item
+						a.page-link(href="#") 2
+					li.page-item
+						a.page-link(href="#") 3
+					li.page-item
+						a.page-link(href="#") 4
+					li.page-item.next
+						a.page-link(href="#") 5
+					li.page-item
+						a.page-link(href="#") 12

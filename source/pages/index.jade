@@ -1,62 +1,21 @@
 block page
 	-var page = "index";
 
+block header
+block footer
+
 extends ../blocks/layout/layout
 
 block content
 	.jumbotron-fluid
-		.main-carousel
-			.main-carousel__state.js-main-carousel
-				.main-carousel__state-item(style="background-image: url('content/images/main-slider/img-1.jpg');")
-				.main-carousel__state-item(style="background-image: url('content/images/main-slider/img-2.jpg');")
-			.main-carousel__arrows
-				.main-carousel__arrows-next
-				.main-carousel__arrows-prev
-	.promo-box
-		.promo-box__list.js-promo-box
-			.promo-box__list-item
-				a.promo-box__item(href="#")
-					.promo-box__title Ювелирные украшения
-					.promo-box__bg(style="background-image: url('content/images/promo-box/img-1.jpg');")
-			.promo-box__list-item
-				a.promo-box__item(href="#")
-					.promo-box__title Часы
-					.promo-box__bg(style="background-image: url('content/images/promo-box/img-2.jpg');")
-			.promo-box__list-item
-				a.promo-box__item(href="#")
-					.promo-box__title Аксессуары
-					.promo-box__bg(style="background-image: url('content/images/promo-box/img-3.jpg');")
-	.section
-		.section__content
-			h2.section__title Новые поступления
-			.section__slider
-				.product-carousel
-					.product-carousel__state.js-product-carousel
-						a.product-carousel__item(href="#")
-							img.product-carousel__img(src="content/images/small-slider/img-1.jpg" srcset="content/images/small-slider/img2x-1.jpg 2x" alt="")
-						a.product-carousel__item(href="#")
-							img.product-carousel__img(src="content/images/small-slider/img-2.jpg" srcset="content/images/small-slider/img2x-2.jpg 2x" alt="")
-						a.product-carousel__item(href="#")
-							img.product-carousel__img(src="content/images/small-slider/img-3.jpg" srcset="content/images/small-slider/img2x-3.jpg 2x" alt="")
-						a.product-carousel__item(href="#")
-							img.product-carousel__img(src="content/images/small-slider/img-4.jpg" srcset="content/images/small-slider/img2x-4.jpg 2x" alt="")
-						a.product-carousel__item(href="#")
-							img.product-carousel__img(src="content/images/small-slider/img-5.jpg" srcset="content/images/small-slider/img2x-5.jpg 2x" alt="")
-						a.product-carousel__item(href="#")
-							img.product-carousel__img(src="content/images/small-slider/img-2.jpg" srcset="content/images/small-slider/img2x-2.jpg 2x" alt="")
-			.section__group-btn
-				a.btn.btn-outline-gold(href="#") Все новинки
-	.section.section_border-top
-		.section__content
-			h2.section__title Лучшие бренды
-			.section__slider
-				.brands-carousel
-					.brands-carousel__state.js-brands-carousel
-						each value, index in INDEX.brandsList
-							if (index % 6 === 0)
-								.brands-carousel__group(data-group=len)
-									- for(var i = index; i <= index+5; i++)
-										a.brands-carousel__item(href="#")
-											img.brands-carousel__img(src="content/images/brands/" + INDEX.brandsList[i].title + ".png" srcset="content/images/brands/" + INDEX.brandsList[i].title + "2x.png 2x" alt="")
-			.section__group-btn
-				a.btn.btn-outline-gold(href="#") Все бренды
+		.container
+			h1 Список страниц
+			ul.list-unstyled
+				li
+					a(href="main.html") Главная
+				li
+					a(href="catalog.html") Каталог
+				li
+					a(href="catalog_brand.html") Каталог (бренд)
+				li
+					a(href="product.html") Продукт

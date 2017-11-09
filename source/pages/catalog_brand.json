@@ -1,0 +1,71 @@
+{
+	"catalogNavbar": [
+		{
+			"url": "#",
+			"title": "Коллекции"
+		},
+		{
+			"url": "#",
+			"title": "Ювелирные украшения"
+		},
+		{
+			"url": "#",
+			"title": "Часы"
+		},
+		{
+			"url": "#",
+			"title": "Аксессуары"
+		}
+	],
+
+	"catalogList": [
+		{
+			"url": "#",
+			"src": "content/images/catalog/brand/img-1.jpg",
+			"title": "БРАСЛЕТ PANTHÈRE DE CARTIER",
+			"subtitle": "Cartier",
+			"description": "Желтое золото, брилианты, изумруды",
+			"price": "5 300 000"
+		},
+		{
+			"url": "#",
+			"src": "content/images/catalog/brand/img-2.jpg",
+			"title": "КОЛЬЦО PANTHÈRE DE CARTIER",
+			"subtitle": "Cartier",
+			"description": "Золото, изумруды",
+			"price": "378 500"
+		},
+		{
+			"url": "#",
+			"src": "content/images/catalog/brand/img-3.jpg",
+			"title": "СЕРЬГИ TRINITY RUBAN",
+			"subtitle": "Cartier",
+			"description": "Белое золото, бриллианты",
+			"price": "29 800"
+		},
+		{
+			"url": "#",
+			"src": "content/images/catalog/brand/img-4.jpg",
+			"title": "СЕРЬГИ LOVE",
+			"subtitle": "Cartier",
+			"description": "Золото, брилианты",
+			"price": "725 000"
+		},
+		{
+			"url": "#",
+			"src": "content/images/catalog/brand/img-5.jpg",
+			"title": "БРОШЬ ETOURDISSANT",
+			"subtitle": "Cartier",
+			"description": "Белое золото, рубеллит, оникс, бриллианты",
+			"price": "900 850"
+		},
+		{
+			"url": "#",
+			"src": "content/images/catalog/brand/img-6.jpg",
+			"title": "BALLON BLEU DE CARTIER",
+			"subtitle": "Cartier",
+			"description": "Сталь",
+			"price": "300 000"
+		}
+	]
+}

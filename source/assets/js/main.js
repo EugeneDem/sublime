@@ -371,4 +371,11 @@ $(function () {
     promoBox.init();
     productCarousel.init();
     brandsCarousel.init();
+
+    if($('.product-media').length){
+		$('.product-media').fotorama({
+			thumbborderwidth: 3,
+			thumbmargin: 0
+		});
+	}
 });

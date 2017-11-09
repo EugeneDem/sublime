@@ -157,3 +157,37 @@ body {
         }
     }
 }
+
+.breadcrumb {
+    background: none;
+    padding-top: rem(16);
+    padding-bottom: rem(16);
+
+    @media (max-width: $screen-sm-max) {
+        display: none;
+    }
+}
+
+.breadcrumb-item {
+    font-size: 10px;
+    line-height: 12px;
+    text-transform: uppercase;
+
+    a {
+        color: #d0ac80;
+
+        &:hover,
+        &:focus {
+            color: #d0ac80;
+        }
+    }
+
+    &.active {
+        color: #d0ac80;
+    }
+}
+
+.breadcrumb-item + .breadcrumb-item:before {
+    content: "—";
+    color: #d0ac80;
+}

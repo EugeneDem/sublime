@@ -50,6 +50,20 @@
         }
     }
 
+    &__title_brand {
+        height: 90px;
+        font-size: 0;
+
+        @media (max-width: $screen-xs-max) {
+            height: 80px;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
     &__navbar {
         max-width: 560px;
         min-height: 105px;
@@ -120,6 +134,10 @@
         &:focus {
             color: #d0ac80;
         }
+
+        .is-active > & {
+            color: #fff;
+        }
     }
 
     &__mask {
@@ -142,39 +160,5 @@
             width: 130%;
             height: auto;
         }
-    }
-
-    .breadcrumb {
-        background: none;
-        padding-top: rem(16);
-        padding-bottom: rem(16);
-
-        @media (max-width: $screen-sm-max) {
-            display: none;
-        }
-
-        &-item {
-            font-size: 10px;
-            line-height: 12px;
-            text-transform: uppercase;
-
-            a {
-                color: #d0ac80;
-
-                &:hover,
-                &:focus {
-                    color: #d0ac80;
-                }
-            }
-
-            &.active {
-                color: #d0ac80;
-            }
-        }
-    }
-
-    .breadcrumb-item+.breadcrumb-item:before {
-        content: "—";
-        color: #d0ac80;
     }
 }
