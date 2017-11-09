@@ -41,6 +41,7 @@
   "dependencies": {
     "autoprefixer": "^7.1.2",
     "babel-polyfill": "^6.26.0",
+    "bootstrap-slider": "^9.9.0",
     "browser-sync": "^2.18.13",
     "cached": "^4.3.1",
     "connect-history-api-fallback": "^1.4.0",

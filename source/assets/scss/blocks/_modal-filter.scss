@@ -51,7 +51,10 @@
 
     &__container {
         max-width: 1060px;
+        height: calc(100vh - 120px);
         margin: 0 auto;
+        overflow-y: auto;
+        overflow-x: hidden;
 
         @media (max-width: $screen-sm-max) {
             max-width: 480px;
@@ -66,6 +69,29 @@
         justify-content: space-between;
         padding-top: rem(25);
         margin-top: rem(23);
+
+        @media (max-width: $screen-xs-min) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__footer-item {
+        @media (max-width: $screen-xs-min) {
+            width: 100%;
+        }
+
+        .btn {
+            @media (max-width: $screen-xs-min) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__footer-item + &__footer-item {
+        @media (max-width: $screen-xs-min) {
+            margin-top: rem(10);
+        }
     }
 
     &__column {
@@ -178,6 +204,11 @@
 
         .checkbox-line__input:checked + .checkbox-line__icon + .checkbox-line__text {
             color: #fff;
+        }
+
+        .slider.slider-horizontal {
+            width: calc(100% - 20px);
+            margin: 20px 10px 0;
         }
     }
 

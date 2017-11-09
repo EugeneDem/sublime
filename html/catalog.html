@@ -738,19 +738,17 @@
                 <div class="modal-filter__column-item js-drop-mobile">
                   <div class="modal-filter__column-title js-drop-mobile-handler">Цена</div>
                   <div class="modal-filter__column-list js-drop-mobile-content">
-                    <label class="checkbox-line">
-                      <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input js-reset-checks"><i class="checkbox-line__icon"></i><span class="checkbox-line__text"></span>
-                    </label>
+                    <input id="filter-slider" data-slider-id="filter-slider" type="text" data-slider-min="150000" data-slider-max="10000000" data-slider-step="1">
                   </div>
                 </div>
               </li>
             </ul>
           </div>
           <div class="modal-filter__footer">
-            <div class="modal-filter__item">
+            <div class="modal-filter__footer-item">
               <div class="btn btn-outline-gold">Сбросить фильтры</div>
             </div>
-            <div class="modal-filter__item">
+            <div class="modal-filter__footer-item">
               <div class="btn btn-outline-gold">Показать <span>126</span> товаров</div>
             </div>
           </div>
@@ -762,6 +760,7 @@
     <script src="assets/js/vendor/bootstrap.min.js"></script>
     <script src="assets/js/vendor/jquery.nicescroll.min.js"></script>
     <script src="assets/js/vendor/slick.js"></script>
+    <script src="assets/js/vendor/bootstrap-slider.js"></script>
     <script src="assets/js/vendor/svg4everybody.js"></script>
     <script src="assets/js/main.js"></script>
   </body>

@@ -48,14 +48,10 @@
 						.modal-filter__column-item.js-drop-mobile
 							.modal-filter__column-title.js-drop-mobile-handler!= value.title
 							.modal-filter__column-list.js-drop-mobile-content
-								each item, index in value.list
-									label.checkbox-line
-										input.checkbox-line__input(class=(index === 0 ) ? "js-reset-checks" : "" type="checkbox" onchange="smartFilter.click(this)")
-										i.checkbox-line__icon
-										span.checkbox-line__text!= item.name
+								input#filter-slider(data-slider-id="filter-slider" type="text" data-slider-min=value.minValue data-slider-max=value.maxValue data-slider-step="1")
 
 		.modal-filter__footer
-			.modal-filter__item
+			.modal-filter__footer-item
 				.btn.btn-outline-gold Сбросить фильтры
-			.modal-filter__item
+			.modal-filter__footer-item
 				.btn.btn-outline-gold Показать <span>126</span> товаров

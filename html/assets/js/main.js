@@ -1,8 +1,9 @@
 'use strict';
 var Main = function() {
-	var _this = this;
 	var $html = $('html'),
 		$win = $(window),
+		$winWidth = $(window).width(),
+		$winHeight = $(window).height(),
 		navbar = $('.navbar-nav'),
 		MEDIAQUERY = {};
 	MEDIAQUERY = {
@@ -16,7 +17,7 @@ var Main = function() {
 		var elem = $('.navbar-nav'),
 			$this = void 0;
 		elem.on('click', '.nav-link', function(e) {
-			$this = $(_this);
+			$this = $(this);
 			if (isSmallDevice() && !$this.parent().hasClass('active')) {
 				e.preventDefault();
 				$this.closest('.navbar-nav').find('.active').removeClass('active');
@@ -62,6 +63,43 @@ var Main = function() {
 			};
 		});
 	};
+	var filterSlider = {
+		elem: null,
+		init: function init($element, opts) {
+			opts = opts || {};
+			var defaultOptions = {
+				orientation: !isSmallDevice() ? 'vertical' : 'horizontal',
+				range: true,
+				reversed: !isSmallDevice() ? true : false,
+				scale: 'logarithmic',
+				tooltip: 'always',
+				tooltip_position: !isSmallDevice() ? 'right' : 'top',
+				tooltip_split: true,
+				formatter: function formatter(num) {
+					var n = num.toString();
+					return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, '$1' + ' ') + ' ₽';
+				}
+			};
+			var options = $.extend({}, defaultOptions, opts);
+			$element.slider(options);
+			$win.on('resize', function() {
+				if (isSmallDevice()) {
+					defaultOptions.orientation = 'horizontal';
+					defaultOptions.reversed = false;
+					defaultOptions.tooltip_position = 'top';
+					$element.slider(defaultOptions);
+					$element.slider('refresh');
+				} else {
+					defaultOptions.orientation = 'vertical';
+					defaultOptions.reversed = true;
+					defaultOptions.tooltip_position = 'right';
+					$element.slider(defaultOptions);
+					$element.slider('refresh');
+					$element.slider('relayout');
+				}
+			});
+		}
+	};
 	var modalSearch = function modalSearch() {
 		var elem = $('.modal-search');
 		$(document).on('click', '.js-modal-search', function() {
@@ -75,17 +113,28 @@ var Main = function() {
 	};
 	var modalFilter = function modalFilter() {
 		var elem = $('.modal-filter');
-		$(document).on('click', '.js-modal-filter', function() {
+		$(document).on('click', '.js-modal-filter', function() { // let sp;
 			$('body').addClass('modal-open');
 			elem.addClass('fade');
+			filterSlider.elem = $('#filter-slider');
+			filterSlider.init($('#filter-slider'));
+			spollerMobile.hiddenSpoller.call(); // sp = $('.modal-filter__container:visible', elem).niceScroll({
+			//     cursorcolor: '#d0ac80',
+			//     cursoropacitymax: 0.3,
+			//     cursorwidth: 6,
+			//     cursorborder: '1px solid rgba(208, 172, 128, 0.5)',
+			//     cursorborderradius: '3px',
+			//     horizrailenabled: false,
+			//     railpadding: { top: 0, right: -15, left: 0, bottom: 0 }
+			// });
 		});
 		$(document).on('click', '.js-modal-filter-close', function() {
 			elem.removeClass('fade');
 			$('body').removeClass('modal-open');
 		});
 	};
-	var spollerMobile = function spollerMobile() {
-		function hiddenSpoller() {
+	var spollerMobile = {
+		hiddenSpoller: function hiddenSpoller() {
 			if (!isSmallDevice()) {
 				$('.js-drop-mobile-content').removeAttr('style');
 				$('.js-drop-mobile-handler').removeClass('is-opened');
@@ -94,17 +143,20 @@ var Main = function() {
 					$('.js-drop-mobile-handler').closest('.js-drop-mobile').find('.js-drop-mobile-content').hide();
 				}
 			}
+		},
+		init: function init() {
+			$(document).on('click', '.js-drop-mobile-handler', function() {
+				if (isSmallDevice()) {
+					$(this).toggleClass('is-opened').closest('.js-drop-mobile').toggleClass('is-opened').find('.js-drop-mobile-content').filter(':first').stop().slideToggle(200);
+					if (typeof $.fn.bootstrapSlider != "undefined" && typeof filterSlider.elem !== "null") {
+						filterSlider.elem.slider('relayout');
+					}
+				}
+			});
+			$(window).on('resize', function() {
+				spollerMobile.hiddenSpoller.call();
+			});
 		}
-		hiddenSpoller();
-		$(document).on('click', '.js-drop-mobile-handler', function() {
-			if (isSmallDevice()) {
-				var parentEl = $(_this).closest('.js-drop-mobile');
-				$(_this).toggleClass('is-opened').closest('.js-drop-mobile').toggleClass('is-opened').find('.js-drop-mobile-content').filter(':first').stop().slideToggle(200);
-			}
-		});
-		$win.on('resize', function() {
-			hiddenSpoller();
-		});
 	};
 
 	function navbarLeave() {
@@ -124,7 +176,7 @@ var Main = function() {
 			toggleClassOnElement();
 			modalSearch();
 			modalFilter();
-			spollerMobile();
+			spollerMobile.init();
 		}
 	};
 }();

@@ -806,11 +806,8 @@
 		"filterPrice": [
 			{
 				"title": "Цена",
-				"list": [
-					{
-						"name": ""
-					}
-				]
+				"minValue": "150000",
+				"maxValue": "10000000"
 			}
 		]
 	}
