@@ -35,3 +35,23 @@ block content
 						.product-info__category
 							.product-info__category-item Chanel
 							.product-info__category-item Коллекция J12
+						.product-info__description
+							p В начале 2000-х керамические часы J12, на которые в Chanel Horlogerie была сделана серьезная ставка, оправдали все надежды. И на какое-то время даже потеснили хронометры Rolex на воображаемом пьедестале часов, которые должны сообщить окружающим о достатке счастливого обладателя. Спустя десять лет они стали просто красивыми и культовыми часами, и владельцам их сыграла на руку возвращающаяся мода на спорт и минимализм — и того, и другого в J12 с достатком. Именно сейчас, когда классика J12 как никогда актуальна, руководство часового подразделения Chanel решилось на новую линию
+						.product-info__form
+							.product-info__form-controls
+								.product-info__form-price
+									span 56 500
+									span.currency
+								a.btn.btn-outline-gold(href="#") Сделать запрос
+							a.product-info__form-wishlist(href="#")
+								i.product-info__form-wishlist-icon
+									+svg('wishlist')
+						dl.row.product-info__property
+							each value in ITEM.property
+								dt.col-4.product-info__property-name!= value.name
+									| :
+								dd.col-8.product-info__property-text!= value.text
+						.product-info__docs
+							.file-download
+								i.file-download__icon
+								a.file-download__name(href="#") Инструкция по эксплуатации (PDF)
