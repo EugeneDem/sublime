@@ -217,3 +217,44 @@ body {
         }
     }
 }
+
+.video-content {
+    width: 100%;
+    min-height: 200px;
+    height: 34vw;
+    max-height: 420px;
+    position: relative;
+    text-align: center;
+
+    &__cover {
+        width: auto;
+        height: 100%;
+        display: inline-block;
+    }
+
+    &__play {
+        background-color: rgba(#fff, 0.7);
+        border-radius: 50%;
+        width: 110px;
+        height: 110px;
+        cursor: pointer;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        &:before {
+            content: "";
+            background: url("icon-play.svg#datauri") no-repeat 0 0;
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -17px;
+            margin-top: -25px;
+        }
+    }
+}

@@ -1,4 +1,12 @@
 .product-carousel {
+    &__state {
+        margin-bottom: rem(7);
+
+        &.slick-dotted.slick-slider {
+            margin-bottom: rem(37);
+        }
+    }
+
     &__item {
         display: inline-block;
         vertical-align: top;

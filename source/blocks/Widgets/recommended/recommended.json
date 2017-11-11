@@ -1,0 +1,28 @@
+{
+	"recommendedList": [
+		{
+			"url": "#",
+			"src": "content/images/catalog/jewelery/img-1.jpg",
+			"title": "БРАСЛЕТ PANTHÈRE DE CARTIER",
+			"subtitle": "Cartier",
+			"description": "Желтое золото, брилианты, изумруды",
+			"price": "5 300 000"
+		},
+		{
+			"url": "#",
+			"src": "content/images/catalog/jewelery/img-2.jpg",
+			"title": "ОБРУЧАЛЬНОЕ КОЛЬЦО LOVE",
+			"subtitle": "Cartier",
+			"description": "Золото",
+			"price": "63 250"
+		},
+		{
+			"url": "#",
+			"src": "content/images/catalog/jewelery/img-3.jpg",
+			"title": "СЕРЬГИ TRINITY RUBAN",
+			"subtitle": "Cartier",
+			"description": "Белое золото, бриллианты",
+			"price": "29 800"
+		}
+	]
+}

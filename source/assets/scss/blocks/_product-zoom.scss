@@ -1,0 +1,72 @@
+.product-zoom {
+    margin-bottom: rem(30);
+    @include clearfix();
+    
+    &__state {
+        &.slick-dotted.slick-slider {
+            margin-bottom: rem(105);
+        }
+    }
+
+    &__item:focus {
+        outline: 0 none;
+    }
+
+    .slick-slide {
+        img {
+            width: auto;
+            height: 100%;
+            min-height: rem(830);
+            max-height: 70vh;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+
+            &:focus {
+                outline: 0 none;
+            }
+        }
+    }
+
+    .slick-dots {
+        bottom: -1* rem(112);
+
+        li {
+            height: rem(105);
+            width: rem(105);
+            margin: 0 rem(10);
+            overflow: hidden;
+
+            button {
+                height: rem(105);
+                width: rem(105);
+                line-height: 0;
+                font-size: 0;
+                color: transparent;
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                overflow: hidden;
+
+                &:before {
+                    border: 1px solid #bf9f77;
+                    content: " ";
+                    height: rem(105);
+                    width: rem(105);
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    opacity: 0;
+                }
+            }
+
+            .img-thumbnail {
+                border: medium none;
+            }
+
+            &.slick-active button:before {
+                opacity: 0.4;
+            }
+        }
+    }
+}

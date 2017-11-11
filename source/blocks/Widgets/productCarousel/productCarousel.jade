@@ -1,0 +1,5 @@
+.product-carousel
+	.product-carousel__state.js-product-carousel
+		each value in PRODUCTCAROUSEL.productList
+			a.product-carousel__item(href=value.url)
+				img.product-carousel__img(src=value.img srcset=value.imgSet + " 2x" alt="")

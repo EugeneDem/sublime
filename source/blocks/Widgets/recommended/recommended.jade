@@ -1,0 +1,17 @@
+.recommended
+	.recommended__state.js-recommended-slider
+		each value in RECOMMENDED.recommendedList
+			.recommended__item
+				.catalog-item
+					a.catalog-item__link(href=value.url)
+						.catalog-item__media
+							img(src=value.src alt="")
+						.catalog-item__content
+							.catalog-item__title!= value.title
+							.catalog-item__subtitle!= value.subtitle
+							.catalog-item__description!= value.description
+							.catalog-item__price!= value.price
+								span.currency
+					.catalog-item__wishlist
+						i.catalog-item__wishlist-icon
+							+svg('wishlist')

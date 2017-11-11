@@ -21,15 +21,16 @@ block content
 				a.product__navbar-back(href="catalog.html")
 		.product__container
 			.row
-				.col-12.col-sm-6.col-md-6
-					.product-media(data-width="626" data-ratio="626/470" data-max-width="100%" data-nav="thumbs" data-thumbheight="86" data-thumbwidth="86" data-allowfullscreen="native")
-						a(href="content/images/product/big/img-1.jpg")
-							img(src="content/images/product/thumb/img-1.jpg")
-						a(href="content/images/product/big/img-2.jpg")
-							img(src="content/images/product/thumb/img-2.jpg")
-						a(href="content/images/product/big/img-3.jpg")
-							img(src="content/images/product/thumb/img-3.jpg")
-				.col-12.col-sm-6.col-md-6
+				.col-12.col-lg-6
+					.product-zoom
+						.product-zoom__state.js-product-zoom
+							.product-zoom__item(data-src="" zoom="true" data-size="2000x2000" data-alt-zoom="Отобразить-Часы-Вид спереди - Масштаб" tabindex="0")
+								img.img-fluide(src="content/images/product/big/img-1.jpg" data-thumb="content/images/product/thumb/img-1.jpg" alt="Приблизить - Часы - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Часы - Вид спереди - Уменьшенное изображение")
+							.product-zoom__item(data-src="" zoom="true" data-size="2000x2000" data-alt-zoom="Отобразить - Часы - Вид спереди - Масштаб" tabindex="1")
+								img.img-fluide(src="content/images/product/big/img-2.jpg" data-thumb="content/images/product/thumb/img-2.jpg" alt="Приблизить - Часы - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Часы - Вид спереди - Уменьшенное изображение")
+							.product-zoom__item(data-src="" zoom="true" data-size="2000x2000" data-alt-zoom="Отобразить - Часы - Вид спереди - Масштаб" tabindex="2")
+								img.img-fluide(src="content/images/product/big/img-3.jpg" data-thumb="content/images/product/thumb/img-3.jpg" alt="Приблизить - Часы - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Часы - Вид спереди - Уменьшенное изображение")
+				.col-12.col-lg-6
 					.product-info
 						h1.product-info__title Часы J12 white
 						.product-info__category
@@ -48,10 +49,21 @@ block content
 									+svg('wishlist')
 						dl.row.product-info__property
 							each value in ITEM.property
-								dt.col-4.product-info__property-name!= value.name
+								dt.col-6.col-lg-4.product-info__property-name!= value.name
 									| :
-								dd.col-8.product-info__property-text!= value.text
+								dd.col-6.col-lg-8.product-info__property-text!= value.text
 						.product-info__docs
 							.file-download
 								i.file-download__icon
 								a.file-download__name(href="#") Инструкция по эксплуатации (PDF)
+	.video-content
+		img.video-content__cover(src="content/images/video/video-cover-1.jpg" alt="" data-video-id="" data-video-link="")
+		.video-content__play
+	.section-content
+		.section-content__title Рекомендуемое сочетание
+		.section-content__wrap
+			include ../blocks/Widgets/recommended/recommended
+	.section-content
+		.section-content__title Недавно просмотренное
+		.section-content__wrap
+			include ../blocks/Widgets/productCarousel/productCarousel

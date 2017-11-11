@@ -1,0 +1,27 @@
+.section-content {
+    margin-top: 15px;
+    padding-top: rem(20);
+
+    &+ .section-content {
+        border-top: 1px solid rgba(#d0ac80, 0.5);
+    }
+
+    &__title {
+        font-size: rem(20);
+        line-height: rem(22);
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: rem(10);
+        margin-bottom: rem(20);
+    }
+
+    &__wrap {
+        max-width: 1060px;
+        margin: 0 auto;
+
+        .product-carousel {
+            padding-top: rem(48);
+            padding-bottom: rem(30);
+        }
+    }
+}

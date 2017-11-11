@@ -1,4 +1,18 @@
 'use strict';
+
+function _defineProperty(obj, key, value) {
+	if (key in obj) {
+		Object.defineProperty(obj, key, {
+			value: value,
+			enumerable: true,
+			configurable: true,
+			writable: true
+		});
+	} else {
+		obj[key] = value;
+	}
+	return obj;
+}
 var Main = function() {
 	var $html = $('html'),
 		$win = $(window),
@@ -243,40 +257,36 @@ var promoBox = {
 var productCarousel = {
 	slider: $('.js-product-carousel'),
 	sliderSettings: function sliderSettings() {
-		return {
-			slidesToShow: 6,
-			slidesToScroll: 1,
-			infinite: true,
-			focusOnSelect: false,
-			variableWidth: false,
-			arrows: false,
-			dots: false,
-			speed: 500,
-			responsive: [{
-				breakpoint: 1199,
-				settings: {
-					variableWidth: false,
-					slidesToShow: 4,
-					dots: true
-				}
-			}, {
-				breakpoint: 767,
-				settings: {
-					slidesToShow: 2,
-					centerMode: true,
-					variableWidth: false,
-					dots: true
-				}
-			}, {
-				breakpoint: 575,
-				settings: {
-					slidesToShow: 1,
-					centerMode: true,
-					variableWidth: false,
-					dots: true
-				}
-			}]
-		};
+		var _ref;
+		var counts = productCarousel.slider.children().length;
+		counts = counts > 6 ? 6 : counts;
+		return _ref = {
+			infinite: false,
+			slidesToShow: counts,
+			slidesToScroll: 1
+		}, _defineProperty(_ref, 'infinite', false), _defineProperty(_ref, 'focusOnSelect', false), _defineProperty(_ref, 'dots', true), _defineProperty(_ref, 'arrows', false), _defineProperty(_ref, 'speed', 300), _defineProperty(_ref, 'responsive', [{
+			breakpoint: 1199,
+			settings: {
+				variableWidth: false,
+				slidesToShow: 4,
+				slidesToScroll: 1,
+				dots: true
+			}
+		}, {
+			breakpoint: 767,
+			settings: {
+				variableWidth: false,
+				slidesToShow: 3,
+				slidesToScroll: 1
+			}
+		}, {
+			breakpoint: 575,
+			settings: {
+				slidesToShow: 1,
+				centerMode: true,
+				variableWidth: false
+			}
+		}]), _ref;
 	},
 	init: function init() {
 		if ($('.js-product-carousel').exists()) {
@@ -316,6 +326,73 @@ var brandsCarousel = {
 		});
 	}
 };
+var recommendedCarousel = {
+	slider: $('.js-recommended-slider'),
+	sliderSettings: function sliderSettings() {
+		var counts = recommendedCarousel.slider.children().length;
+		counts = counts > 3 ? 3 : counts;
+		return {
+			dots: true,
+			infinite: false,
+			speed: 300,
+			slidesToShow: counts,
+			slidesToScroll: counts,
+			responsive: [{
+				breakpoint: 991,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2
+				}
+			}, {
+				breakpoint: 575,
+				settings: {
+					slidesToShow: 1,
+					centerMode: true,
+					variableWidth: false
+				}
+			}]
+		};
+	},
+	init: function init() {
+		if ($('.js-recommended-slider').exists()) {
+			recommendedCarousel.slider.slick(recommendedCarousel.sliderSettings());
+		}
+	}
+};
+var productZoomCarousel = {
+	slider: $('.js-product-zoom'),
+	sliderSettings: function sliderSettings() {
+		return {
+			dots: true,
+			arrows: false,
+			infinite: true,
+			speed: 500,
+			fade: true,
+			focusOnSelect: false,
+			lazyLoad: "ondemand",
+			cssEase: "linear",
+			adaptiveHeight: true,
+			mobileFirst: true,
+			centerMode: true,
+			responsive: [{
+				breakpoint: 767,
+				settings: {
+					arrows: false,
+					dots: true,
+					customPaging: function customPaging(slider, i) {
+						var item = $(slider.$slides[i]).find("img");
+						return '<button class="product-zoom__tab"><img class="img-thumbnail" src="' + item.attr("data-thumb") + '" alt="' + item.attr("data-alt-thumb") + '"></button>';
+					}
+				}
+			}]
+		};
+	},
+	init: function init() {
+		if ($('.product-zoom').exists()) {
+			productZoomCarousel.slider.slick(productZoomCarousel.sliderSettings());
+		}
+	}
+};
 $(function() {
 	svg4everybody();
 	Main.init();
@@ -323,10 +400,6 @@ $(function() {
 	promoBox.init();
 	productCarousel.init();
 	brandsCarousel.init();
-	if ($('.product-media').length) {
-		$('.product-media').fotorama({
-			thumbborderwidth: 3,
-			thumbmargin: 0
-		});
-	}
+	recommendedCarousel.init();
+	productZoomCarousel.init();
 });

@@ -285,30 +285,32 @@ let promoBox = {
 let productCarousel = {
     slider: $('.js-product-carousel'),
     sliderSettings: function () {
+        let counts = productCarousel.slider.children().length;
+        counts = counts > 6 ? 6 : counts;
         return {
-            slidesToShow: 6,
+            infinite: false,
+            slidesToShow: counts,
             slidesToScroll: 1,
-            infinite: true,
+            infinite: false,
             focusOnSelect: false,
-            variableWidth: false,
+            dots: true,
             arrows: false,
-            dots: false,
-            speed: 500,
+            speed: 300,
             responsive: [{
                     breakpoint: 1199,
                     settings: {
                         variableWidth: false,
                         slidesToShow: 4,
+                        slidesToScroll: 1,
                         dots: true
                     }
                 },
                 {
                     breakpoint: 767,
                     settings: {
-                        slidesToShow: 2,
-                        centerMode: true,
                         variableWidth: false,
-                        dots: true
+                        slidesToShow: 3,
+                        slidesToScroll: 1
                     }
                 },
                 {
@@ -316,8 +318,7 @@ let productCarousel = {
                     settings: {
                         slidesToShow: 1,
                         centerMode: true,
-                        variableWidth: false,
-                        dots: true
+                        variableWidth: false
                     }
                 }
             ]
@@ -364,6 +365,81 @@ let brandsCarousel = {
     }
 };
 
+let recommendedCarousel = {
+    slider: $('.js-recommended-slider'),
+    sliderSettings: function () {
+        let counts = recommendedCarousel.slider.children().length;
+        counts = counts > 3 ? 3 : counts;
+        return {
+            dots: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: counts,
+            slidesToScroll: counts,
+            responsive: [
+                {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 575,
+                    settings: {
+                        slidesToShow: 1,
+                        centerMode: true,
+                        variableWidth: false
+                    }
+                }
+            ]
+        }
+    },
+    init: function() {
+        if ($('.js-recommended-slider').exists()) {
+            recommendedCarousel.slider.slick(recommendedCarousel.sliderSettings());
+        }
+    }
+};
+
+let productZoomCarousel = {
+    slider: $('.js-product-zoom'),
+    sliderSettings: function () {
+        return {
+            dots: true,
+            arrows: false,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            focusOnSelect: false,
+            lazyLoad: "ondemand",
+            cssEase: "linear",
+            adaptiveHeight: true,
+            mobileFirst: true,
+            centerMode: true,
+            responsive: [
+                {
+                    breakpoint: 767,
+                    settings: {
+                        arrows: false,
+                        dots: true,
+                        customPaging: function(slider, i) {
+                            let item = $(slider.$slides[i]).find("img");
+                            return '<button class="product-zoom__tab"><img class="img-thumbnail" src="' + item.attr("data-thumb") + '" alt="' + item.attr("data-alt-thumb") + '"></button>'
+                        }
+                    }
+                }
+            ]
+        }
+    },
+
+    init: function() {
+        if ($('.product-zoom').exists()) {
+            productZoomCarousel.slider.slick(productZoomCarousel.sliderSettings());
+        }
+    }
+};
+
 $(function () {
     svg4everybody();
     Main.init();
@@ -371,11 +447,6 @@ $(function () {
     promoBox.init();
     productCarousel.init();
     brandsCarousel.init();
-
-    if($('.product-media').length){
-		$('.product-media').fotorama({
-			thumbborderwidth: 3,
-			thumbmargin: 0
-		});
-	}
+    recommendedCarousel.init();
+    productZoomCarousel.init();
 });

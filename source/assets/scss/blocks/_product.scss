@@ -7,6 +7,10 @@
         justify-content: space-between;
         padding-top: rem(2);
 
+        @media (max-width: $screen-sm-max) {
+            justify-content: flex-end;
+        }
+
         .breadcrumb {
             flex-wrap: nowrap;
             flex-basis: 100%;
@@ -39,6 +43,10 @@
         font-family: $font-stem-medium;
         text-transform: uppercase;
         margin-bottom: 0;
+
+        @media (max-width: $screen-sm-max) {
+            text-align: center;
+        }
     }
 
     &__category {
@@ -48,6 +56,10 @@
         justify-content: flex-start;
         padding-bottom: rem(14);
         padding-top: rem(9);
+
+        @media (max-width: $screen-sm-max) {
+            justify-content: center;
+        }
     }
 
     &__category-item {
