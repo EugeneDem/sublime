@@ -1,0 +1,74 @@
+block page
+	-var page = "product";
+
+extends ../blocks/layout/layout
+
+block content
+	.product
+		.product__navbar
+			ol.breadcrumb
+				li.breadcrumb-item
+					a(href="catalog.html") Каталог
+				li.breadcrumb-item
+					a(href="#") Часы
+				li.breadcrumb-item
+					a(href="#") Женские часы
+				li.breadcrumb-item
+					a(href="#") Chanel
+				li.breadcrumb-item.active
+					span J12 white
+			a.product__wishlist.hidden-sm-up(href="#")
+				i.product__wishlist-icon
+					+svg('wishlist')
+			a.product__navbar-back(href="catalog.html")
+		.product__container
+			.row
+				.col-12.col-lg-6
+					.product-zoom.product-zoom_vertical
+						.product-zoom__state.js-product-zoom
+							.product-zoom__item(data-src="" zoom="true" data-size="2000x2000" data-alt-zoom="Отобразить-Часы-Вид спереди - Масштаб" tabindex="0")
+								img.img-fluide(src="content/images/product/big/img-1.jpg" data-thumb="content/images/product/thumb/img-1.jpg" alt="Приблизить - Часы - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Часы - Вид спереди - Уменьшенное изображение")
+							.product-zoom__item(data-src="" zoom="true" data-size="2000x2000" data-alt-zoom="Отобразить - Часы - Вид спереди - Масштаб" tabindex="1")
+								img.img-fluide(src="content/images/product/big/img-2.jpg" data-thumb="content/images/product/thumb/img-2.jpg" alt="Приблизить - Часы - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Часы - Вид спереди - Уменьшенное изображение")
+							.product-zoom__item(data-src="" zoom="true" data-size="2000x2000" data-alt-zoom="Отобразить - Часы - Вид спереди - Масштаб" tabindex="2")
+								img.img-fluide(src="content/images/product/big/img-3.jpg" data-thumb="content/images/product/thumb/img-3.jpg" alt="Приблизить - Часы - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Часы - Вид спереди - Уменьшенное изображение")
+				.col-12.col-lg-6
+					.product-info
+						h1.product-info__title Часы J12 white
+						.product-info__category
+							.product-info__category-item Chanel
+							.product-info__category-item Коллекция J12
+						.product-info__description
+							p В начале 2000-х керамические часы J12, на которые в Chanel Horlogerie была сделана серьезная ставка, оправдали все надежды. И на какое-то время даже потеснили хронометры Rolex на воображаемом пьедестале часов, которые должны сообщить окружающим о достатке счастливого обладателя. Спустя десять лет они стали просто красивыми и культовыми часами, и владельцам их сыграла на руку возвращающаяся мода на спорт и минимализм — и того, и другого в J12 с достатком. Именно сейчас, когда классика J12 как никогда актуальна, руководство часового подразделения Chanel решилось на новую линию
+						.product-info__form
+							.product-info__form-controls
+								.product-info__form-price
+									span 56 500
+									span.currency
+								a.btn.btn-outline-gold.js-send-request(href="#") Сделать запрос
+							a.product__wishlist.hidden-xs-down(href="#")
+								i.product__wishlist-icon
+									+svg('wishlist')
+						.product-info__property
+							.row
+								each value in PRODUCT_VERTICAL.property
+									.col-6.col-lg-4
+										.product-info__property-name!= value.name
+											| :
+									.col-6.col-lg-8
+										.product-info__property-text!= value.text
+						.product-info__docs
+							.file-download
+								i.file-download__icon
+								a.file-download__name(href="#") Инструкция по эксплуатации (PDF)
+	.video-content
+		img.video-content__cover(src="content/images/video/video-cover-1.jpg" alt="" data-video-id="" data-video-link="")
+		.video-content__play
+	.section-content
+		.section-content__title Рекомендуемое сочетание
+		.section-content__wrap
+			include ../blocks/Widgets/recommended/recommended
+	.section-content
+		.section-content__title Недавно просмотренное
+		.section-content__wrap
+			include ../blocks/Widgets/productCarousel/productCarousel

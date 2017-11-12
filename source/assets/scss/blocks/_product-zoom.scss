@@ -1,10 +1,18 @@
 .product-zoom {
     margin-bottom: rem(30);
     @include clearfix();
+
+    @media (max-width: $screen-xs-max) {
+        margin-bottom: 0;
+    }
     
     &__state {
         &.slick-dotted.slick-slider {
             margin-bottom: rem(105);
+
+            @media (max-width: $screen-xs-max) {
+                margin-bottom: rem(32);
+            }
         }
     }
 
@@ -16,11 +24,21 @@
         img {
             width: auto;
             height: 100%;
-            min-height: rem(830);
+            min-height: rem(524);
             max-height: 70vh;
             position: relative;
             left: 50%;
             transform: translateX(-50%);
+
+            @media (max-width: $screen-sm-max) {
+                min-height: rem(480);
+                max-height: 50vh;
+            }
+
+            @media (max-width: $screen-xs-max) {
+                min-height: rem(280);
+                max-height: 34vh;
+            }
 
             &:focus {
                 outline: 0 none;
@@ -31,41 +49,121 @@
     .slick-dots {
         bottom: -1* rem(112);
 
-        li {
-            height: rem(105);
-            width: rem(105);
-            margin: 0 rem(10);
-            overflow: hidden;
+        @media (max-width: $screen-xs-max) {
+            bottom: -1* rem(16);
+        }
 
-            button {
+        li {
+
+            width: 10px;
+            height: 10px;
+            margin-left: 15px;
+            margin-right: 15px;
+
+            @media (max-width: $screen-xs-max) {
+                margin-left: 11px;
+                margin-right: 11px;
+            }
+
+            @media (min-width: $screen-sm-min) {
                 height: rem(105);
                 width: rem(105);
-                line-height: 0;
-                font-size: 0;
-                color: transparent;
-                padding: 0;
-                margin: 0;
-                box-sizing: border-box;
+                margin: 0 rem(10);
                 overflow: hidden;
+            }
 
-                &:before {
-                    border: 1px solid #bf9f77;
-                    content: " ";
+            button {
+                width: 10px;
+                height: 10px;
+                box-sizing: border-box;
+
+                @media (min-width: $screen-sm-min) {
                     height: rem(105);
                     width: rem(105);
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    opacity: 0;
+                    line-height: 0;
+                    font-size: 0;
+                    color: transparent;
+                    padding: 0;
+                    margin: 0;
+                    overflow: hidden;
                 }
+                
+                &:before {
+                    border-radius: 50%;
+                    border: 1px solid #d0ac80;
+                    width: 10px;
+                    height: 10px;
+                    content: "";
+                    opacity: 1;
+                    box-sizing: border-box;
+
+                    @media (min-width: $screen-sm-min) {
+                        border-radius: 0;
+                        border-color: #bf9f77;
+                        height: rem(105);
+                        width: rem(105);
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        opacity: 0;
+                    }
+                }
+
             }
 
             .img-thumbnail {
                 border: medium none;
             }
 
-            &.slick-active button:before {
-                opacity: 0.4;
+            &.slick-active {
+                button:before {
+                    background-color: #d0ac80;
+
+                    @media (min-width: $screen-sm-min) {
+                        background: none;
+                        opacity: 0.4;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.product-zoom_vertical {
+    .slick-slide {
+        img {
+            min-height: rem(830);
+            max-height: 70vh;
+
+            @media (max-width: $screen-sm-max) {
+                min-height: rem(590);
+                max-height: 60vh;
+            }
+
+            @media (max-width: $screen-xs-max) {
+                min-height: rem(280);
+                max-height: 40vh;
+            }
+        }
+    }
+}
+
+.product-zoom_horizontal {
+    margin-top: rem(12);
+
+    .slick-slide {
+        img {
+            min-height: rem(390);
+            max-height: 50vh;
+
+            @media (max-width: $screen-sm-max) {
+                min-height: rem(320);
+                max-height: 30vh;
+            }
+
+            @media (max-width: $screen-xs-max) {
+                min-height: rem(130);
+                max-height: 14vh;
             }
         }
     }

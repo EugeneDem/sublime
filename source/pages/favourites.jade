@@ -1,0 +1,34 @@
+block page
+	-var page = "catalog";
+
+extends ../blocks/layout/layout
+
+block content
+	.favourites
+		.favourites__navbar
+			ol.breadcrumb
+				li.breadcrumb-item
+					a(href="#") Sublime
+				li.breadcrumb-item.active
+					span Избранное
+		.favourites__content
+			h1.favourites__title Избранное
+			.favourites__subtitle В&nbsp;вашем списке 12&nbsp;товаров
+			.catalog-list
+				.row
+					each value in FAVOURITES.catalogList
+						.catalog-list__item.col-12.col-sm-6.col-lg-4
+							.catalog-item
+								a.catalog-item__link(href=value.url)
+									.catalog-item__media
+										img(src=value.src alt="")
+									.catalog-item__content
+										.catalog-item__title!= value.title
+										.catalog-item__subtitle!= value.subtitle
+										.catalog-item__description!= value.description
+										.catalog-item__price!= value.price
+											span.currency
+								.catalog-item__fovour-remove.js-fovourites-remove
+								// .catalog-item__wishlist
+									i.catalog-item__wishlist-icon
+										+svg('wishlist')

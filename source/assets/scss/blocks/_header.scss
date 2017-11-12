@@ -343,13 +343,6 @@
         overflow: hidden;
         opacity: 0;
         visibility: hidden;
-
-        &:after {
-            background-color: rgba(#ead4a4, 0.9);
-            padding-top: 400%;
-            content: "";
-            display: block;
-        }
     }
 
     &__subnav-wrap {
@@ -600,4 +593,17 @@
             text-decoration: none;
         }
     }
+}
+
+.navbar-nav__backdrop {
+    background-color: rgba(#ead4a4, 0.9);
+    padding-top: 400%;
+    content: "";
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
 }

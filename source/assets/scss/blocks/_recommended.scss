@@ -2,6 +2,11 @@
     margin-left: -10px;
     margin-right: -10px;
 
+    @media (max-width: $screen-xs-min) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
     &__state {
         &.slick-dotted.slick-slider {
             margin-bottom: rem(37);
@@ -68,5 +73,10 @@
     &__item {
         margin-left: 10px;
         margin-right: 10px;
+
+        @media (max-width: $screen-xs-min) {
+            margin-left: 0;
+            margin-right: 0;
+        }
     }
 }

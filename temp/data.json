@@ -167,43 +167,55 @@
 			}
 		]
 	},
-	"ITEM": {
-		"property": [
+	"FAVOURITES": {
+		"catalogList": [
 			{
-				"name": "Производство",
-				"text": "Швейцария"
+				"url": "#",
+				"src": "content/images/catalog/jewelery/img-1.jpg",
+				"title": "БРАСЛЕТ PANTHÈRE DE CARTIER",
+				"subtitle": "Cartier",
+				"description": "Желтое золото, брилианты, изумруды",
+				"price": "5 300 000"
 			},
 			{
-				"name": "Модель",
-				"text": "J12"
+				"url": "#",
+				"src": "content/images/catalog/jewelery/img-2.jpg",
+				"title": "ОБРУЧАЛЬНОЕ КОЛЬЦО LOVE",
+				"subtitle": "Cartier",
+				"description": "Золото",
+				"price": "63 250"
 			},
 			{
-				"name": "Артикул",
-				"text": "F221A"
+				"url": "#",
+				"src": "content/images/catalog/jewelery/img-3.jpg",
+				"title": "СЕРЬГИ TRINITY RUBAN",
+				"subtitle": "Cartier",
+				"description": "Белое золото, бриллианты",
+				"price": "29 800"
 			},
 			{
-				"name": "Материал",
-				"text": "Сталь, керамика"
+				"url": "#",
+				"src": "content/images/catalog/jewelery/img-4.jpg",
+				"title": "КОЛЬЦО CAMÉLIA",
+				"subtitle": "Chanel",
+				"description": "Белое золото, брилианты 16&nbsp;карат",
+				"price": "305 000"
 			},
 			{
-				"name": "Механизм",
-				"text": "Кварцевые часы"
+				"url": "#",
+				"src": "content/images/catalog/jewelery/img-5.jpg",
+				"title": "БРОШЬ ETOURDISSANT",
+				"subtitle": "Cartier",
+				"description": "Белое золото, рубеллит, оникс, бриллианты",
+				"price": "900 850"
 			},
 			{
-				"name": "Стекло",
-				"text": "Сапфир"
-			},
-			{
-				"name": "Корпус",
-				"text": "Керамика"
-			},
-			{
-				"name": "Водонепроницаемость",
-				"text": "200&nbsp;м"
-			},
-			{
-				"name": "Диаметр",
-				"text": "35&nbsp;мм"
+				"url": "#",
+				"src": "content/images/catalog/jewelery/img-6.jpg",
+				"title": "КОЛЬЕ CAMÉLIA",
+				"subtitle": "Chanel",
+				"description": "Золото",
+				"price": "33 500"
 			}
 		]
 	},
@@ -256,6 +268,110 @@
 			{
 				"title": "chanel",
 				"url": "#"
+			}
+		]
+	},
+	"PRODUCT": {
+		"property": [
+			{
+				"name": "Производство",
+				"text": "Швейцария"
+			},
+			{
+				"name": "Модель",
+				"text": "J12"
+			},
+			{
+				"name": "Артикул",
+				"text": "F221A"
+			},
+			{
+				"name": "Материал",
+				"text": "Сталь, керамика"
+			},
+			{
+				"name": "Механизм",
+				"text": "Кварцевые часы"
+			},
+			{
+				"name": "Стекло",
+				"text": "Сапфир"
+			},
+			{
+				"name": "Корпус",
+				"text": "Керамика"
+			},
+			{
+				"name": "Водонепроницаемость",
+				"text": "200&nbsp;м"
+			},
+			{
+				"name": "Диаметр",
+				"text": "35&nbsp;мм"
+			}
+		],
+		"property2": [
+			{
+				"name": "Представлено в&nbsp;бутиках",
+				"text": [
+					{
+						"title": "ГУМ (Красная пл., 3)"
+					},
+					{
+						"title": "Весна (Новый Арбат, 19)"
+					},
+					{
+						"title": "Сочи (ул. Войкова, 1)"
+					}
+				]
+			}
+		]
+	},
+	"PRODUCT_HORIZONTAL": {
+		"property": [
+			{
+				"name": "Производство",
+				"text": "Франция"
+			},
+			{
+				"name": "Модель",
+				"text": "Camelia"
+			},
+			{
+				"name": "Артикул",
+				"text": "VF321"
+			},
+			{
+				"name": "Материал",
+				"text": "Золото 18 карат"
+			},
+			{
+				"name": "Инкрустация",
+				"text": "Брилианты 16 карат"
+			}
+		]
+	},
+	"PRODUCT_VERTICAL": {
+		"property": [
+			{
+				"name": "Производство",
+				"text": "Франция"
+			},
+			{
+				"name": "Артикул",
+				"text": "N09643"
+			},
+			{
+				"name": "Материал",
+				"text": "Желтое золото"
+			},
+			{
+				"name": "Инкрустация",
+				"text": "Брилианты, изумруды, оникс"
+			},
+			{
+				"name": "Размер",
+				"text": "15—18 см."
 			}
 		]
 	},
@@ -326,6 +442,292 @@
 			{
 				"title": "Контакты",
 				"url": "contacts.html"
+			}
+		]
+	},
+	"HEADER": {
+		"submenuCatalog": [
+			{
+				"title": "Ювелирные украшения",
+				"link": "#",
+				"list": [
+					{
+						"title": "Кольца",
+						"link": "#"
+					},
+					{
+						"title": "Браслеты",
+						"link": "#"
+					},
+					{
+						"title": "Колье",
+						"link": "#"
+					},
+					{
+						"title": "Серьги",
+						"link": "#"
+					},
+					{
+						"title": "Броши",
+						"link": "#"
+					},
+					{
+						"title": "Брелоки",
+						"link": "#"
+					}
+				]
+			},
+			{
+				"title": "Часы",
+				"link": "#",
+				"list": [
+					{
+						"title": "Мужские часы",
+						"link": "#"
+					},
+					{
+						"title": "Женские часы",
+						"link": "#"
+					},
+					{
+						"title": "Детские часы",
+						"link": "#"
+					},
+					{
+						"title": "Ремешки",
+						"link": "#"
+					}
+				]
+			},
+			{
+				"title": "Аксессуары",
+				"link": "#",
+				"list": [
+					{
+						"title": "Пишущие инструменты",
+						"link": "#"
+					},
+					{
+						"title": "Запонки",
+						"link": "#"
+					},
+					{
+						"title": "Зажигалки",
+						"link": "#"
+					},
+					{
+						"title": "Кольца для ключей",
+						"link": "#"
+					},
+					{
+						"title": "Зажимы для денег",
+						"link": "#"
+					},
+					{
+						"title": "Предметы интерьера",
+						"link": "#"
+					}
+				]
+			}
+		],
+		"submenuBrands": [
+			{
+				"title": "Бренды",
+				"link": "#",
+				"list": [
+					{
+						"title": "A. Lange & Sohne",
+						"link": "#"
+					},
+					{
+						"title": "Audemars Piguet",
+						"link": "#"
+					},
+					{
+						"title": "Aviator",
+						"link": "#"
+					},
+					{
+						"title": "Axenoff Jewellery",
+						"link": "#"
+					},
+					{
+						"title": "Baume & Mercier",
+						"link": "#"
+					},
+					{
+						"title": "Blancpain",
+						"link": "#"
+					},
+					{
+						"title": "Buben&Zorweg",
+						"link": "#"
+					},
+					{
+						"title": "Buccellati",
+						"link": "#"
+					},
+					{
+						"title": "Carrera y Carrera",
+						"link": "#"
+					},
+					{
+						"title": "Chanel",
+						"link": "#"
+					},
+					{
+						"title": "CORUM",
+						"link": "#"
+					},
+					{
+						"title": "Damiani",
+						"link": "#"
+					},
+					{
+						"title": "Dario&Peter",
+						"link": "#"
+					},
+					{
+						"title": "Deakin & Francis",
+						"link": "#"
+					},
+					{
+						"title": "Encelade",
+						"link": "#"
+					},
+					{
+						"title": "Frederique Constant",
+						"link": "#"
+					},
+					{
+						"title": "Gellner",
+						"link": "#"
+					},
+					{
+						"title": "Glashutte Original",
+						"link": "#"
+					},
+					{
+						"title": "Gourji",
+						"link": "#"
+					},
+					{
+						"title": "Herzog",
+						"link": "#"
+					},
+					{
+						"title": "Ilgiz F.",
+						"link": "#"
+					},
+					{
+						"title": "IWC",
+						"link": "#"
+					},
+					{
+						"title": "Jaeger-LeCoultre",
+						"link": "#"
+					},
+					{
+						"title": "Jaquet Droz",
+						"link": "#"
+					},
+					{
+						"title": "Le Gioie",
+						"link": "#"
+					},
+					{
+						"title": "Longines",
+						"link": "#"
+					},
+					{
+						"title": "Luca Carati",
+						"link": "#"
+					},
+					{
+						"title": "MILUS",
+						"link": "#"
+					},
+					{
+						"title": "Montegrappa",
+						"link": "#"
+					},
+					{
+						"title": "Omega",
+						"link": "#"
+					},
+					{
+						"title": "Panerai",
+						"link": "#"
+					},
+					{
+						"title": "Pearl Style by Gellner",
+						"link": "#"
+					},
+					{
+						"title": "Perrelet",
+						"link": "#"
+					},
+					{
+						"title": "Pesavento",
+						"link": "#"
+					},
+					{
+						"title": "Rado",
+						"link": "#"
+					},
+					{
+						"title": "Raketa",
+						"link": "#"
+					},
+					{
+						"title": "Roberto Coin",
+						"link": "#"
+					},
+					{
+						"title": "Shaun Leane",
+						"link": "#"
+					},
+					{
+						"title": "Tag Heuer",
+						"link": "#"
+					},
+					{
+						"title": "TF",
+						"link": "#"
+					},
+					{
+						"title": "Ulysse Nardin",
+						"link": "#"
+					},
+					{
+						"title": "Underwood",
+						"link": "#"
+					},
+					{
+						"title": "Vacheron Constantin",
+						"link": "#"
+					},
+					{
+						"title": "Vhernier",
+						"link": "#"
+					},
+					{
+						"title": "Zenith",
+						"link": "#"
+					},
+					{
+						"title": "Zoccai",
+						"link": "#"
+					},
+					{
+						"title": "",
+						"link": "#"
+					},
+					{
+						"title": "",
+						"link": "#"
+					}
+				]
 			}
 		]
 	},
@@ -666,292 +1068,6 @@
 				"url": "#",
 				"img": "content/images/small-slider/img-2.jpg",
 				"imgSet": "content/images/small-slider/img2x-2.jpg"
-			}
-		]
-	},
-	"HEADER": {
-		"submenuCatalog": [
-			{
-				"title": "Ювелирные украшения",
-				"link": "#",
-				"list": [
-					{
-						"title": "Кольца",
-						"link": "#"
-					},
-					{
-						"title": "Браслеты",
-						"link": "#"
-					},
-					{
-						"title": "Колье",
-						"link": "#"
-					},
-					{
-						"title": "Серьги",
-						"link": "#"
-					},
-					{
-						"title": "Броши",
-						"link": "#"
-					},
-					{
-						"title": "Брелоки",
-						"link": "#"
-					}
-				]
-			},
-			{
-				"title": "Часы",
-				"link": "#",
-				"list": [
-					{
-						"title": "Мужские часы",
-						"link": "#"
-					},
-					{
-						"title": "Женские часы",
-						"link": "#"
-					},
-					{
-						"title": "Детские часы",
-						"link": "#"
-					},
-					{
-						"title": "Ремешки",
-						"link": "#"
-					}
-				]
-			},
-			{
-				"title": "Аксессуары",
-				"link": "#",
-				"list": [
-					{
-						"title": "Пишущие инструменты",
-						"link": "#"
-					},
-					{
-						"title": "Запонки",
-						"link": "#"
-					},
-					{
-						"title": "Зажигалки",
-						"link": "#"
-					},
-					{
-						"title": "Кольца для ключей",
-						"link": "#"
-					},
-					{
-						"title": "Зажимы для денег",
-						"link": "#"
-					},
-					{
-						"title": "Предметы интерьера",
-						"link": "#"
-					}
-				]
-			}
-		],
-		"submenuBrands": [
-			{
-				"title": "Бренды",
-				"link": "#",
-				"list": [
-					{
-						"title": "A. Lange & Sohne",
-						"link": "#"
-					},
-					{
-						"title": "Audemars Piguet",
-						"link": "#"
-					},
-					{
-						"title": "Aviator",
-						"link": "#"
-					},
-					{
-						"title": "Axenoff Jewellery",
-						"link": "#"
-					},
-					{
-						"title": "Baume & Mercier",
-						"link": "#"
-					},
-					{
-						"title": "Blancpain",
-						"link": "#"
-					},
-					{
-						"title": "Buben&Zorweg",
-						"link": "#"
-					},
-					{
-						"title": "Buccellati",
-						"link": "#"
-					},
-					{
-						"title": "Carrera y Carrera",
-						"link": "#"
-					},
-					{
-						"title": "Chanel",
-						"link": "#"
-					},
-					{
-						"title": "CORUM",
-						"link": "#"
-					},
-					{
-						"title": "Damiani",
-						"link": "#"
-					},
-					{
-						"title": "Dario&Peter",
-						"link": "#"
-					},
-					{
-						"title": "Deakin & Francis",
-						"link": "#"
-					},
-					{
-						"title": "Encelade",
-						"link": "#"
-					},
-					{
-						"title": "Frederique Constant",
-						"link": "#"
-					},
-					{
-						"title": "Gellner",
-						"link": "#"
-					},
-					{
-						"title": "Glashutte Original",
-						"link": "#"
-					},
-					{
-						"title": "Gourji",
-						"link": "#"
-					},
-					{
-						"title": "Herzog",
-						"link": "#"
-					},
-					{
-						"title": "Ilgiz F.",
-						"link": "#"
-					},
-					{
-						"title": "IWC",
-						"link": "#"
-					},
-					{
-						"title": "Jaeger-LeCoultre",
-						"link": "#"
-					},
-					{
-						"title": "Jaquet Droz",
-						"link": "#"
-					},
-					{
-						"title": "Le Gioie",
-						"link": "#"
-					},
-					{
-						"title": "Longines",
-						"link": "#"
-					},
-					{
-						"title": "Luca Carati",
-						"link": "#"
-					},
-					{
-						"title": "MILUS",
-						"link": "#"
-					},
-					{
-						"title": "Montegrappa",
-						"link": "#"
-					},
-					{
-						"title": "Omega",
-						"link": "#"
-					},
-					{
-						"title": "Panerai",
-						"link": "#"
-					},
-					{
-						"title": "Pearl Style by Gellner",
-						"link": "#"
-					},
-					{
-						"title": "Perrelet",
-						"link": "#"
-					},
-					{
-						"title": "Pesavento",
-						"link": "#"
-					},
-					{
-						"title": "Rado",
-						"link": "#"
-					},
-					{
-						"title": "Raketa",
-						"link": "#"
-					},
-					{
-						"title": "Roberto Coin",
-						"link": "#"
-					},
-					{
-						"title": "Shaun Leane",
-						"link": "#"
-					},
-					{
-						"title": "Tag Heuer",
-						"link": "#"
-					},
-					{
-						"title": "TF",
-						"link": "#"
-					},
-					{
-						"title": "Ulysse Nardin",
-						"link": "#"
-					},
-					{
-						"title": "Underwood",
-						"link": "#"
-					},
-					{
-						"title": "Vacheron Constantin",
-						"link": "#"
-					},
-					{
-						"title": "Vhernier",
-						"link": "#"
-					},
-					{
-						"title": "Zenith",
-						"link": "#"
-					},
-					{
-						"title": "Zoccai",
-						"link": "#"
-					},
-					{
-						"title": "",
-						"link": "#"
-					},
-					{
-						"title": "",
-						"link": "#"
-					}
-				]
 			}
 		]
 	},

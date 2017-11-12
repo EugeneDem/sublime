@@ -3,6 +3,8 @@
     position: relative;
     height: 280px;
     overflow: hidden;
+    padding-left: 15px;
+    padding-right: 15px;
 
     @media (max-width: $screen-sm-max) {
         height: 30vw;
@@ -11,11 +13,14 @@
     }
 
     &__wrap {
+        max-width: 1060px;
         display: flex;
         flex-direction: column;
         align-content: stretch;
         position: relative;
         height: 280px;
+        margin-left: auto;
+        margin-right: auto;
         justify-content: space-between;
         z-index: 2;
 

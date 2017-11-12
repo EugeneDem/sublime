@@ -38,8 +38,24 @@ var Main = function() {
 				$this.parent().addClass('active');
 			}
 		});
+		elem.on('mouseover', '.nav-link', function(e) {
+			$this = $(this);
+			$this.closest('.navbar-nav').find('.hover').removeClass('hover');
+			$this.parent().addClass('hover');
+			if (!$('.navbar-nav__backdrop').is(':visible')) {
+				$('<div class="navbar-nav__backdrop"></div>').insertAfter(navbar.parents('.navbar'));
+				$('.navbar-nav__backdrop').fadeIn(100);
+			}
+		});
+		elem.on('mouseleave', '.nav-link', function(e) {
+			if (!$(this).parent().hasClass('hover')) {
+				navbar.parents('.navbar').next('.navbar-nav__backdrop').fadeOut(50).remove();
+			}
+		});
 		navbar.on('mouseleave', function(e) {
 			$('.active', navbar).removeClass('active');
+			$('.hover', navbar).removeClass('hover');
+			$(this).parents('.navbar').next('.navbar-nav__backdrop').fadeOut(50).remove();
 		});
 		$win.on('resize', function() {
 			if (!isSmallDevice()) {
@@ -127,20 +143,27 @@ var Main = function() {
 	};
 	var modalFilter = function modalFilter() {
 		var elem = $('.modal-filter');
-		$(document).on('click', '.js-modal-filter', function() { // let sp;
+		$(document).on('click', '.js-modal-filter', function() {
+			var sp = void 0;
 			$('body').addClass('modal-open');
 			elem.addClass('fade');
 			filterSlider.elem = $('#filter-slider');
 			filterSlider.init($('#filter-slider'));
-			spollerMobile.hiddenSpoller.call(); // sp = $('.modal-filter__container:visible', elem).niceScroll({
-			//     cursorcolor: '#d0ac80',
-			//     cursoropacitymax: 0.3,
-			//     cursorwidth: 6,
-			//     cursorborder: '1px solid rgba(208, 172, 128, 0.5)',
-			//     cursorborderradius: '3px',
-			//     horizrailenabled: false,
-			//     railpadding: { top: 0, right: -15, left: 0, bottom: 0 }
-			// });
+			spollerMobile.hiddenSpoller.call();
+			sp = $('.modal-filter__container:visible', elem).niceScroll({
+				cursorcolor: '#d0ac80',
+				cursoropacitymax: 0.3,
+				cursorwidth: 6,
+				cursorborder: '1px solid rgba(208, 172, 128, 0.5)',
+				cursorborderradius: '3px',
+				horizrailenabled: false,
+				railpadding: {
+					top: 0,
+					right: -15,
+					left: 0,
+					bottom: 0
+				}
+			});
 		});
 		$(document).on('click', '.js-modal-filter-close', function() {
 			elem.removeClass('fade');
@@ -172,6 +195,50 @@ var Main = function() {
 			});
 		}
 	};
+	var sendRequest = {
+		elem: $('.modal-request'),
+		toShow: function toShow(handler) {
+			var offsetTop = void 0;
+			var offsetLeft = void 0;
+			offsetTop = Math.floor(handler.offset().top - sendRequest.elem.outerHeight() / 2);
+			offsetLeft = Math.floor(handler.offset().left + handler.outerWidth() / 2 - sendRequest.elem.outerWidth() / 2);
+			if (isSmallDevice()) {
+				sendRequest.elem.css({
+					"top": offsetTop > 0 ? offsetTop : 30 + "px"
+				}).addClass('fade');
+			} else {
+				sendRequest.elem.css({
+					"top": offsetTop > 0 ? offsetTop : 30 + "px",
+					"left": offsetLeft + "px"
+				}).addClass('fade');
+			}
+			$(document).on('mousedown touchstart', sendRequest.toggleOutside);
+		},
+		toClose: function toClose() {
+			if (sendRequest.elem.is(':visible')) {
+				sendRequest.elem.removeClass('fade').removeAttr('style');
+				sendRequest.elem.find('input.form-control').val('');
+				$(document).off('mousedown touchstart', sendRequest.toggleOutside);
+			}
+		},
+		toggleOutside: function toggleOutside(e) {
+			if (sendRequest.elem.has(e.target).length === 0 && !sendRequest.elem.is(e.target)) {
+				sendRequest.toClose();
+			}
+		},
+		init: function init() {
+			$(document).on('click', '.js-send-request', function(e) {
+				e.preventDefault();
+				sendRequest.toShow($(this));
+			});
+			$win.on('resize', function() {
+				if (sendRequest.elem.is(':visible')) {
+					sendRequest.toClose();
+				}
+			});
+			$(document).on('click', '.js-modal-request-close', sendRequest.toClose);
+		}
+	};
 
 	function navbarLeave() {
 		navbar.trigger('mouseleave');
@@ -191,6 +258,7 @@ var Main = function() {
 			modalSearch();
 			modalFilter();
 			spollerMobile.init();
+			sendRequest.init();
 		}
 	};
 }();
@@ -347,8 +415,7 @@ var recommendedCarousel = {
 				breakpoint: 575,
 				settings: {
 					slidesToShow: 1,
-					centerMode: true,
-					variableWidth: false
+					slidesToScroll: 1
 				}
 			}]
 		};

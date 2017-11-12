@@ -1,0 +1,64 @@
+block page
+	-var page = "product";
+
+extends ../blocks/layout/layout
+
+block content
+	.product
+		.product__navbar
+			ol.breadcrumb
+				li.breadcrumb-item
+					a(href="catalog.html") Каталог
+				li.breadcrumb-item
+					a(href="#") Ювелирные украшения
+				li.breadcrumb-item
+					a(href="#") Браслеты
+				li.breadcrumb-item
+					a(href="#") Chanel
+				li.breadcrumb-item.active
+					span Camèlia
+			a.product__wishlist.hidden-sm-up(href="#")
+				i.product__wishlist-icon
+					+svg('wishlist')
+			a.product__navbar-back(href="catalog.html")
+		.product__container
+			.row
+				.col-12
+					.product-zoom.product-zoom_horizontal
+						.product-zoom__state.js-product-zoom
+							.product-zoom__item(data-src="" zoom="true" data-size="2000x2000" data-alt-zoom="Отобразить-Браслет-Вид спереди - Масштаб" tabindex="0")
+								img.img-fluide(src="content/images/product/big/img-7.jpg" data-thumb="content/images/product/thumb/img-7.jpg" alt="Приблизить - Браслет - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Браслет - Вид спереди - Уменьшенное изображение")
+							.product-zoom__item(data-src="" zoom="true" data-size="2000x2000" data-alt-zoom="Отобразить - Браслет - Вид спереди - Масштаб" tabindex="1")
+								img.img-fluide(src="content/images/product/big/img-8.jpg" data-thumb="content/images/product/thumb/img-8.jpg" alt="Приблизить - Браслет - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Браслет - Вид спереди - Уменьшенное изображение")
+				.col-12
+					.product-info
+						h1.product-info__title Браслет Camèlia
+						.product-info__category
+							.product-info__category-item Chanel
+						.product-info__description
+							p Известнейший в мире моды бренд Chanel представляет свой неповторимый золотой браслет. Изящный, тонкой работы браслет, созданный чередованием гладких полированных золотых овальных колец с парами текстурированных, словно выполненных из небольших золотых бусин колец той же формы.<br />Но особое обаяние придают съемные подвески: нежная золотая камелия и великолепный золотой олень, ветвистые рога которого украшены бриллиантами 16 карат.
+						.product-info__form
+							.product-info__form-controls
+								.product-info__form-price
+									span 217 850
+									span.currency
+								a.btn.btn-outline-gold.js-send-request(href="#") Сделать запрос
+							a.product__wishlist.hidden-xs-down(href="#")
+								i.product__wishlist-icon
+									+svg('wishlist')
+						.product-info__property
+							.row
+								each value in PRODUCT_HORIZONTAL.property
+									.col-6.col-lg-4
+										.product-info__property-name!= value.name
+											| :
+									.col-6.col-lg-8
+										.product-info__property-text!= value.text
+	.section-content
+		.section-content__title Рекомендуемое сочетание
+		.section-content__wrap
+			include ../blocks/Widgets/recommended/recommended
+	.section-content
+		.section-content__title Недавно просмотренное
+		.section-content__wrap
+			include ../blocks/Widgets/productCarousel/productCarousel
