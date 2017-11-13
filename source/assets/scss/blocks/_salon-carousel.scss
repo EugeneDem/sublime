@@ -1,0 +1,165 @@
+.salon-carousel {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding-top: rem(22);
+
+    @media (max-width: $screen-md-max) {
+        max-width: 880px;
+    }
+
+    @media (max-width: $screen-sm-max) {
+        max-width: 620px;
+    }
+
+    @media (max-width: $screen-xs-max) {
+        max-width: 420px;
+    }
+
+    @media (max-width: $screen-xs-min) {
+        max-width: 280px;
+        padding-top: rem(16);
+    }
+
+    &__state {
+        margin-bottom: rem(7);
+
+        &.slick-dotted.slick-slider {
+            margin-bottom: rem(37);
+        }
+    }
+
+    &__item {
+        display: inline-block;
+        vertical-align: top;
+        text-decoration: none;
+        padding-left: rem(10);
+        padding-right: rem(10);
+        box-sizing: border-box;
+
+        @media (max-width: $screen-xs-min) {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        &:focus {
+            outline: 0 none;
+            text-decoration: none;
+        }
+    }
+
+    &__img {
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .slick-arrow {
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 17px;
+        height: 36px;
+        position: absolute;
+        top: 50%;
+        margin-top: ceil(36 / -2);
+        cursor: pointer;
+        z-index: 1;
+        
+        &:before {
+            content: "";
+            display: none;
+        }
+    }
+    
+    .slick-next {
+        background-image: url("arrow-right-gold.svg#datauri");
+        right: -40px;
+  
+        // &.disabled {
+        //     @include sprite-2x($sprite-view-next-dis);
+        // }
+
+        @media (min-width: 1240px) {
+            right: -80px;
+        }
+        
+        @media (max-width: $screen-xs-max) {
+            right: -30px;
+        }
+        
+        @media (max-width: $screen-xs-min) {
+            right: -60px;
+        }
+    }
+
+    .slick-prev {
+        left: -38px;
+        background-image: url("arrow-left-gold.svg#datauri");
+
+        @media (min-width: 1240px) {
+            left: -78px;
+        }
+
+        // &.disabled {
+        //    @include sprite-2x($sprite-view-prev-dis);
+        // }
+
+        @media (max-width: $screen-xs-max) {
+            left: -28px;
+        }
+
+        @media (max-width: $screen-xs-min) {
+            left: -58px;
+        }
+    }
+
+    .slick-dots {
+        bottom: -32px;
+        
+        li {
+            width: 10px;
+            height: 10px;
+            margin-left: 15px;
+            margin-right: 15px;
+
+            @media (max-width: $screen-xs-max) {
+                margin-left: 11px;
+                margin-right: 11px;
+            }
+
+            button {
+                width: 10px;
+                height: 10px;
+                box-sizing: border-box;
+
+                &:before {
+                    border-radius: 50%;
+                    border: 1px solid #d0ac80;
+                    width: 10px;
+                    height: 10px;
+                    content: "";
+                    opacity: 1;
+                    box-sizing: border-box;
+                }
+            }
+
+            &.slick-active {
+                button:before {
+                    background-color: #d0ac80;
+                }
+            }
+        }
+    }
+}
+
+.salon-map {
+    padding-top: rem(40);
+
+    @media (max-width: $screen-xs-max) {
+        padding-top: rem(20);
+    }
+
+    &__state {
+        height: 40vw;
+    }
+}

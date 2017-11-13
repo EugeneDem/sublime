@@ -1,4 +1,20 @@
 {
+	"ABOUT": {
+		"aboutNavbar": [
+			{
+				"url": "#",
+				"title": "О&nbsp;нас"
+			},
+			{
+				"url": "#",
+				"title": "Бренды"
+			},
+			{
+				"url": "#",
+				"title": "Контакты"
+			}
+		]
+	},
 	"CATALOG": {
 		"catalogNavbar": [
 			{
@@ -375,73 +391,65 @@
 			}
 		]
 	},
-	"FOOTER": {
-		"footerNav": [
+	"SALON": {
+		"salonNavbar": [
 			{
-				"title": "Sublime",
-				"url": "index.html",
-				"list": [
-					{
-						"url": "about.html",
-						"text": "О&nbsp;нас"
-					},
-					{
-						"url": "brands.html",
-						"text": "Бренды"
-					},
-					{
-						"url": "contacts.html",
-						"text": "Контакты"
-					}
-				]
+				"url": "#",
+				"title": "Гум"
 			},
 			{
-				"title": "Каталог",
-				"url": "catalog.html",
-				"list": [
-					{
-						"url": "#",
-						"text": "Ювелирные украшения"
-					},
-					{
-						"url": "watch.html",
-						"text": "Часы"
-					},
-					{
-						"url": "accessories.html",
-						"text": "Аксессуары"
-					},
-					{
-						"url": "offers.html",
-						"text": "Скидки"
-					}
-				]
+				"url": "#",
+				"title": "Весна"
 			},
 			{
-				"title": "Бутики",
-				"url": "butics.html",
-				"list": [
-					{
-						"url": "gum.html",
-						"text": "ГУМ"
-					},
-					{
-						"url": "vesna.html",
-						"text": "Весна"
-					},
-					{
-						"url": "sochi.html",
-						"text": "Сочи"
-					},
-					{
-						"url": "polyana.html",
-						"text": "Красная Поляна"
-					}
-				]
+				"url": "#",
+				"title": "Сочи"
 			},
 			{
-				"title": "Контакты",
-				"url": "contacts.html"
+				"url": "#",
+				"title": "Красная поляна"
+			}
+		],
+		"salonList": [
+			{
+				"url": "#",
+				"img": "content/images/salon/gum/img-1.jpg"
+			},
+			{
+				"url": "#",
+				"img": "content/images/salon/gum/img-2.jpg"
+			},
+			{
+				"url": "#",
+				"img": "content/images/salon/gum/img-3.jpg"
+			},
+			{
+				"url": "#",
+				"img": "content/images/salon/gum/img-4.jpg"
+			},
+			{
+				"url": "#",
+				"img": "content/images/salon/gum/img-5.jpg"
+			},
+			{
+				"url": "#",
+				"img": "content/images/salon/gum/img-2.jpg"
+			},
+			{
+				"url": "#",
+				"img": "content/images/salon/gum/img-3.jpg"
+			},
+			{
+				"url": "#",
+				"img": "content/images/salon/gum/img-4.jpg"
+			},
+			{
+				"url": "#",
+				"img": "content/images/salon/gum/img-5.jpg"
+			},
+			{
+				"url": "#",
+				"img": "content/images/salon/gum/img-2.jpg"
 			}
 		]
 	},
@@ -1096,6 +1104,76 @@
 				"subtitle": "Cartier",
 				"description": "Белое золото, бриллианты",
 				"price": "29 800"
+			}
+		]
+	},
+	"FOOTER": {
+		"footerNav": [
+			{
+				"title": "Sublime",
+				"url": "index.html",
+				"list": [
+					{
+						"url": "about.html",
+						"text": "О&nbsp;нас"
+					},
+					{
+						"url": "brands.html",
+						"text": "Бренды"
+					},
+					{
+						"url": "contacts.html",
+						"text": "Контакты"
+					}
+				]
+			},
+			{
+				"title": "Каталог",
+				"url": "catalog.html",
+				"list": [
+					{
+						"url": "#",
+						"text": "Ювелирные украшения"
+					},
+					{
+						"url": "watch.html",
+						"text": "Часы"
+					},
+					{
+						"url": "accessories.html",
+						"text": "Аксессуары"
+					},
+					{
+						"url": "offers.html",
+						"text": "Скидки"
+					}
+				]
+			},
+			{
+				"title": "Бутики",
+				"url": "butics.html",
+				"list": [
+					{
+						"url": "gum.html",
+						"text": "ГУМ"
+					},
+					{
+						"url": "vesna.html",
+						"text": "Весна"
+					},
+					{
+						"url": "sochi.html",
+						"text": "Сочи"
+					},
+					{
+						"url": "polyana.html",
+						"text": "Красная Поляна"
+					}
+				]
+			},
+			{
+				"title": "Контакты",
+				"url": "contacts.html"
 			}
 		]
 	}

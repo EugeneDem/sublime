@@ -59,6 +59,34 @@ body {
     }
 }
 
+.content-container {
+    padding-right: 0;
+    padding-left: 0;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: $screen-xs-min) {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    @media (min-width: $screen-sm-min) {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+  
+    @media (min-width: $screen-md-min) {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+  
+    @media (min-width: $screen-lg-min) {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+
 .row {
     margin-right: -10px;
     margin-left: -10px;
@@ -284,4 +312,10 @@ body {
         content: "\00BB";
         display: inline-block;
     }
+}
+
+.content-text {
+    color: #737373;
+    font-size: rem(16);
+    line-height: rem(24);
 }

@@ -1,0 +1,63 @@
+{
+	"salonNavbar": [
+		{
+			"url": "#",
+			"title": "Гум"
+		},
+		{
+			"url": "#",
+			"title": "Весна"
+		},
+		{
+			"url": "#",
+			"title": "Сочи"
+		},
+		{
+			"url": "#",
+			"title": "Красная поляна"
+		}
+	],
+
+	"salonList": [
+		{
+			"url": "#",
+			"img": "content/images/salon/gum/img-1.jpg"
+		},
+		{
+			"url": "#",
+			"img": "content/images/salon/gum/img-2.jpg"
+		},
+		{
+			"url": "#",
+			"img": "content/images/salon/gum/img-3.jpg"
+		},
+		{
+			"url": "#",
+			"img": "content/images/salon/gum/img-4.jpg"
+		},
+		{
+			"url": "#",
+			"img": "content/images/salon/gum/img-5.jpg"
+		},
+		{
+			"url": "#",
+			"img": "content/images/salon/gum/img-2.jpg"
+		},
+		{
+			"url": "#",
+			"img": "content/images/salon/gum/img-3.jpg"
+		},
+		{
+			"url": "#",
+			"img": "content/images/salon/gum/img-4.jpg"
+		},
+		{
+			"url": "#",
+			"img": "content/images/salon/gum/img-5.jpg"
+		},
+		{
+			"url": "#",
+			"img": "content/images/salon/gum/img-2.jpg"
+		}
+	]
+}

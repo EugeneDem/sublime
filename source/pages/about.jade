@@ -1,0 +1,40 @@
+block page
+	-var page = "О&nbsp;нас";
+
+extends ../blocks/layout/layout
+
+block content
+	.jumbotron-fluid
+		.catalog-frame
+			.catalog-frame__wrap
+				ol.breadcrumb
+					li.breadcrumb-item
+						a(href="#") Sublime
+					li.breadcrumb-item.active
+						span О&nbsp;нас
+				.catalog-frame__content
+					h1.catalog-frame__title Sublime by&nbsp;bosco
+					.catalog-frame__navbar
+						ul.catalog-frame__navbar-list
+							each value in ABOUT.aboutNavbar
+								if(page === value.title)
+									li.catalog-frame__navbar-list-item.is-active
+										span.catalog-frame__navbar-link!= value.title
+								else
+									li.catalog-frame__navbar-list-item
+										a.catalog-frame__navbar-link(href=value.url)!= value.title
+			.catalog-frame__mask
+			img.catalog-frame__bg(src="content/images/catalog/frame-bg-3.jpg" alt="")
+	.catalog
+		.catalog__header.catalog__header_bordered
+			h2.catalog__title О&nbsp;нас
+			.catalog__subtitle.catalog__subtitle_style-color Sublime by&nbsp;bosco&nbsp;&mdash; утвердившееся представление bosco di&nbsp;ciliegi о&nbsp;том, что такое по-настоящему красиво, роскошно и&nbsp;даже важно. <Br />не&nbsp;смущаясь&nbsp;&mdash; это просто очень хороший магазин очень хороших ювелирных изделий и&nbsp;часов.
+		.catalog__content
+			.content-container
+				.row
+					.col-12.col-lg-4
+						p.content-text Sublime by&nbsp;BOSCO&nbsp;&mdash; это переход от&nbsp;просто дорогостоящих материальных ценностей, минуя состояние неуверенности и&nbsp;неопределенности, к&nbsp;вечным ценностям времени, благополучия и&nbsp;уверенности в&nbsp;завтрашнем дне.
+					.col-12.col-lg-4
+						p.content-text Sublime by&nbsp;BOSCO&nbsp;&mdash; это новые концептуальные пространства, насыщенные светом и&nbsp;комфортом, органично заполненные замечательными историческими произведениями ювелирного и&nbsp;часового искусства, в специально созданном теплом пространстве.
+					.col-12.col-lg-4
+						p.content-text В&nbsp;конце концов лучшее, что мы&nbsp;рады предложить вам,&nbsp;&mdash; это состояние Sublime. Это состояние стоит вашего увлечения.

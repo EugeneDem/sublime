@@ -401,6 +401,56 @@ let productCarousel = {
     }
 };
 
+let salonCarousel = {
+    slider: $('.js-salon-carousel'),
+    sliderSettings: function () {
+        let counts = salonCarousel.slider.children().length;
+        counts = counts > 6 ? 6 : counts;
+        return {
+            infinite: false,
+            slidesToShow: counts,
+            slidesToScroll: 1,
+            infinite: false,
+            focusOnSelect: false,
+            dots: false,
+            arrows: true,
+            speed: 300,
+            responsive: [{
+                    breakpoint: 1199,
+                    settings: {
+                        variableWidth: false,
+                        slidesToShow: 5,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 991,
+                    settings: {
+                        variableWidth: false,
+                        slidesToShow: 4,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        variableWidth: false,
+                        arrows: false,
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        dots: true
+                    }
+                }
+            ]
+        }
+    },
+    init: function () {
+        if ($('.js-salon-carousel').exists()) {
+            salonCarousel.slider.slick(salonCarousel.sliderSettings());
+        }
+    }
+};
+
 let brandsCarousel = {
     slider: $('.js-brands-carousel'),
     sliderSettings: function () {
@@ -515,6 +565,7 @@ $(function () {
     mainSlider.init();
     promoBox.init();
     productCarousel.init();
+    salonCarousel.init();
     brandsCarousel.init();
     recommendedCarousel.init();
     productZoomCarousel.init();
