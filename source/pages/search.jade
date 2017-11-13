@@ -1,0 +1,74 @@
+block page
+	-var page = "catalog";
+
+extends ../blocks/layout/layout
+
+block content
+	.static-page
+		.static-page__header
+			h1.static-page__title Результаты поиска
+			.static-page__subtitle По&nbsp;запросу <span class="search-elem">Cartier</span> найдено 132 товара
+		.static-page__content
+			.filter
+				.filter__wrap
+					.filter__handler.js-modal-filter
+						i.filter__handler-icon
+							+svg('filters')
+						span Фильтры
+					//- .filter__tags
+						input(type="hidden" value="chanel, кольца, серьги, желтое золото, белое золото, бриллианты, изысканный стиль")
+						.filter__tags-inner
+							.filter__entry-field(data-value="chanel")
+								span chanel
+								i.filter__entry-field-close
+							.filter__entry-field(data-value="кольца")
+								span кольца
+								i.filter__entry-field-close
+							.filter__entry-field(data-value="серьги")
+								span серьги
+								i.filter__entry-field-close
+							.filter__entry-field(data-value="желтое золото")
+								span желтое золото
+								i.filter__entry-field-close
+							.filter__entry-field(data-value="белое золото")
+								span белое золото
+								i.filter__entry-field-close
+							.filter__entry-field(data-value="бриллианты")
+								span бриллианты
+								i.filter__entry-field-close
+							.filter__entry-field(data-value="изысканный стиль")
+								span изысканный стиль
+								i.filter__entry-field-close
+							.filter__entry-field(data-value="серьги")
+								span серьги
+								i.filter__entry-field-close
+							.filter__entry-field(data-value="желтое золото")
+								span желтое золото
+								i.filter__entry-field-close
+							.filter__entry-field(data-value="белое золото")
+								span белое золото
+								i.filter__entry-field-close
+							.filter__entry-field(data-value="бриллианты")
+								span бриллианты
+								i.filter__entry-field-close
+							.filter__entry-field(data-value="изысканный стиль")
+								span изысканный стиль
+								i.filter__entry-field-close
+			.catalog-list
+				.row
+					each value in FAVOURITES.catalogList
+						.catalog-list__item.col-12.col-sm-6.col-lg-4
+							.catalog-item
+								a.catalog-item__link(href=value.url)
+									.catalog-item__media
+										img(src=value.src alt="")
+									.catalog-item__content
+										.catalog-item__title!= value.title
+										.catalog-item__subtitle!= value.subtitle
+										.catalog-item__description!= value.description
+										.catalog-item__price!= value.price
+											span.currency
+								// .catalog-item__fovour-remove.js-fovourites-remove
+								.catalog-item__wishlist
+									i.catalog-item__wishlist-icon
+										+svg('wishlist')

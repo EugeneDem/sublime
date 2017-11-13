@@ -128,6 +128,9 @@ var Main = function() {
 					$element.slider('relayout');
 				}
 			});
+		},
+		destroy: function destroy($element) {
+			$element.slider('destroy');
 		}
 	};
 	var modalSearch = function modalSearch() {
@@ -144,30 +147,17 @@ var Main = function() {
 	var modalFilter = function modalFilter() {
 		var elem = $('.modal-filter');
 		$(document).on('click', '.js-modal-filter', function() {
-			var sp = void 0;
-			$('body').addClass('modal-open');
+			$('html, body').animate({
+				scrollTop: $('html').offset().top
+			}, 300);
 			elem.addClass('fade');
 			filterSlider.elem = $('#filter-slider');
-			filterSlider.init($('#filter-slider'));
+			filterSlider.init(filterSlider.elem);
 			spollerMobile.hiddenSpoller.call();
-			sp = $('.modal-filter__container:visible', elem).niceScroll({
-				cursorcolor: '#d0ac80',
-				cursoropacitymax: 0.3,
-				cursorwidth: 6,
-				cursorborder: '1px solid rgba(208, 172, 128, 0.5)',
-				cursorborderradius: '3px',
-				horizrailenabled: false,
-				railpadding: {
-					top: 0,
-					right: -15,
-					left: 0,
-					bottom: 0
-				}
-			});
 		});
 		$(document).on('click', '.js-modal-filter-close', function() {
 			elem.removeClass('fade');
-			$('body').removeClass('modal-open');
+			filterSlider.destroy(filterSlider.elem);
 		});
 	};
 	var spollerMobile = {

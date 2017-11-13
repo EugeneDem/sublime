@@ -271,3 +271,17 @@ body {
         }
     }
 }
+
+.search-elem {
+    color: #000;
+
+    &:before {
+        content: "\00AB";
+        display: inline-block;
+    }
+
+    &:after {
+        content: "\00BB";
+        display: inline-block;
+    }
+}

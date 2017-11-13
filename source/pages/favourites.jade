@@ -4,16 +4,17 @@ block page
 extends ../blocks/layout/layout
 
 block content
-	.favourites
-		.favourites__navbar
+	.static-page
+		.static-page__navbar
 			ol.breadcrumb
 				li.breadcrumb-item
 					a(href="#") Sublime
 				li.breadcrumb-item.active
 					span Избранное
-		.favourites__content
-			h1.favourites__title Избранное
-			.favourites__subtitle В&nbsp;вашем списке 12&nbsp;товаров
+		.static-page__header
+			h1.static-page__title Избранное
+			.static-page__subtitle В&nbsp;вашем списке 12&nbsp;товаров
+		.static-page__content
 			.catalog-list
 				.row
 					each value in FAVOURITES.catalogList

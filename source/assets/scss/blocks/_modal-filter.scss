@@ -1,6 +1,6 @@
 .modal-filter {
     background-color: rgba(#813700, 0.95);
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
@@ -10,7 +10,6 @@
     outline: 0;
     display: none;
     transition: opacity .3s .3s;
-    visibility: hidden;
     opacity: 0;
     padding: rem(20) rem(15);
 
@@ -51,10 +50,7 @@
 
     &__container {
         max-width: 1060px;
-        height: calc(100vh - 120px);
         margin: 0 auto;
-        overflow-y: auto;
-        overflow-x: hidden;
 
         @media (max-width: $screen-sm-max) {
             max-width: 480px;
