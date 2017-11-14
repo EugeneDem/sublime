@@ -1,0 +1,37 @@
+block page
+	-var page = "Бренды";
+
+extends ../blocks/layout/layout
+
+block content
+	.jumbotron-fluid
+		.catalog-frame
+			.catalog-frame__wrap
+				ol.breadcrumb
+					li.breadcrumb-item
+						a(href="#") Sublime
+					li.breadcrumb-item.active
+						span Бренды
+				.catalog-frame__content
+					h1.catalog-frame__title Sublime by&nbsp;bosco
+					.catalog-frame__navbar
+						ul.catalog-frame__navbar-list
+							each value in ABOUT.aboutNavbar
+								if(page === value.title)
+									li.catalog-frame__navbar-list-item.is-active
+										span.catalog-frame__navbar-link!= value.title
+								else
+									li.catalog-frame__navbar-list-item
+										a.catalog-frame__navbar-link(href=value.url)!= value.title
+			.catalog-frame__mask
+			img.catalog-frame__bg(src="content/images/catalog/frame-bg-5.jpg" alt="")
+	.catalog
+		.catalog__header
+			h2.catalog__title Бренды
+		.catalog__content
+			.brands-list
+				each value in BRANDS.brandsList
+					.brands-list__item
+						a.brands-item(href="#")
+							img.brands-item__img-hover(src="content/images/brands2/" + value.title + "_h.png" srcset="content/images/brands2/" + value.title + "2x_h.png 2x" alt="")
+							img.brands-item__img(src="content/images/brands2/" + value.title + ".png" srcset="content/images/brands2/" + value.title + "2x.png 2x" alt="")

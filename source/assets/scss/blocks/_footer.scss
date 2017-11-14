@@ -154,6 +154,16 @@
             height: 18px;
             width: 24px;
             fill: #d0ac80;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+
+            svg {
+                fill: #fff;
+            }
         }
     }
 }

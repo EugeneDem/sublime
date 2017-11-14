@@ -15,6 +15,114 @@
 			}
 		]
 	},
+	"BRANDS": {
+		"brandsList": [
+			{
+				"title": "audemarspiguet",
+				"url": "#"
+			},
+			{
+				"title": "baume&mercier",
+				"url": "#"
+			},
+			{
+				"title": "bell&ross",
+				"url": "#"
+			},
+			{
+				"title": "breitling",
+				"url": "#"
+			},
+			{
+				"title": "cartier",
+				"url": "#"
+			},
+			{
+				"title": "carrera",
+				"url": "#"
+			},
+			{
+				"title": "chanel",
+				"url": "#"
+			},
+			{
+				"title": "corum",
+				"url": "#"
+			},
+			{
+				"title": "favero",
+				"url": "#"
+			},
+			{
+				"title": "iwc",
+				"url": "#"
+			},
+			{
+				"title": "jaegerlecoultre",
+				"url": "#"
+			},
+			{
+				"title": "longines",
+				"url": "#"
+			},
+			{
+				"title": "lucacarati",
+				"url": "#"
+			},
+			{
+				"title": "mauricelacroix",
+				"url": "#"
+			},
+			{
+				"title": "nanis",
+				"url": "#"
+			},
+			{
+				"title": "omega",
+				"url": "#"
+			},
+			{
+				"title": "officinepanerai",
+				"url": "#"
+			},
+			{
+				"title": "piaget",
+				"url": "#"
+			},
+			{
+				"title": "rado",
+				"url": "#"
+			},
+			{
+				"title": "rosato",
+				"url": "#"
+			},
+			{
+				"title": "salvini",
+				"url": "#"
+			},
+			{
+				"title": "shaunleane",
+				"url": "#"
+			},
+			{
+				"title": "tagheuer",
+				"url": "#"
+			},
+			{
+				"title": "ulyssenardin",
+				"url": "#"
+			},
+			{
+				"title": "vacheronconstantin",
+				"url": "#"
+			},
+			{
+				"title": "vhernier",
+				"url": "#"
+			}
+		]
+	},
 	"CATALOG": {
 		"catalogNavbar": [
 			{
@@ -450,6 +558,76 @@
 			{
 				"url": "#",
 				"img": "content/images/salon/gum/img-2.jpg"
+			}
+		]
+	},
+	"FOOTER": {
+		"footerNav": [
+			{
+				"title": "Sublime",
+				"url": "index.html",
+				"list": [
+					{
+						"url": "about.html",
+						"text": "О&nbsp;нас"
+					},
+					{
+						"url": "brands.html",
+						"text": "Бренды"
+					},
+					{
+						"url": "contacts.html",
+						"text": "Контакты"
+					}
+				]
+			},
+			{
+				"title": "Каталог",
+				"url": "catalog.html",
+				"list": [
+					{
+						"url": "#",
+						"text": "Ювелирные украшения"
+					},
+					{
+						"url": "watch.html",
+						"text": "Часы"
+					},
+					{
+						"url": "accessories.html",
+						"text": "Аксессуары"
+					},
+					{
+						"url": "offers.html",
+						"text": "Скидки"
+					}
+				]
+			},
+			{
+				"title": "Бутики",
+				"url": "butics.html",
+				"list": [
+					{
+						"url": "gum.html",
+						"text": "ГУМ"
+					},
+					{
+						"url": "vesna.html",
+						"text": "Весна"
+					},
+					{
+						"url": "sochi.html",
+						"text": "Сочи"
+					},
+					{
+						"url": "polyana.html",
+						"text": "Красная Поляна"
+					}
+				]
+			},
+			{
+				"title": "Контакты",
+				"url": "contacts.html"
 			}
 		]
 	},
@@ -1104,76 +1282,6 @@
 				"subtitle": "Cartier",
 				"description": "Белое золото, бриллианты",
 				"price": "29 800"
-			}
-		]
-	},
-	"FOOTER": {
-		"footerNav": [
-			{
-				"title": "Sublime",
-				"url": "index.html",
-				"list": [
-					{
-						"url": "about.html",
-						"text": "О&nbsp;нас"
-					},
-					{
-						"url": "brands.html",
-						"text": "Бренды"
-					},
-					{
-						"url": "contacts.html",
-						"text": "Контакты"
-					}
-				]
-			},
-			{
-				"title": "Каталог",
-				"url": "catalog.html",
-				"list": [
-					{
-						"url": "#",
-						"text": "Ювелирные украшения"
-					},
-					{
-						"url": "watch.html",
-						"text": "Часы"
-					},
-					{
-						"url": "accessories.html",
-						"text": "Аксессуары"
-					},
-					{
-						"url": "offers.html",
-						"text": "Скидки"
-					}
-				]
-			},
-			{
-				"title": "Бутики",
-				"url": "butics.html",
-				"list": [
-					{
-						"url": "gum.html",
-						"text": "ГУМ"
-					},
-					{
-						"url": "vesna.html",
-						"text": "Весна"
-					},
-					{
-						"url": "sochi.html",
-						"text": "Сочи"
-					},
-					{
-						"url": "polyana.html",
-						"text": "Красная Поляна"
-					}
-				]
-			},
-			{
-				"title": "Контакты",
-				"url": "contacts.html"
 			}
 		]
 	}

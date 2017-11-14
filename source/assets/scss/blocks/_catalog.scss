@@ -192,6 +192,13 @@
             vertical-align: middle;
             fill: none;
             stroke: #d2af84;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+            svg {
+                fill: #d2af84;
+            }
         }
     }
 
