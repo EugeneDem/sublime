@@ -1,0 +1,75 @@
+{
+	"catalogNavbar": [
+		{
+			"url": "#",
+			"title": "Кольца"
+		},
+		{
+			"url": "#",
+			"title": "Серьги"
+		},
+		{
+			"url": "#",
+			"title": "Колье"
+		},
+		{
+			"url": "#",
+			"title": "Браслеты"
+		},
+		{
+			"url": "#",
+			"title": "Броши"
+		}
+	],
+
+	"catalogList": [
+		{
+			"url": "#",
+			"src": "content/images/catalog/random/img-1.jpg",
+			"title": "БРАСЛЕТ PANTHÈRE DE CARTIER",
+			"subtitle": "Cartier",
+			"description": "Желтое золото, брилианты, изумруды",
+			"price": "5 300 000"
+		},
+		{
+			"url": "#",
+			"src": "content/images/catalog/random/img-2.jpg",
+			"title": "ОБРУЧАЛЬНОЕ КОЛЬЦО LOVE",
+			"subtitle": "Cartier",
+			"description": "Золото",
+			"price": "63 250"
+		},
+		{
+			"url": "#",
+			"src": "content/images/catalog/random/img-3.jpg",
+			"title": "СЕРЬГИ TRINITY RUBAN",
+			"subtitle": "Cartier",
+			"description": "Белое золото, бриллианты",
+			"price": "29 800"
+		},
+		{
+			"url": "#",
+			"src": "content/images/catalog/random/img-4.jpg",
+			"title": "КОЛЬЦО CAMÉLIA",
+			"subtitle": "Chanel",
+			"description": "Белое золото, брилианты 16&nbsp;карат",
+			"price": "305 000"
+		},
+		{
+			"url": "#",
+			"src": "content/images/catalog/random/img-5.jpg",
+			"title": "БРОШЬ ETOURDISSANT",
+			"subtitle": "Cartier",
+			"description": "Белое золото, рубеллит, оникс, бриллианты",
+			"price": "900 850"
+		},
+		{
+			"url": "#",
+			"src": "content/images/catalog/random/img-6.jpg",
+			"title": "КОЛЬЕ CAMÉLIA",
+			"subtitle": "Chanel",
+			"description": "Золото",
+			"price": "33 500"
+		}
+	]
+}

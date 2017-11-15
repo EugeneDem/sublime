@@ -131,7 +131,7 @@
 .catalog-item {
     border: 1px solid transparent;
     transition: border 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
-    height: 490px;
+    height: 492px;
     max-width: 340px;
     text-align: center;
     margin: 0 auto;
@@ -227,10 +227,10 @@
     }
 
     &__media {
-        height: calc(100% - 165px);
+        height: calc(100% - 167px);
 
         @media (max-width: $screen-sm-min) {
-            height: calc(100% - 125px);
+            height: calc(100% - 127px);
         }
 
         img {
@@ -245,9 +245,14 @@
     }
 
     &__content {
-        padding-top: rem(19);
-        padding-left: rem(10);
-        padding-right: rem(10);
+        padding-top: rem(25);
+        padding-left: rem(20);
+        padding-right: rem(20);
+
+        @media (max-width: $screen-xs-min) {
+            padding-left: rem(10);
+            padding-right: rem(10);
+        }
     }
 
     &__title {
@@ -293,7 +298,7 @@
         font-family: $font-stem-bold;
         font-size: rem(18);
         line-height: rem(20);
-        margin-top: 10px;
+        margin-top: rem(12);
 
         @media (max-width: $screen-sm-min) {
             font-size: rem(14);

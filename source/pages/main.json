@@ -1,19 +1,7 @@
 {
 	"brandsList": [
 		{
-			"title": "carrera",
-			"url": "#"
-		},
-		{
-			"title": "cartier",
-			"url": "#"
-		},
-		{
-			"title": "breitling",
-			"url": "#"
-		},
-		{
-			"title": "bell&ross",
+			"title": "audemarspiguet",
 			"url": "#"
 		},
 		{
@@ -21,23 +9,23 @@
 			"url": "#"
 		},
 		{
-			"title": "audemarspiguet",
+			"title": "bell&ross",
 			"url": "#"
 		},
 		{
-			"title": "longines",
+			"title": "breitling",
 			"url": "#"
 		},
 		{
-			"title": "jaegerlecoultre",
+			"title": "cartier",
 			"url": "#"
 		},
 		{
-			"title": "iwc",
+			"title": "carrera",
 			"url": "#"
 		},
 		{
-			"title": "favero",
+			"title": "chanel",
 			"url": "#"
 		},
 		{
@@ -45,7 +33,19 @@
 			"url": "#"
 		},
 		{
-			"title": "chanel",
+			"title": "favero",
+			"url": "#"
+		},
+		{
+			"title": "iwc",
+			"url": "#"
+		},
+		{
+			"title": "jaegerlecoultre",
+			"url": "#"
+		},
+		{
+			"title": "longines",
 			"url": "#"
 		}
 	]

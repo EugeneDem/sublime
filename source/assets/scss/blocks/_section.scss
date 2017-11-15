@@ -6,6 +6,7 @@
         text-transform: uppercase;
         font-size: rem(36);
         line-height: rem(38);
+        letter-spacing: 0.1px;
         font-weight: normal;
         font-family: $font-stem-medium;
         margin-bottom: rem(57);
@@ -35,5 +36,10 @@
         text-align: center;
         padding-bottom: rem(49);
         padding-top: rem(49);
+
+        .btn {
+            min-width: rem(187);
+            letter-spacing: 2px;
+        }
     }
 }

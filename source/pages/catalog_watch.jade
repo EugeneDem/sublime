@@ -11,18 +11,18 @@ block content
 					li.breadcrumb-item
 						a(href="#") Каталог
 					li.breadcrumb-item.active
-						span Ювелирные украшения
+						span Часы
 				.catalog-frame__content
-					h1.catalog-frame__title Ювелирные украшения
+					h1.catalog-frame__title Часы
 					.catalog-frame__navbar
 						ul.catalog-frame__navbar-list
-							each value in CATALOG.catalogNavbar
+							each value in CATALOG_WATCH.catalogNavbar
 								li.catalog-frame__navbar-list-item
 									a.catalog-frame__navbar-link(href=value.url)!= value.title
 			.catalog-frame__mask
-			img.catalog-frame__bg(src="content/images/catalog/frame-bg-1.jpg" alt="")
+			img.catalog-frame__bg(src="content/images/catalog/frame-bg-6.jpg" alt="")
 	.catalog
-		.filter.is-active
+		.filter
 			.filter__wrap
 				.filter__handler.js-modal-filter
 					i.filter__handler-icon
@@ -31,46 +31,13 @@ block content
 				.filter__tags
 					input(type="hidden" value="chanel, кольца, серьги, желтое золото, белое золото, бриллианты, изысканный стиль")
 					.filter__tags-inner
-						.filter__entry-field(data-value="chanel")
-							span chanel
-							i.filter__entry-field-close
-						.filter__entry-field(data-value="кольца")
-							span кольца
-							i.filter__entry-field-close
-						.filter__entry-field(data-value="серьги")
-							span серьги
-							i.filter__entry-field-close
-						.filter__entry-field(data-value="желтое золото")
-							span желтое золото
-							i.filter__entry-field-close
-						.filter__entry-field(data-value="белое золото")
-							span белое золото
-							i.filter__entry-field-close
-						.filter__entry-field(data-value="бриллианты")
-							span бриллианты
-							i.filter__entry-field-close
-						.filter__entry-field(data-value="изысканный стиль")
-							span изысканный стиль
-							i.filter__entry-field-close
-						.filter__entry-field(data-value="серьги")
-							span серьги
-							i.filter__entry-field-close
-						.filter__entry-field(data-value="желтое золото")
-							span желтое золото
-							i.filter__entry-field-close
-						.filter__entry-field(data-value="белое золото")
-							span белое золото
-							i.filter__entry-field-close
-						.filter__entry-field(data-value="бриллианты")
-							span бриллианты
-							i.filter__entry-field-close
-						.filter__entry-field(data-value="изысканный стиль")
-							span изысканный стиль
-							i.filter__entry-field-close
+
+		.catalog__header
+			h2.catalog__title Мужские часы
 		.catalog__content
 			.catalog-list
 				.row
-					each value in CATALOG.catalogList
+					each value in CATALOG_WATCH.catalogList
 						.catalog-list__item.col-12.col-sm-6.col-lg-4
 							.catalog-item
 								a.catalog-item__link(href=value.url)

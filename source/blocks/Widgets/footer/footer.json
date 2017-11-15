@@ -2,7 +2,7 @@
 	"footerNav": [
 		{
 			"title": "Sublime",
-			"url": "index.html",
+			"url": "main.html",
 			"list": [
 				{
 					"url": "about.html",
@@ -42,7 +42,7 @@
 		},
 		{
 			"title": "Бутики",
-			"url": "butics.html",
+			"url": "salon.html",
 			"list": [
 				{
 					"url": "gum.html",

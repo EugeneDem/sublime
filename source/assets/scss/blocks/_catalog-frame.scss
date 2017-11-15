@@ -71,7 +71,7 @@
 
     &__navbar {
         max-width: 560px;
-        min-height: 105px;
+        min-height: 103px;
         padding-bottom: rem(22);
         margin: 0 auto;
         display: flex;
@@ -103,14 +103,15 @@
     &__navbar-list-item {
         font-size: 14px;
         line-height: 16px;
+        letter-spacing: 0.25px;
         text-transform: uppercase;
-        padding: rem(4) rem(16) ;
+        padding: rem(4) rem(14) ;
 
         @media (max-width: $screen-sm-max) {
             font-size: rem(12);
             line-height: rem(14);
-            padding-left: rem(10);
-            padding-right: rem(10);
+            padding-left: rem(8);
+            padding-right: rem(8);
         }
 
         @media (max-width: $screen-xs-max) {
@@ -125,10 +126,10 @@
         content: "•";
         color: #d0ac80;
         position: relative;
-        left: -1 * rem(16);
+        left: -1 * rem(14);
 
         @media (max-width: $screen-sm-max) {
-            left: -1 * rem(10);
+            left: -1 * rem(8);
         }
     }
 

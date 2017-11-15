@@ -1,5 +1,5 @@
 .promo-box {
-    margin-bottom: rem(30);
+    margin-bottom: rem(32);
 
     @media (max-width: $screen-xs-max) {
         margin-bottom: 0;
@@ -10,7 +10,7 @@
         margin: 0 auto;
 
         @media (min-width: $screen-lg-min) {
-            max-width: 1060px;
+            max-width: 1080px;
         }
 
         &.slick-dotted {
@@ -67,13 +67,14 @@
 
     &__title {
         font-size: rem(24);
-        line-height: rem(26);
+        line-height: rem(29);
         color: #fff;
         text-transform: uppercase;
         text-align: right;
+        letter-spacing: 0.25px;
         padding-left: rem(30);
-        padding-right: rem(30);
-        padding-bottom: rem(30);
+        padding-right: rem(28);
+        padding-bottom: rem(22);
         position: absolute;
         left: 0;
         right: 0;

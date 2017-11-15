@@ -30,7 +30,7 @@
         width: 94px;
         position: absolute;
         left: 0;
-        top: 18px;
+        top: 13px;
 
         @media (max-width: $screen-md-max) {
             display: none;
@@ -43,21 +43,18 @@
     }
 
     &__nav {
+        max-width: 740px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        margin-left: -10px;
-        margin-right: -10px;
-        padding-left: percentage(1 / 6);
-        padding-right: percentage(1 / 6);
+        margin: 0 auto;
+        padding-left: 10px;
+        padding-right: 10px;
         box-sizing: border-box;
 
         @media (max-width: $screen-sm-max) {
-            max-width: 750px;
             padding-left: 0;
             padding-right: 0;
-            margin-left: auto;
-            margin-right: auto;
         }
     }
 
@@ -92,6 +89,7 @@
     &__nav-title {
         font-size: 13px;
         text-transform: uppercase;
+        letter-spacing: 0.25px;
         color: #d0ac80;
         transition: color 0.3s ease 0s;
 
@@ -107,13 +105,14 @@
     }
 
     &__nav-item {
-        line-height: 20px;
+        line-height: 19px;
     }
 
     &__nav-link {
         display: inline-block;
         vertical-align: top;
         font-size: 12px;
+        letter-spacing: 0.25px;
         color: #d0ac80;
         opacity: 0.5;
         transition: opacity 0.3s ease 0s;
@@ -127,14 +126,15 @@
     }
 
     &__social {
-        padding-top: 16px;
-        padding-bottom: 16px;
+        padding-top: 17px;
+        padding-bottom: 17px;
         position: absolute;
-        right: 0;
+        right: -5px;
         top: 0;
 
         @media (max-width: $screen-md-max) {
             position: relative;
+            right: auto;
         }
 
         @media (max-width: $screen-xs-min) {
@@ -144,7 +144,9 @@
     }
 
     &__social-link {
-        margin-left: rem(30);
+        display: inline-block;
+        vertical-align: top;
+        margin-left: rem(35);
 
         &:first-child {
             margin-left: 0;

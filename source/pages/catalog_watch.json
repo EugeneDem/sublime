@@ -1,0 +1,75 @@
+{
+	"catalogNavbar": [
+		{
+			"url": "#",
+			"title": "Мужские"
+		},
+		{
+			"url": "#",
+			"title": "Женские"
+		},
+		{
+			"url": "#",
+			"title": "Детские"
+		},
+		{
+			"url": "#",
+			"title": "Карманные"
+		},
+		{
+			"url": "#",
+			"title": "Ремешки"
+		}
+	],
+
+	"catalogList": [
+		{
+			"url": "#",
+			"src": "content/images/catalog/watch/img-1.jpg",
+			"title": "chanel j12 white",
+			"subtitle": "chanel",
+			"description": "Сталь, керамика",
+			"price": "235 000"
+		},
+		{
+			"url": "#",
+			"src": "content/images/catalog/watch/img-2.jpg",
+			"title": "Omega Speedmaster",
+			"subtitle": "Omega",
+			"description": "Сталь, платина",
+			"price": "215 800"
+		},
+		{
+			"url": "#",
+			"src": "content/images/catalog/watch/img-3.jpg",
+			"title": "RADO HYPERCHROME",
+			"subtitle": "Rado",
+			"description": "Керамика",
+			"price": "199 500"
+		},
+		{
+			"url": "#",
+			"src": "content/images/catalog/watch/img-4.jpg",
+			"title": "RADO HYPERCHROME II",
+			"subtitle": "Rado",
+			"description": "Сталь, керамика",
+			"price": "204 000"
+		},
+		{
+			"url": "#",
+			"src": "content/images/catalog/watch/img-5.jpg",
+			"title": "OMEGA SPEEDMASTER 300",
+			"subtitle": "Omega",
+			"description": "Сталь",
+			"price": "412 000"
+		},
+		{
+			"url": "#",
+			"src": "content/images/catalog/watch/img-6.jpg",
+			"title": "LONGINES AUTOMATIC",
+			"subtitle": "Longines",
+			"description": "Сталь, белое золото",
+			"price": "415 000"
+		}
+	]
+}

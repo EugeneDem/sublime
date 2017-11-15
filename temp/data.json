@@ -291,6 +291,154 @@
 			}
 		]
 	},
+	"CATALOG_RANDOM": {
+		"catalogNavbar": [
+			{
+				"url": "#",
+				"title": "Кольца"
+			},
+			{
+				"url": "#",
+				"title": "Серьги"
+			},
+			{
+				"url": "#",
+				"title": "Колье"
+			},
+			{
+				"url": "#",
+				"title": "Браслеты"
+			},
+			{
+				"url": "#",
+				"title": "Броши"
+			}
+		],
+		"catalogList": [
+			{
+				"url": "#",
+				"src": "content/images/catalog/random/img-1.jpg",
+				"title": "БРАСЛЕТ PANTHÈRE DE CARTIER",
+				"subtitle": "Cartier",
+				"description": "Желтое золото, брилианты, изумруды",
+				"price": "5 300 000"
+			},
+			{
+				"url": "#",
+				"src": "content/images/catalog/random/img-2.jpg",
+				"title": "ОБРУЧАЛЬНОЕ КОЛЬЦО LOVE",
+				"subtitle": "Cartier",
+				"description": "Золото",
+				"price": "63 250"
+			},
+			{
+				"url": "#",
+				"src": "content/images/catalog/random/img-3.jpg",
+				"title": "СЕРЬГИ TRINITY RUBAN",
+				"subtitle": "Cartier",
+				"description": "Белое золото, бриллианты",
+				"price": "29 800"
+			},
+			{
+				"url": "#",
+				"src": "content/images/catalog/random/img-4.jpg",
+				"title": "КОЛЬЦО CAMÉLIA",
+				"subtitle": "Chanel",
+				"description": "Белое золото, брилианты 16&nbsp;карат",
+				"price": "305 000"
+			},
+			{
+				"url": "#",
+				"src": "content/images/catalog/random/img-5.jpg",
+				"title": "БРОШЬ ETOURDISSANT",
+				"subtitle": "Cartier",
+				"description": "Белое золото, рубеллит, оникс, бриллианты",
+				"price": "900 850"
+			},
+			{
+				"url": "#",
+				"src": "content/images/catalog/random/img-6.jpg",
+				"title": "КОЛЬЕ CAMÉLIA",
+				"subtitle": "Chanel",
+				"description": "Золото",
+				"price": "33 500"
+			}
+		]
+	},
+	"CATALOG_WATCH": {
+		"catalogNavbar": [
+			{
+				"url": "#",
+				"title": "Мужские"
+			},
+			{
+				"url": "#",
+				"title": "Женские"
+			},
+			{
+				"url": "#",
+				"title": "Детские"
+			},
+			{
+				"url": "#",
+				"title": "Карманные"
+			},
+			{
+				"url": "#",
+				"title": "Ремешки"
+			}
+		],
+		"catalogList": [
+			{
+				"url": "#",
+				"src": "content/images/catalog/watch/img-1.jpg",
+				"title": "chanel j12 white",
+				"subtitle": "chanel",
+				"description": "Сталь, керамика",
+				"price": "235 000"
+			},
+			{
+				"url": "#",
+				"src": "content/images/catalog/watch/img-2.jpg",
+				"title": "Omega Speedmaster",
+				"subtitle": "Omega",
+				"description": "Сталь, платина",
+				"price": "215 800"
+			},
+			{
+				"url": "#",
+				"src": "content/images/catalog/watch/img-3.jpg",
+				"title": "RADO HYPERCHROME",
+				"subtitle": "Rado",
+				"description": "Керамика",
+				"price": "199 500"
+			},
+			{
+				"url": "#",
+				"src": "content/images/catalog/watch/img-4.jpg",
+				"title": "RADO HYPERCHROME II",
+				"subtitle": "Rado",
+				"description": "Сталь, керамика",
+				"price": "204 000"
+			},
+			{
+				"url": "#",
+				"src": "content/images/catalog/watch/img-5.jpg",
+				"title": "OMEGA SPEEDMASTER 300",
+				"subtitle": "Omega",
+				"description": "Сталь",
+				"price": "412 000"
+			},
+			{
+				"url": "#",
+				"src": "content/images/catalog/watch/img-6.jpg",
+				"title": "LONGINES AUTOMATIC",
+				"subtitle": "Longines",
+				"description": "Сталь, белое золото",
+				"price": "415 000"
+			}
+		]
+	},
 	"FAVOURITES": {
 		"catalogList": [
 			{
@@ -346,19 +494,7 @@
 	"MAIN": {
 		"brandsList": [
 			{
-				"title": "carrera",
-				"url": "#"
-			},
-			{
-				"title": "cartier",
-				"url": "#"
-			},
-			{
-				"title": "breitling",
-				"url": "#"
-			},
-			{
-				"title": "bell&ross",
+				"title": "audemarspiguet",
 				"url": "#"
 			},
 			{
@@ -366,23 +502,23 @@
 				"url": "#"
 			},
 			{
-				"title": "audemarspiguet",
+				"title": "bell&ross",
 				"url": "#"
 			},
 			{
-				"title": "longines",
+				"title": "breitling",
 				"url": "#"
 			},
 			{
-				"title": "jaegerlecoultre",
+				"title": "cartier",
 				"url": "#"
 			},
 			{
-				"title": "iwc",
+				"title": "carrera",
 				"url": "#"
 			},
 			{
-				"title": "favero",
+				"title": "chanel",
 				"url": "#"
 			},
 			{
@@ -390,7 +526,19 @@
 				"url": "#"
 			},
 			{
-				"title": "chanel",
+				"title": "favero",
+				"url": "#"
+			},
+			{
+				"title": "iwc",
+				"url": "#"
+			},
+			{
+				"title": "jaegerlecoultre",
+				"url": "#"
+			},
+			{
+				"title": "longines",
 				"url": "#"
 			}
 		]
@@ -565,7 +713,7 @@
 		"footerNav": [
 			{
 				"title": "Sublime",
-				"url": "index.html",
+				"url": "main.html",
 				"list": [
 					{
 						"url": "about.html",
@@ -605,7 +753,7 @@
 			},
 			{
 				"title": "Бутики",
-				"url": "butics.html",
+				"url": "salon.html",
 				"list": [
 					{
 						"url": "gum.html",

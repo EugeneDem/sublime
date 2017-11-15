@@ -75,8 +75,8 @@
     }
 
     .navbar-brand {
-        height: 60px;
-        line-height: 60px;
+        height: 61px;
+        line-height: 61px;
 
         @media (max-width: $screen-xs-min) {
             margin-left: rem(16);
@@ -114,8 +114,8 @@
             vertical-align: middle;
             padding-left: 0;
             padding-right: 0;
-            margin-left: rem(29);
-            margin-right: rem(29);
+            margin-left: rem(21);
+            margin-right: rem(21);
 
             @media (max-width: $screen-sm-max) {
                 height: 28px;
@@ -129,6 +129,7 @@
                 color: $color-beige;
                 font-size: rem(16);
                 text-transform: uppercase;
+                letter-spacing: 0.25px;
                 padding-top: 0;
                 padding-bottom: 0;
                 transition: color 0.3s ease 0s;
@@ -169,8 +170,6 @@
                     visibility: visible;
                     opacity: 1;
                     transition: max-height .3s, opacity .3s .3s;
-                    // display: block;
-                    // opacity: 1;
                 }
 
                 > .nav-link {
@@ -181,6 +180,14 @@
                     }
                 }
             }
+
+            &.selected > .nav-link {
+                color: $color-white;
+
+                &:after {
+                    width: 100%;
+                }
+            }
         }
     }
 
@@ -189,6 +196,7 @@
         right: rem(30);
         top: 50%;
         transform: translateY(-50%);
+        margin-top: -1px;
 
         @media (max-width: $screen-xs-min) {
             right: rem(15);
@@ -197,7 +205,7 @@
 
     &__form-item {
         display: inline-flex;
-        margin-left: rem(40);
+        margin-left: rem(35);
 
         @media (max-width: $screen-md-max) {
             margin-left: rem(26);
@@ -220,6 +228,7 @@
         font-size: rem(16);
         color: $color-pearlyLight;
         white-space: nowrap;
+        letter-spacing: 0.25px;
 
         @media (max-width: $screen-sm-max) {
             display: none;

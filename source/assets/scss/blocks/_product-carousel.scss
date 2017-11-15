@@ -1,6 +1,9 @@
 .product-carousel {
+    margin-left: -1* rem(10);
+    margin-right: -1* rem(10);
+
     &__state {
-        margin-bottom: rem(7);
+        margin-bottom: rem(8);
 
         &.slick-dotted.slick-slider {
             margin-bottom: rem(37);

@@ -42,6 +42,8 @@
 
     &__handler-icon {
         margin-right: 14px;
+        position: relative;
+        top: -1px;
 
         @media (max-width: $screen-xs-max) {
             margin-right: 6px;
@@ -82,7 +84,7 @@
         line-height: rem(18);
         color: #5c3b2d;
         position: relative;
-        padding: 0 rem(26) 0 rem(10);
+        padding: 0 rem(26) 0 rem(8);
         box-sizing: border-box;
         white-space: nowrap;
         margin-right: 5px;
