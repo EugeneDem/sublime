@@ -71,12 +71,15 @@
     }
 
     &__item {
-        margin-left: 10px;
-        margin-right: 10px;
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 10px;
+        padding-right: 10px;
+        box-sizing: border-box;
 
         @media (max-width: $screen-xs-min) {
-            margin-left: 0;
-            margin-right: 0;
+            padding-left: 0;
+            padding-right: 0;
         }
     }
 }

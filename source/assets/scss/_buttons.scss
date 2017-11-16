@@ -1,6 +1,11 @@
 .btn {
+    letter-spacing: 2px;
     padding-top: rem(7);
     padding-bottom: rem(7);
+
+    @media (max-width: $screen-xs-min) {
+        letter-spacing: 0.5px;
+    }
 }
 
 .btn-outline-gold {

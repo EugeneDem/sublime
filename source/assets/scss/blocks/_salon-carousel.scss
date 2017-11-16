@@ -1,7 +1,7 @@
 .salon-carousel {
-    max-width: 1060px;
+    max-width: 1080px;
     margin: 0 auto;
-    padding-top: rem(22);
+    padding-top: rem(24);
 
     @media (max-width: $screen-md-max) {
         max-width: 880px;
@@ -21,7 +21,6 @@
     }
 
     &__state {
-        margin-bottom: rem(7);
 
         &.slick-dotted.slick-slider {
             margin-bottom: rem(37);
@@ -160,6 +159,7 @@
     }
 
     &__state {
-        height: 40vw;
+        height: 46vw;
+        max-height: rem(600);
     }
 }

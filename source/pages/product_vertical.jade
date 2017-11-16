@@ -33,7 +33,7 @@ block content
 							.product-zoom__item(data-src="" zoom="true" data-size="2000x2000" data-alt-zoom="Отобразить - Часы - Вид спереди - Масштаб" tabindex="2")
 								img.img-fluide(src="content/images/product/big/img-3.jpg" data-thumb="content/images/product/thumb/img-3.jpg" alt="Приблизить - Часы - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Часы - Вид спереди - Уменьшенное изображение")
 				.col-12.col-lg-6
-					.product-info
+					.product-info.product-info_vertical
 						h1.product-info__title Часы J12 white
 						.product-info__category
 							.product-info__category-item Chanel
@@ -50,13 +50,12 @@ block content
 								i.product__wishlist-icon
 									+svg('wishlist')
 						.product-info__property
-							.row
-								each value in PRODUCT_VERTICAL.property
-									.col-6.col-lg-4
-										.product-info__property-name!= value.name
-											| :
-									.col-6.col-lg-8
-										.product-info__property-text!= value.text
+							each value in PRODUCT_VERTICAL.property
+								.product-info__property-groupname
+									.product-info__property-name!= value.name
+										| :
+								.product-info__property-grouptext
+									.product-info__property-text!= value.text
 						.product-info__docs
 							.file-download
 								i.file-download__icon

@@ -1,5 +1,6 @@
 .product-zoom {
-    margin-bottom: rem(30);
+    margin-top: -1* rem(8);
+    margin-bottom: rem(20);
     @include clearfix();
 
     @media (max-width: $screen-xs-max) {
@@ -8,7 +9,7 @@
     
     &__state {
         &.slick-dotted.slick-slider {
-            margin-bottom: rem(105);
+            margin-bottom: rem(98);
 
             @media (max-width: $screen-xs-max) {
                 margin-bottom: rem(32);
@@ -47,7 +48,7 @@
     }
 
     .slick-dots {
-        bottom: -1* rem(112);
+        bottom: -1* rem(104);
 
         @media (max-width: $screen-xs-max) {
             bottom: -1* rem(16);
@@ -83,7 +84,7 @@
                     line-height: 0;
                     font-size: 0;
                     color: transparent;
-                    padding: 0;
+                    padding: rem(6);
                     margin: 0;
                     overflow: hidden;
                 }
@@ -132,7 +133,7 @@
 .product-zoom_vertical {
     .slick-slide {
         img {
-            min-height: rem(830);
+            min-height: rem(840);
             max-height: 70vh;
 
             @media (max-width: $screen-sm-max) {
@@ -149,11 +150,9 @@
 }
 
 .product-zoom_horizontal {
-    margin-top: rem(12);
-
     .slick-slide {
         img {
-            min-height: rem(390);
+            min-height: rem(400);
             max-height: 50vh;
 
             @media (max-width: $screen-sm-max) {

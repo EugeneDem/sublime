@@ -40,8 +40,10 @@
 
     &__subtitle {
         color: #d0ac80;
+        font-size: rem(18);
         text-align: center;
         margin-bottom: rem(20);
+        margin-top: -1 * rem(4);
     }
 
     &__content {

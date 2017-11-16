@@ -140,9 +140,9 @@ body {
 
 .currency {
     &:after {
-        margin-left: 4px;
+        margin-left: 8px;
         font-size: 100%;
-        content: "₽";
+        content: "\20BD";
         display: inline-block;
     }
 }
@@ -201,6 +201,7 @@ body {
 .breadcrumb-item {
     font-size: 10px;
     line-height: 12px;
+    letter-spacing: 0.25px;
     text-transform: uppercase;
 
     a {
@@ -218,8 +219,10 @@ body {
 }
 
 .breadcrumb-item + .breadcrumb-item:before {
-    content: "—";
+    content: "\2014";
     color: #d0ac80;
+    padding-left: rem(5);
+    padding-right: rem(6);
 }
 
 .file-download {
@@ -319,4 +322,10 @@ body {
     color: #737373;
     font-size: rem(16);
     line-height: rem(24);
+
+    @media (max-width: $screen-xs-max) {
+        font-size: rem(14);
+        line-height: rem(20);
+        text-align: center;
+    }
 }

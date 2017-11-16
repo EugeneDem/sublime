@@ -1,13 +1,18 @@
 .product {
     padding-left: 15px;
     padding-right: 15px;
+    padding-bottom: rem(8);
+
+    @media (max-width: $screen-xs-min) {
+        padding-bottom: 0;
+    }
 
     &__navbar {
         max-width: 1060px;
+        min-height: rem(42);
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
-        padding-top: rem(2);
 
         @media (max-width: $screen-sm-max) {
             justify-content: flex-end;
@@ -32,6 +37,10 @@
         cursor: pointer;
         flex: 0 0 auto;
         margin-top: rem(16);
+
+        @media (max-width: $screen-xs-min) {
+            margin-top: rem(6);
+        }
     }
 
     &__container {
@@ -44,7 +53,7 @@
         flex: 0 0 auto;
 
         @media (max-width: $screen-xs-min) {
-            margin-top: rem(16);
+            margin-top: rem(6);
         }
 
         &:hover,
@@ -78,9 +87,10 @@
     }
 
     &__title {
-        font-size: rem(36);
-        line-height: rem(38);
+        font-size: rem(35);
+        line-height: rem(42);
         font-family: $font-stem-medium;
+        letter-spacing: 0.25px;
         text-transform: uppercase;
         margin-bottom: 0;
 
@@ -96,8 +106,8 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-start;
-        padding-bottom: rem(14);
-        padding-top: rem(9);
+        padding-bottom: rem(16);
+        padding-top: rem(15);
 
         @media (max-width: $screen-sm-max) {
             justify-content: center;
@@ -143,7 +153,13 @@
         font-size: rem(13);
         line-height: rem(18);
         padding-top: rem(25);
-        padding-bottom: rem(12);
+        padding-bottom: rem(16);
+
+        b {
+            font-family: $font-stem-medium;
+            color: #000;
+            font-weight: normal;
+        }
     }
 
     &__property {
@@ -151,11 +167,35 @@
         font-size: rem(13);
         line-height: rem(15);
         padding-top: rem(26);
-        padding-bottom: rem(20);
+        padding-bottom: rem(26);
+        display: flex;
+        flex-wrap: wrap;
 
         @media (max-width: $screen-xs-min) {
             padding-top: rem(13);
-            padding-bottom: rem(12);
+            padding-bottom: rem(13);
+        }
+    }
+
+    &__property-groupname {
+        width: 100%;
+        max-width: 180px;
+        flex: 0 0 180px;
+
+        @media (max-width: $screen-md-max) {
+            max-width: 50%;
+            flex: 0 0 50%;
+        }
+    }
+
+    &__property-grouptext {
+        width: 100%;
+        max-width: calc(100% - 180px);
+        flex: 0 0 calc(100% - 180px);
+
+        @media (max-width: $screen-md-max) {
+            max-width: 50%;
+            flex: 0 0 50%;
         }
     }
 
@@ -175,7 +215,12 @@
     &__property-text {
         padding-top: rem(4);
         padding-bottom: rem(4);
+        padding-left: rem(30);
         margin-bottom: rem(8);
+
+        @media (max-width: $screen-md-max) {
+            padding-left: 0;
+        }
 
         @media (max-width: $screen-xs-min) {
             margin-bottom: 0;
@@ -204,12 +249,17 @@
         display: flex;
         flex-flow: row;
         justify-content: space-between;
-        height: 96px;
+        height: 102px;
         align-items: center;
+        margin-bottom: -1px;
 
         @media (max-width: $screen-xs-min) {
             height: 64px;
         }
+    }
+
+    &__category + &__form {
+        border-top: medium none;
     }
 
     &__form-controls {
@@ -221,7 +271,7 @@
         }
 
         .btn {
-            margin-left: rem(20);
+            margin-left: rem(29);
 
             @media (max-width: $screen-xs-min) {
                 width: 50%;
@@ -249,5 +299,65 @@
         }
     }
 
+    &.product-info_vertical {
 
+        .product-info__category {
+            padding-top: rem(7);
+        }
+
+        .product-info__form {
+            height: 98px;
+
+            @media (max-width: $screen-xs-min) {
+                height: 64px;
+            }
+        }
+
+        .product-info__description {
+            padding-bottom: rem(13);
+        }
+
+        .product-info__form-controls .btn {
+            margin-left: rem(8);
+
+            @media (max-width: $screen-xs-min) {
+                margin-left: 0;
+            }
+        }
+
+        .product-info__property-text {
+            padding-left: 0;
+        }
+    }
+
+    &.product-info_horizontal {
+        padding-top: 0;
+
+        .product-info__category {
+            padding-top: rem(7);
+            padding-bottom: 0;
+        }
+
+        .product-info__form {
+            height: 96px;
+            margin-top: -1 * rem(5);
+
+            @media (max-width: $screen-xs-min) {
+                height: 64px;
+                margin-top: 0;
+            }
+        }
+
+        .product-info__form-controls .btn {
+            margin-left: rem(8);
+
+            @media (max-width: $screen-xs-min) {
+                margin-left: 0;
+            }
+        }
+
+        .product-info__property-text {
+            padding-left: 0;
+        }
+    }
 }

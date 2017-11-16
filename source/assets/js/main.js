@@ -1,289 +1,274 @@
 'use strict';
 
-let Main = function () {
-    let $html = $('html'),
-        $win = $(window),
-        $winWidth = $(window).width(),
-        $winHeight = $(window).height(),
-        navbar = $('.navbar-nav'),
-        MEDIAQUERY = {};
+let $html = $('html'),
+    $win = $(window),
+    navbar = $('.navbar-nav'),
+    MEDIAQUERY = {};
 
-    MEDIAQUERY = {
-        desktopXL: 1200,
-        desktop: 992,
-        tablet: 768,
-        mobile: 576,
-        phone: 480
-    };
+MEDIAQUERY = {
+    desktopXL: 1200,
+    desktop: 992,
+    tablet: 768,
+    mobile: 576,
+    phone: 480
+};
 
-    let navbarHandler = () => {
-        let elem = $('.navbar-nav'),
-            $this;
-    
-        elem.on('click', '.nav-link', function(e) {
-            $this = $(this);
+let navbarHandler = () => {
+    let elem = $('.navbar-nav'),
+        $this;
 
-            if (isSmallDevice() && !$this.parent().hasClass('active')) {
-                e.preventDefault();
-                $this.closest('.navbar-nav').find('.active').removeClass('active');
-                $this.parent().addClass('active');
-            }
-        });
+    elem.on('click', '.nav-link', (e) => {
+        $this = $(this);
 
-        elem.on('mouseover', '.nav-link', function(e) {
-            $this = $(this);
-
-            $this.closest('.navbar-nav').find('.hover').removeClass('hover');
-            $this.parent().addClass('hover');
-            if (!$('.navbar-nav__backdrop').is(':visible')) {
-                $('<div class="navbar-nav__backdrop"></div>').insertAfter(navbar.parents('.navbar'));
-                $('.navbar-nav__backdrop').fadeIn(100);
-            }
-        });
-
-        elem.on('mouseleave', '.nav-link', function(e) {
-            if (!$(this).parent().hasClass('hover')) {
-                navbar.parents('.navbar').next('.navbar-nav__backdrop').fadeOut(50).remove();
-            }
-        });
-
-        navbar.on('mouseleave', function(e) {
-            $('.active', navbar).removeClass('active');
-            $('.hover', navbar).removeClass('hover');
-            $(this).parents('.navbar').next('.navbar-nav__backdrop').fadeOut(50).remove();
-        });
-
-        $win.on('resize', function() {
-            if (!isSmallDevice()) {
-                $('.active', navbar).removeClass('active');
-            }
-        });
-    };
-
-    let toggleClassOnElement = () => {
-        let toggleAttribute = $('*[data-toggle-class]');
-        
-        toggleAttribute.each(function () {
-            let $this = $(this);
-            let toggleClass = $this.attr('data-toggle-class');
-            let outsideElement;
-            let toggleElement;
-            typeof $this.attr('data-toggle-target') !== 'undefined' ? toggleElement = $($this.attr('data-toggle-target')) : toggleElement = $this;
-            
-            $this.on('click', function(e) {
-                if ($this.attr('data-toggle-type') !== 'undefined' && $this.attr('data-toggle-type') == 'on') {
-                    toggleElement.addClass(toggleClass);
-                } else if ($this.attr('data-toggle-type') !== 'undefined' && $this.attr('data-toggle-type') == 'off') {
-                    toggleElement.removeClass(toggleClass);
-                } else {
-                    toggleElement.toggleClass(toggleClass);
-                }
-                e.preventDefault();
-                if ($this.attr('data-toggle-click-outside')) {
-                    outsideElement = $($this.attr('data-toggle-click-outside'));
-                    $(document).on('mousedown touchstart', toggleOutside);
-                };
-            });
-
-            let toggleOutside = (e) => {
-                if (outsideElement.has(e.target).length === 0
-                && !outsideElement.is(e.target)
-                && !toggleAttribute.is(e.target) && toggleElement.hasClass(toggleClass)) {
-                    toggleElement.removeClass(toggleClass);
-                    $(document).off('mousedown touchstart', toggleOutside);
-                }
-            };
-
-        });
-    };
-
-    let filterSlider = {
-        elem: null,
-        init: function init($element, opts){
-            opts = opts || {};
-
-            let defaultOptions = {
-                orientation: (!isSmallDevice()) ? 'vertical' : 'horizontal',
-                range: true,
-                reversed: (!isSmallDevice()) ? true : false,
-                scale: 'logarithmic',
-                tooltip: 'always',
-                tooltip_position: (!isSmallDevice()) ? 'right' : 'top',
-                tooltip_split: true,
-                formatter: function(num) {
-                    var n = num.toString();
-                    return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, '$1' + ' ') + ' ₽';
-                }
-            }
-
-            let options = $.extend({}, defaultOptions, opts);
-
-            $element.slider(options);
-
-            $win.on('resize', function() {
-                if (isSmallDevice()) {
-                    defaultOptions.orientation = 'horizontal';
-                    defaultOptions.reversed = false;
-                    defaultOptions.tooltip_position = 'top';
-
-                    $element.slider(defaultOptions);
-                    $element.slider('refresh');
-                } else {
-                    defaultOptions.orientation = 'vertical';
-                    defaultOptions.reversed = true;
-                    defaultOptions.tooltip_position = 'right';
-
-                    $element.slider(defaultOptions);
-                    $element.slider('refresh');
-                    $element.slider('relayout');
-                }
-            });
-        },
-
-        destroy: ($element) => {
-            $element.slider('destroy');
+        if (isSmallDevice() && !$this.parent().hasClass('active')) {
+            e.preventDefault();
+            $this.closest('.navbar-nav').find('.active').removeClass('active');
+            $this.parent().addClass('active');
         }
-    };
+    });
 
-    let modalSearch = () => {
-        let elem = $('.modal-search');
+    elem.on('mouseover', '.nav-link', (e) => {
+        $this = $(this);
 
-        $(document).on('click', '.js-modal-search', function() {
-            $('body').addClass('modal-open');
-            elem.addClass('fade');
+        $this.closest('.navbar-nav').find('.hover').removeClass('hover');
+        $this.parent().addClass('hover');
+        if (!$('.navbar-nav__backdrop').is(':visible')) {
+            $('<div class="navbar-nav__backdrop"></div>').insertAfter(navbar.parents('.navbar'));
+            $('.navbar-nav__backdrop').fadeIn(100);
+        }
+    });
+
+    elem.on('mouseleave', '.nav-link', (e) => {
+        if (!$(this).parent().hasClass('hover')) {
+            navbar.parents('.navbar').next('.navbar-nav__backdrop').fadeOut(50).remove();
+        }
+    });
+
+    navbar.on('mouseleave', (e) => {
+        $('.active', navbar).removeClass('active');
+        $('.hover', navbar).removeClass('hover');
+        $(this).parents('.navbar').next('.navbar-nav__backdrop').fadeOut(50).remove();
+    });
+
+    $win.on('resize', () => {
+        if (!isSmallDevice()) {
+            $('.active', navbar).removeClass('active');
+        }
+    });
+};
+
+let toggleClassOnElement = () => {
+    let toggleAttribute = $('*[data-toggle-class]');
+
+    toggleAttribute.each(function () {
+        let $this = $(this);
+        let toggleClass = $this.attr('data-toggle-class');
+        let outsideElement;
+        let toggleElement;
+        typeof $this.attr('data-toggle-target') !== 'undefined' ? toggleElement = $($this.attr('data-toggle-target')) : toggleElement = $this;
+
+        $this.on('click', function (e) {
+            if ($this.attr('data-toggle-type') !== 'undefined' && $this.attr('data-toggle-type') == 'on') {
+                toggleElement.addClass(toggleClass);
+            } else if ($this.attr('data-toggle-type') !== 'undefined' && $this.attr('data-toggle-type') == 'off') {
+                toggleElement.removeClass(toggleClass);
+            } else {
+                toggleElement.toggleClass(toggleClass);
+            }
+            e.preventDefault();
+            if ($this.attr('data-toggle-click-outside')) {
+                outsideElement = $($this.attr('data-toggle-click-outside'));
+                $(document).on('mousedown touchstart', toggleOutside);
+            };
         });
 
-        $(document).on('click', '.js-modal-search-close', function() {
-            elem.removeClass('fade').find('.form-control').val('');
-            $('body').removeClass('modal-open');
+        let toggleOutside = (e) => {
+            if (outsideElement.has(e.target).length === 0 &&
+                !outsideElement.is(e.target) &&
+                !toggleAttribute.is(e.target) && toggleElement.hasClass(toggleClass)) {
+                toggleElement.removeClass(toggleClass);
+                $(document).off('mousedown touchstart', toggleOutside);
+            }
+        };
+
+    });
+};
+
+let filterSlider = {
+    elem: null,
+    init: function init($element, opts) {
+        opts = opts || {};
+
+        let defaultOptions = {
+            orientation: (!isSmallDevice()) ? 'vertical' : 'horizontal',
+            range: true,
+            reversed: (!isSmallDevice()) ? true : false,
+            scale: 'logarithmic',
+            tooltip: 'always',
+            tooltip_position: (!isSmallDevice()) ? 'right' : 'top',
+            tooltip_split: true,
+            formatter: (num) => {
+                var n = num.toString();
+                return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, '$1' + ' ') + ' ₽';
+            }
+        }
+
+        let options = $.extend({}, defaultOptions, opts);
+
+        $element.slider(options);
+
+        $win.on('resize', () => {
+            if (isSmallDevice()) {
+                defaultOptions.orientation = 'horizontal';
+                defaultOptions.reversed = false;
+                defaultOptions.tooltip_position = 'top';
+
+                $element.slider(defaultOptions);
+                $element.slider('refresh');
+            } else {
+                defaultOptions.orientation = 'vertical';
+                defaultOptions.reversed = true;
+                defaultOptions.tooltip_position = 'right';
+
+                $element.slider(defaultOptions);
+                $element.slider('refresh');
+                $element.slider('relayout');
+            }
         });
-    };
+    },
 
-    let modalFilter = () => {
-        let elem = $('.modal-filter');
+    destroy: ($element) => {
+        $element.slider('destroy');
+    }
+};
 
-        $(document).on('click', '.js-modal-filter', function() {
-            $('html, body').animate({
-                scrollTop: $('html').offset().top
-            }, 300);
-            elem.addClass('fade');
-            filterSlider.elem = $('#filter-slider');
-            filterSlider.init(filterSlider.elem);
+let modalSearch = () => {
+    let elem = $('.modal-search');
+
+    $(document).on('click', '.js-modal-search', () => {
+        $('body').addClass('modal-open');
+        elem.addClass('fade');
+    });
+
+    $(document).on('click', '.js-modal-search-close', () => {
+        elem.removeClass('fade').find('.form-control').val('');
+        $('body').removeClass('modal-open');
+    });
+};
+
+let modalFilter = () => {
+    let elem = $('.modal-filter');
+
+    $(document).on('click', '.js-modal-filter', () => {
+        $('html, body').animate({
+            scrollTop: $('html').offset().top
+        }, 300);
+        elem.addClass('fade');
+        filterSlider.elem = $('#filter-slider');
+        filterSlider.init(filterSlider.elem);
+        spollerMobile.hiddenSpoller.call();
+    });
+
+    $(document).on('click', '.js-modal-filter-close', () => {
+        elem.removeClass('fade');
+        filterSlider.destroy(filterSlider.elem);
+    });
+};
+
+let spollerMobile = {
+    hiddenSpoller: () => {
+        if (!isSmallDevice()) {
+            $('.js-drop-mobile-content').removeAttr('style');
+            $('.js-drop-mobile-handler').removeClass('is-opened');
+        } else {
+            if (!$('.js-drop-mobile-handler').hasClass('is-opened') && $('.js-drop-mobile-content').is(':visible')) {
+                $('.js-drop-mobile-handler').closest('.js-drop-mobile').find('.js-drop-mobile-content').hide();
+            }
+        }
+    },
+
+    init: () => {
+
+        $(document).on('click', '.js-drop-mobile-handler', () => {
+            if (isSmallDevice()) {
+                $(this).toggleClass('is-opened').closest('.js-drop-mobile').toggleClass('is-opened').find('.js-drop-mobile-content').filter(':first').stop().slideToggle(200);
+                if (typeof ($.fn.bootstrapSlider) != "undefined" && typeof (filterSlider.elem) !== "null") {
+                    filterSlider.elem.slider('relayout');
+                }
+            }
+        });
+
+        $(window).on('resize', () => {
             spollerMobile.hiddenSpoller.call();
         });
+    }
+};
 
-        $(document).on('click', '.js-modal-filter-close', function() {
-            elem.removeClass('fade');
-            filterSlider.destroy(filterSlider.elem);
-        });
-    };
+let sendRequest = {
+    elem: $('.modal-request'),
+    toShow: (handler) => {
+        let offsetTop;
+        let offsetLeft;
 
-    let spollerMobile = {
-        hiddenSpoller: () => {
-            if (!isSmallDevice()) {
-                $('.js-drop-mobile-content').removeAttr('style');
-                $('.js-drop-mobile-handler').removeClass('is-opened');
-            } else {
-                if(!$('.js-drop-mobile-handler').hasClass('is-opened') && $('.js-drop-mobile-content').is(':visible')){
-                    $('.js-drop-mobile-handler').closest('.js-drop-mobile').find('.js-drop-mobile-content').hide();
-                }
-            }
-        },
+        offsetTop = Math.floor(handler.offset().top - (sendRequest.elem.outerHeight() / 2));
+        offsetLeft = Math.floor((handler.offset().left + (handler.outerWidth() / 2)) - (sendRequest.elem.outerWidth() / 2));
 
-        init: () => {
-
-            $(document).on('click', '.js-drop-mobile-handler', function() {
-                if (isSmallDevice()) {
-                    $(this).toggleClass('is-opened').closest('.js-drop-mobile').toggleClass('is-opened').find('.js-drop-mobile-content').filter(':first').stop().slideToggle(200);
-                    if (typeof($.fn.bootstrapSlider) != "undefined" && typeof(filterSlider.elem) !== "null") {
-                        filterSlider.elem.slider('relayout');
-                    }
-                }
-            });
-
-            $(window).on('resize', function () {
-                spollerMobile.hiddenSpoller.call();
-            });
+        if (isSmallDevice()) {
+            sendRequest.elem.css({
+                "top": (offsetTop > 0) ? offsetTop : 30 + "px"
+            }).addClass('fade');
+        } else {
+            sendRequest.elem.css({
+                "top": (offsetTop > 0) ? offsetTop : 30 + "px",
+                "left": offsetLeft + "px"
+            }).addClass('fade');
         }
-    };
 
-    let sendRequest = {
-        elem: $('.modal-request'),
-        toShow: (handler) => {
-            let offsetTop;
-            let offsetLeft;
+        $(document).on('mousedown touchstart', sendRequest.toggleOutside);
+    },
 
-            offsetTop = Math.floor(handler.offset().top - (sendRequest.elem.outerHeight() / 2));
-            offsetLeft = Math.floor((handler.offset().left + (handler.outerWidth() / 2)) - (sendRequest.elem.outerWidth() / 2));
+    toClose: () => {
+        if (sendRequest.elem.is(':visible')) {
+            sendRequest.elem.removeClass('fade').removeAttr('style');
+            sendRequest.elem.find('input.form-control').val('');
+            $(document).off('mousedown touchstart', sendRequest.toggleOutside);
+        }
+    },
 
-            if (isSmallDevice()) {
-                sendRequest.elem.css({
-                    "top": (offsetTop > 0) ? offsetTop : 30 + "px"
-                }).addClass('fade');
-            } else {
-                sendRequest.elem.css({
-                    "top": (offsetTop > 0) ? offsetTop : 30 + "px",
-                    "left": offsetLeft + "px"
-                }).addClass('fade');
-            }
+    toggleOutside: (e) => {
+        if (sendRequest.elem.has(e.target).length === 0 && !sendRequest.elem.is(e.target)) {
+            sendRequest.toClose();
+        }
+    },
 
-            $(document).on('mousedown touchstart', sendRequest.toggleOutside);
-        },
 
-        toClose: () => {
+    init: () => {
+        $(document).on('click', '.js-send-request', (e) => {
+            e.preventDefault();
+            sendRequest.toShow($(this));
+        });
+
+        $win.on('resize', () => {
             if (sendRequest.elem.is(':visible')) {
-                sendRequest.elem.removeClass('fade').removeAttr('style');
-                sendRequest.elem.find('input.form-control').val('');
-                $(document).off('mousedown touchstart', sendRequest.toggleOutside);
-            }
-        },
-
-        toggleOutside: (e) => {
-            if (sendRequest.elem.has(e.target).length === 0 && !sendRequest.elem.is(e.target)) {
                 sendRequest.toClose();
             }
-        },
+        });
 
-
-        init: () => {
-            $(document).on('click', '.js-send-request', function(e) {
-                e.preventDefault();
-                sendRequest.toShow($(this));
-            });
-
-            $win.on('resize', function() {
-                if (sendRequest.elem.is(':visible')) {
-                    sendRequest.toClose();
-                }
-            });
-
-            $(document).on('click', '.js-modal-request-close', sendRequest.toClose);
-        }
+        $(document).on('click', '.js-modal-request-close', sendRequest.toClose);
     }
+}
 
-    function navbarLeave() {
-        navbar.trigger('mouseleave');
-    }
+function navbarLeave() {
+    navbar.trigger('mouseleave');
+}
 
-    function isSmallDevice() {
-       return $win.width() < MEDIAQUERY.desktop;
-    }
+function isSmallDevice() {
+    return $win.width() < MEDIAQUERY.desktop;
+}
 
-    function isTouch() {
-        return $html.hasClass('touch');
-    }
-
-    return {
-        init: () => {
-            navbarHandler();
-            toggleClassOnElement();
-            modalSearch();
-            modalFilter();
-            spollerMobile.init();
-            sendRequest.init();
-        }
-    }
-}();
+function isTouch() {
+    return $html.hasClass('touch');
+}
 
 jQuery.fn.exists = function () {
     return this.length > 0;
@@ -292,7 +277,7 @@ jQuery.fn.exists = function () {
 
 let mainSlider = {
     slider: $('.js-main-carousel'),
-    sliderSettings: function () {
+    sliderSettings: () => {
         return {
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -303,7 +288,7 @@ let mainSlider = {
             speed: 500
         }
     },
-    init: function () {
+    init: () => {
         let slider;
         if ($('.js-main-carousel').exists()) {
             slider = mainSlider.slider.slick(mainSlider.sliderSettings());
@@ -313,7 +298,7 @@ let mainSlider = {
 
 let promoBox = {
     slider: $('.js-promo-box'),
-    sliderSettings: function () {
+    sliderSettings: () => {
         return {
             slidesToShow: 3,
             slidesToScroll: 1,
@@ -345,7 +330,7 @@ let promoBox = {
             ]
         }
     },
-    init: function () {
+    init: () => {
         if ($('.js-promo-box').exists()) {
             promoBox.slider.slick(promoBox.sliderSettings());
         }
@@ -354,7 +339,7 @@ let promoBox = {
 
 let productCarousel = {
     slider: $('.js-product-carousel'),
-    sliderSettings: function () {
+    sliderSettings: () => {
         let counts = productCarousel.slider.children().length;
         counts = counts > 6 ? 6 : counts;
         return {
@@ -394,7 +379,7 @@ let productCarousel = {
             ]
         }
     },
-    init: function () {
+    init: () => {
         if ($('.js-product-carousel').exists()) {
             productCarousel.slider.slick(productCarousel.sliderSettings());
         }
@@ -403,7 +388,7 @@ let productCarousel = {
 
 let salonCarousel = {
     slider: $('.js-salon-carousel'),
-    sliderSettings: function () {
+    sliderSettings: () => {
         let counts = salonCarousel.slider.children().length;
         counts = counts > 6 ? 6 : counts;
         return {
@@ -444,7 +429,7 @@ let salonCarousel = {
             ]
         }
     },
-    init: function () {
+    init: () => {
         if ($('.js-salon-carousel').exists()) {
             salonCarousel.slider.slick(salonCarousel.sliderSettings());
         }
@@ -453,7 +438,7 @@ let salonCarousel = {
 
 let brandsCarousel = {
     slider: $('.js-brands-carousel'),
-    sliderSettings: function () {
+    sliderSettings: () => {
         return {
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -465,7 +450,7 @@ let brandsCarousel = {
             speed: 500
         }
     },
-    init: function () {
+    init: () => {
         if ($('.js-brands-carousel').exists() && $(window).width() < 1199) {
             brandsCarousel.slider.slick(brandsCarousel.sliderSettings());
         }
@@ -487,7 +472,7 @@ let brandsCarousel = {
 
 let recommendedCarousel = {
     slider: $('.js-recommended-slider'),
-    sliderSettings: function () {
+    sliderSettings: () => {
         let counts = recommendedCarousel.slider.children().length;
         counts = counts > 3 ? 3 : counts;
         return {
@@ -496,8 +481,7 @@ let recommendedCarousel = {
             speed: 300,
             slidesToShow: counts,
             slidesToScroll: counts,
-            responsive: [
-                {
+            responsive: [{
                     breakpoint: 991,
                     settings: {
                         slidesToShow: 2,
@@ -514,7 +498,7 @@ let recommendedCarousel = {
             ]
         }
     },
-    init: function() {
+    init: () => {
         if ($('.js-recommended-slider').exists()) {
             recommendedCarousel.slider.slick(recommendedCarousel.sliderSettings());
         }
@@ -523,7 +507,7 @@ let recommendedCarousel = {
 
 let productZoomCarousel = {
     slider: $('.js-product-zoom'),
-    sliderSettings: function () {
+    sliderSettings: () => {
         return {
             dots: true,
             arrows: false,
@@ -536,33 +520,31 @@ let productZoomCarousel = {
             adaptiveHeight: true,
             mobileFirst: true,
             centerMode: true,
-            responsive: [
-                {
-                    breakpoint: 767,
-                    settings: {
-                        arrows: false,
-                        dots: true,
-                        customPaging: function(slider, i) {
-                            let item = $(slider.$slides[i]).find("img");
-                            return '<button class="product-zoom__tab"><img class="img-thumbnail" src="' + item.attr("data-thumb") + '" alt="' + item.attr("data-alt-thumb") + '"></button>'
-                        }
+            responsive: [{
+                breakpoint: 767,
+                settings: {
+                    arrows: false,
+                    dots: true,
+                    customPaging: (slider, i) => {
+                        let item = $(slider.$slides[i]).find("img");
+                        return '<button class="product-zoom__tab"><img class="img-thumbnail" src="' + item.attr("data-thumb") + '" alt="' + item.attr("data-alt-thumb") + '"></button>'
                     }
                 }
-            ]
+            }]
         }
     },
 
-    init: function() {
+    init: () => {
         if ($('.product-zoom').exists()) {
             productZoomCarousel.slider.slick(productZoomCarousel.sliderSettings());
         }
     }
 };
 
-var initPhotoSwipeFromDOM = function(gallerySelector) {
+let initPhotoSwipeFromDOM = (gallerySelector) => {
 
-    var parseThumbnailElements = function(el) {
-        var thumbElements = el.childNodes,
+    let parseThumbnailElements = (el) => {
+        let thumbElements = el.childNodes,
             numNodes = thumbElements.length,
             items = [],
             figureEl,
@@ -570,12 +552,12 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             size,
             item;
 
-        for(var i = 0; i < numNodes; i++) {
+        for (let i = 0; i < numNodes; i++) {
 
             figureEl = thumbElements[i]; // <figure> element
 
             // include only element nodes 
-            if(figureEl.nodeType !== 1) {
+            if (figureEl.nodeType !== 1) {
                 continue;
             }
 
@@ -593,15 +575,15 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
 
 
-            if(figureEl.children.length > 1) {
+            if (figureEl.children.length > 1) {
                 // <figcaption> content
-                item.title = figureEl.children[1].innerHTML; 
+                item.title = figureEl.children[1].innerHTML;
             }
 
-            if(linkEl.children.length > 0) {
+            if (linkEl.children.length > 0) {
                 // <img> thumbnail element, retrieving thumbnail url
                 item.msrc = linkEl.children[0].getAttribute('src');
-            } 
+            }
 
             item.el = figureEl; // save link to element for getThumbBoundsFn
             items.push(item);
@@ -611,40 +593,40 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
     };
 
     // find nearest parent element
-    var closest = function closest(el, fn) {
-        return el && ( fn(el) ? el : closest(el.parentNode, fn) );
+    let closest = function closest(el, fn) {
+        return el && (fn(el) ? el : closest(el.parentNode, fn));
     };
 
     // triggers when user clicks on thumbnail
-    var onThumbnailsClick = function(e) {
+    let onThumbnailsClick = (e) => {
         e = e || window.event;
         e.preventDefault ? e.preventDefault() : e.returnValue = false;
 
-        var eTarget = e.target || e.srcElement;
+        let eTarget = e.target || e.srcElement;
 
         // find root element of slide
-        var clickedListItem = closest(eTarget, function(el) {
+        let clickedListItem = closest(eTarget, function (el) {
             return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
         });
 
-        if(!clickedListItem) {
+        if (!clickedListItem) {
             return;
         }
 
         // find index of clicked item by looping through all child nodes
         // alternatively, you may define index via data- attribute
-        var clickedGallery = clickedListItem.parentNode,
+        let clickedGallery = clickedListItem.parentNode,
             childNodes = clickedListItem.parentNode.childNodes,
             numChildNodes = childNodes.length,
             nodeIndex = 0,
             index;
 
-        for (var i = 0; i < numChildNodes; i++) {
-            if(childNodes[i].nodeType !== 1) { 
-                continue; 
+        for (let i = 0; i < numChildNodes; i++) {
+            if (childNodes[i].nodeType !== 1) {
+                continue;
             }
 
-            if(childNodes[i] === clickedListItem) {
+            if (childNodes[i] === clickedListItem) {
                 index = nodeIndex;
                 break;
             }
@@ -652,44 +634,44 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
         }
 
 
-        var link = $(clickedListItem).find("a").attr("href");
-        if(index >= 0 && link !== undefined) {
+        let link = $(clickedListItem).find("a").attr("href");
+        if (index >= 0 && link !== undefined) {
             // open PhotoSwipe if valid index found
-            openPhotoSwipe( index, clickedGallery );
+            openPhotoSwipe(index, clickedGallery);
         }
         return false;
     };
 
     // parse picture index and gallery index from URL (#&pid=1&gid=2)
-    var photoswipeParseHash = function() {
+    let photoswipeParseHash = () => {
         var hash = window.location.hash.substring(1),
-        params = {};
+            params = {};
 
-        if(hash.length < 5) {
+        if (hash.length < 5) {
             return params;
         }
 
-        var vars = hash.split('&');
-        for (var i = 0; i < vars.length; i++) {
-            if(!vars[i]) {
+        let vars = hash.split('&');
+        for (let i = 0; i < vars.length; i++) {
+            if (!vars[i]) {
                 continue;
             }
-            var pair = vars[i].split('=');  
-            if(pair.length < 2) {
+            let pair = vars[i].split('=');
+            if (pair.length < 2) {
                 continue;
-            }           
+            }
             params[pair[0]] = pair[1];
         }
 
-        if(params.gid) {
+        if (params.gid) {
             params.gid = parseInt(params.gid, 10);
         }
 
         return params;
     };
 
-    var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
-        var pswpElement = document.querySelectorAll('.pswp')[0],
+    let openPhotoSwipe = (index, galleryElement, disableAnimation, fromURL) => {
+        let pswpElement = document.querySelectorAll('.pswp')[0],
             gallery,
             options,
             items;
@@ -711,29 +693,32 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             zoomEl: false,
             counterEl: false,
             arrowEl: false,
-            // modal: false,
             scaleMode: "orig",
             // define gallery index (for URL)
             galleryUID: galleryElement.getAttribute('data-pswp-uid'),
 
-            getThumbBoundsFn: function(index) {
+            getThumbBoundsFn: function (index) {
                 // See Options -> getThumbBoundsFn section of documentation for more info
-                var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+                let thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
                     pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-                    rect = thumbnail.getBoundingClientRect(); 
+                    rect = thumbnail.getBoundingClientRect();
 
-                return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
+                return {
+                    x: rect.left,
+                    y: rect.top + pageYScroll,
+                    w: rect.width
+                };
             }
 
         };
 
         // PhotoSwipe opened from URL
-        if(fromURL) {
-            if(options.galleryPIDs) {
+        if (fromURL) {
+            if (options.galleryPIDs) {
                 // parse real index when custom PIDs are used 
                 // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
-                for(var j = 0; j < items.length; j++) {
-                    if(items[j].pid == index) {
+                for (let j = 0; j < items.length; j++) {
+                    if (items[j].pid == index) {
                         options.index = j;
                         break;
                     }
@@ -747,38 +732,43 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
         }
 
         // exit if index not found
-        if( isNaN(options.index) ) {
+        if (isNaN(options.index)) {
             return;
         }
 
-        if(disableAnimation) {
+        if (disableAnimation) {
             options.showAnimationDuration = 0;
         }
 
         // Pass data to PhotoSwipe and initialize it
-        gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+        gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
         window.gallery = gallery;
         gallery.init();
     };
 
     // loop through all gallery elements and bind events
-    var galleryElements = document.querySelectorAll( gallerySelector );
+    var galleryElements = document.querySelectorAll(gallerySelector);
 
-    for(var i = 0, l = galleryElements.length; i < l; i++) {
-        galleryElements[i].setAttribute('data-pswp-uid', i+1);
+    for (let i = 0, l = galleryElements.length; i < l; i++) {
+        galleryElements[i].setAttribute('data-pswp-uid', i + 1);
         galleryElements[i].onclick = onThumbnailsClick;
     }
 
     // Parse URL and open gallery if it contains #&pid=3&gid=1
-    var hashData = photoswipeParseHash();
-    if(hashData.pid && hashData.gid) {
-        openPhotoSwipe( hashData.pid ,  galleryElements[ hashData.gid - 1 ], true, true );
+    let hashData = photoswipeParseHash();
+    if (hashData.pid && hashData.gid) {
+        openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
     }
 };
 
 $(function () {
     svg4everybody();
-    Main.init();
+    navbarHandler();
+    toggleClassOnElement();
+    modalSearch();
+    modalFilter();
+    spollerMobile.init();
+    sendRequest.init();
     mainSlider.init();
     promoBox.init();
     productCarousel.init();

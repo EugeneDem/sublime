@@ -4,15 +4,21 @@
         margin: 0 auto;
         padding-top: rem(15);
 
-        // @media (max-width: $screen-sm-max) {
-        //     padding-top: 0;
-        // }
+        @media (max-width: $screen-xs-max) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
     }
 
     &__header_bordered {
         border-bottom: 1px solid rgba(#d0ac80, 0.5);
-        padding-bottom: rem(50);
+        padding-bottom: rem(46);
         margin-bottom: rem(26);
+
+        @media (max-width: $screen-xs-min) {
+            padding-bottom: rem(26);
+            margin-bottom: rem(16);
+        }
     }
 
     &__content {
@@ -101,8 +107,15 @@
     &__subtitle_style-color {
         color: #d0ac80;
         font-size: rem(22);
-        line-height: rem(27);
+        line-height: rem(37);
+        letter-spacing: 0.25px;
         text-transform: uppercase;
+        padding-top: rem(4);
+
+        @media (max-width: $screen-xs-max) {
+            font-size: rem(14);
+            line-height: rem(24);
+        }
     }
 }
 .catalog-list {
