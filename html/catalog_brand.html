@@ -219,14 +219,15 @@
                   </svg></i><span>Фильтры</span></div>
               <div class="filter__tags">
                 <input type="hidden" value="">
-                <div class="filter__tags-inner"></div>
+                <div class="filter__tags-counter">Выбрано <span class="js-filter-count">15 фильтров</span></div>
+                <div class="filter__tags-inner hidden-sm-down"></div>
               </div>
             </div>
           </div>
           <div class="catalog__content">
             <div class="catalog-list">
               <div class="row">
-                <div class="catalog-list__item col-12 col-sm-6 col-lg-4">
+                <div class="catalog-list__item col-6 col-lg-4">
                   <div class="catalog-item"><a href="#" class="catalog-item__link">
                       <div class="catalog-item__media"><img src="content/images/catalog/brand/img-1.jpg" alt=""></div>
                       <div class="catalog-item__content">
@@ -241,7 +242,7 @@
                         </svg></i></div>
                   </div>
                 </div>
-                <div class="catalog-list__item col-12 col-sm-6 col-lg-4">
+                <div class="catalog-list__item col-6 col-lg-4">
                   <div class="catalog-item"><a href="#" class="catalog-item__link">
                       <div class="catalog-item__media"><img src="content/images/catalog/brand/img-2.jpg" alt=""></div>
                       <div class="catalog-item__content">
@@ -256,7 +257,7 @@
                         </svg></i></div>
                   </div>
                 </div>
-                <div class="catalog-list__item col-12 col-sm-6 col-lg-4">
+                <div class="catalog-list__item col-6 col-lg-4">
                   <div class="catalog-item"><a href="#" class="catalog-item__link">
                       <div class="catalog-item__media"><img src="content/images/catalog/brand/img-3.jpg" alt=""></div>
                       <div class="catalog-item__content">
@@ -271,7 +272,7 @@
                         </svg></i></div>
                   </div>
                 </div>
-                <div class="catalog-list__item col-12 col-sm-6 col-lg-4">
+                <div class="catalog-list__item col-6 col-lg-4">
                   <div class="catalog-item"><a href="#" class="catalog-item__link">
                       <div class="catalog-item__media"><img src="content/images/catalog/brand/img-4.jpg" alt=""></div>
                       <div class="catalog-item__content">
@@ -286,7 +287,7 @@
                         </svg></i></div>
                   </div>
                 </div>
-                <div class="catalog-list__item col-12 col-sm-6 col-lg-4">
+                <div class="catalog-list__item col-6 col-lg-4">
                   <div class="catalog-item"><a href="#" class="catalog-item__link">
                       <div class="catalog-item__media"><img src="content/images/catalog/brand/img-5.jpg" alt=""></div>
                       <div class="catalog-item__content">
@@ -301,7 +302,7 @@
                         </svg></i></div>
                   </div>
                 </div>
-                <div class="catalog-list__item col-12 col-sm-6 col-lg-4">
+                <div class="catalog-list__item col-6 col-lg-4">
                   <div class="catalog-item"><a href="#" class="catalog-item__link">
                       <div class="catalog-item__media"><img src="content/images/catalog/brand/img-6.jpg" alt=""></div>
                       <div class="catalog-item__content">
@@ -411,9 +412,9 @@
         <div class="modal-filter__container">
           <div class="modal-filter__content">
             <ul class="modal-filter__column">
-              <li class="modal-filter__column-group modal-filter__column-group_brands">
+              <li class="modal-filter__column-group modal-filter__column-group_brands js-smartfilter-group">
                 <div class="modal-filter__column-item js-drop-mobile">
-                  <div class="modal-filter__column-title js-drop-mobile-handler">Бренд</div>
+                  <div class="modal-filter__column-title js-drop-mobile-handler">Бренд<span class="modal-filter__column-title-counter js-smartfilter-group-counter">3</span></div>
                   <div class="modal-filter__column-list js-drop-mobile-content">
                     <div class="modal-filter__column-list-item">
                       <label class="checkbox-line">
@@ -560,9 +561,9 @@
                   </div>
                 </div>
               </li>
-              <li class="modal-filter__column-group modal-filter__column-group_categories">
+              <li class="modal-filter__column-group modal-filter__column-group_categories js-smartfilter-group">
                 <div class="modal-filter__column-item js-drop-mobile">
-                  <div class="modal-filter__column-title js-drop-mobile-handler">Категория</div>
+                  <div class="modal-filter__column-title js-drop-mobile-handler">Категория<span class="modal-filter__column-title-counter js-smartfilter-group-counter">4</span></div>
                   <div class="modal-filter__column-list js-drop-mobile-content">
                     <label class="checkbox-line">
                       <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input js-reset-checks"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Все ювелирные изделия</span>
@@ -600,9 +601,9 @@
                   </div>
                 </div>
               </li>
-              <li class="modal-filter__column-group modal-filter__column-group_advanced">
+              <li class="modal-filter__column-group modal-filter__column-group_advanced js-smartfilter-group">
                 <div class="modal-filter__column-item js-drop-mobile">
-                  <div class="modal-filter__column-title js-drop-mobile-handler">Материал</div>
+                  <div class="modal-filter__column-title js-drop-mobile-handler">Материал<span class="modal-filter__column-title-counter js-smartfilter-group-counter">3</span></div>
                   <div class="modal-filter__column-list js-drop-mobile-content">
                     <label class="checkbox-line">
                       <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input js-reset-checks"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Все материалы</span>
@@ -631,7 +632,7 @@
                   </div>
                 </div>
                 <div class="modal-filter__column-item js-drop-mobile">
-                  <div class="modal-filter__column-title js-drop-mobile-handler">Стиль</div>
+                  <div class="modal-filter__column-title js-drop-mobile-handler">Стиль<span class="modal-filter__column-title-counter js-smartfilter-group-counter">3</span></div>
                   <div class="modal-filter__column-list js-drop-mobile-content">
                     <label class="checkbox-line">
                       <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input js-reset-checks"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Все стили</span>
@@ -660,7 +661,7 @@
                   </div>
                 </div>
                 <div class="modal-filter__column-item js-drop-mobile">
-                  <div class="modal-filter__column-title js-drop-mobile-handler">Отделка</div>
+                  <div class="modal-filter__column-title js-drop-mobile-handler">Отделка<span class="modal-filter__column-title-counter js-smartfilter-group-counter">3</span></div>
                   <div class="modal-filter__column-list js-drop-mobile-content">
                     <label class="checkbox-line">
                       <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input js-reset-checks"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Все варианты</span>
@@ -692,7 +693,7 @@
                   </div>
                 </div>
                 <div class="modal-filter__column-item js-drop-mobile">
-                  <div class="modal-filter__column-title js-drop-mobile-handler">Вид</div>
+                  <div class="modal-filter__column-title js-drop-mobile-handler">Вид<span class="modal-filter__column-title-counter js-smartfilter-group-counter">3</span></div>
                   <div class="modal-filter__column-list js-drop-mobile-content">
                     <label class="checkbox-line">
                       <input type="checkbox" onchange="smartFilter.click(this)" class="checkbox-line__input js-reset-checks"><i class="checkbox-line__icon"></i><span class="checkbox-line__text">Все товары</span>

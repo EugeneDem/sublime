@@ -127,10 +127,6 @@
             @media (max-width: $screen-sm-max) {
                 border-left: 1px solid #f6eee6;
             }
-
-            @media (max-width: $screen-xs-min) {
-                border-left: medium none;
-            }
         }
 
         &:nth-child(n-1) {
@@ -152,7 +148,7 @@
 
     @media (max-width: $screen-sm-max) {
         border: medium none;
-        height: 350px;
+        height: 330px;
     }
 
     &:hover {
@@ -243,7 +239,7 @@
         height: calc(100% - 167px);
 
         @media (max-width: $screen-sm-min) {
-            height: calc(100% - 127px);
+            height: calc(100% - 197px);
         }
 
         img {

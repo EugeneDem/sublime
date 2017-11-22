@@ -17,147 +17,18 @@ function initMs() {
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         styles: [
             {
-                "featureType": "water",
+                "featureType": "all",
+                "elementType": "all",
                 "stylers": [
-                    {
-                        "color": "#c0b9ad"
-                    }
-                ]
-            },
-            {
-                "featureType": "road",
-                "elementType": "geometry.fill",
-                "stylers": [
-                    {
-                        "color": "#e1ddd5"
-                    },
-                    {
-                        "hue": "#ff0000"
-                    },
                     {
                         "saturation": -100
                     },
                     {
-                        "lightness": 99
-                    }
-                ]
-            },
-            {
-                "featureType": "road",
-                "elementType": "geometry.stroke",
-                "stylers": [
-                    {
-                        "color": "#c6beb1"
-                    },
-                    {
-                        "lightness": 54
-                    }
-                ]
-            },
-            {
-                "featureType": "landscape.man_made",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "hue": "#d4cec4"
-                    },
-                    {
-                        "saturation": -6
-                    },
-                    {
-                        "lightness": -9
-                    },
-                    {
-                        "visibility": "on"
-                    }
-                ]
-            },
-            {
-                "featureType": "poi.park",
-                "elementType": "geometry.fill",
-                "stylers": [
-                    {
-                        "color": "#d4cec4"
-                    }
-                ]
-            },
-            {
-                "featureType": "road",
-                "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "color": "#6e635b"
-                    }
-                ]
-            },
-            {
-                "featureType": "road",
-                "elementType": "labels.text.stroke",
-                "stylers": [
-                    {
-                        "color": "#ffffff"
-                    }
-                ]
-            },
-            {
-                "featureType": "poi",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
-            },
-            {
-                "featureType": "landscape.natural",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "hue": "#ddd8d0"
-                    },
-                    {
-                        "saturation": -14
-                    },
-                    {
-                        "lightness": -18
-                    },
-                    {
-                        "visibility": "on"
-                    }
-                ]
-            },
-            {
-                "featureType": "poi.park",
-                "stylers": [
-                    {
-                        "visibility": "on"
-                    }
-                ]
-            },
-            {
-                "featureType": "poi.sports_complex",
-                "stylers": [
-                    {
-                        "visibility": "on"
-                    }
-                ]
-            },
-            {
-                "featureType": "poi.medical",
-                "stylers": [
-                    {
-                        "visibility": "on"
-                    }
-                ]
-            },
-            {
-                "featureType": "poi.business",
-                "stylers": [
-                    {
-                        "visibility": "simplified"
+                        "gamma": 0.5
                     }
                 ]
             }
-        ],
+        ]
     };
 
     let mapElement = document.getElementById('salon-map');

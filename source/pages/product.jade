@@ -39,8 +39,8 @@ block content
 					.product-info
 						h1.product-info__title БРАСЛЕТ Panthère de&nbsp;Cartier
 						.product-info__category
-							.product-info__category-item Cartier
-							.product-info__category-item Panthère de&nbsp;Cartier
+							a.product-info__category-item(href="#") Cartier
+							a.product-info__category-item(href="#") Panthère de&nbsp;Cartier
 						.product-info__description
 							p Впервые пантера, один из символов Дома, появляется в творчестве Cartier в 1914 году. «Укротить» загадочного хищника Луи Картье удается благодаря Жанне Туссен, его коллеге и единомышленнице, которая восхищалась этими животными. С тех пор пантера – одновременно опасная, ласковая и игривая – путешествует из одной коллекции в другую, открывая все грани своего характера. Браслет <b>Panthère de Cartier</b>, желтое золото 18 карат. Каждая из серег украшена 360 бриллиантами классической огранки общим весом 4,33 карата. Изумруды, оникс.
 						.product-info__form
@@ -60,7 +60,8 @@ block content
 								.product-info__property-grouptext
 									if(value.text.length > 1)
 										each item in value.text
-											.product-info__property-text!= item.title
+											.product-info__property-text
+												a(href="#")!= item.title
 									else
 										.product-info__property-text!= value.text
 						.product-info__property

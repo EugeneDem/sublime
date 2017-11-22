@@ -1,3 +1,11 @@
+.modal-visible .modal-filter {
+    animation-name: modal-open;
+}
+
+.modal-hidden .modal-filter {
+    animation-name: modal-close;
+}
+
 .modal-filter {
     background-color: rgba(#813700, 0.95);
     position: absolute;
@@ -9,14 +17,12 @@
     overflow: hidden;
     outline: 0;
     display: none;
-    transition: opacity .3s .3s;
-    opacity: 0;
     padding: rem(20) rem(15);
 
-    &.fade {
-        visibility: visible;
-        opacity: 1;
-        display: block;
+    &.fade-in,
+    &.fade-out {
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
     }
 
     &__close {
@@ -67,7 +73,7 @@
         margin-top: rem(23);
 
         @media (max-width: $screen-xs-min) {
-            flex-direction: column;
+            flex-direction: column-reverse;
             align-items: center;
         }
     }
@@ -75,18 +81,22 @@
     &__footer-item {
         @media (max-width: $screen-xs-min) {
             width: 100%;
+
+            &:first-child {
+                margin-top: 10px;
+            }
+
+            &:last-child {
+                .btn-outline-gold {
+                    color: #fff;
+                }
+            }
         }
 
         .btn {
             @media (max-width: $screen-xs-min) {
                 width: 100%;
             }
-        }
-    }
-
-    &__footer-item + &__footer-item {
-        @media (max-width: $screen-xs-min) {
-            margin-top: rem(10);
         }
     }
 
@@ -216,9 +226,45 @@
         font-family: $font-stem-medium;
         padding-top: rem(19);
         padding-bottom: rem(19);
+        position: relative;
 
         @media (max-width: $screen-sm-max) {
             cursor: pointer;
+            padding-right: 16px;
+        }
+
+        &:after {
+            content: "";
+            background: url("icon-dropdown.svg#datauri") no-repeat 0 0;
+            background-size: cover;
+            width: 12px;
+            height: 6px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: -3px;
+            display: none;
+            transition: transform 0.3s ease 0s;
+
+            @media (max-width: $screen-sm-max) {
+                display: inline-block;
+            }
+        }
+
+        &.is-opened:after {
+            transform: rotate(-180deg);
+        }
+    }
+
+    &__column-title-counter {
+        color: #d0ac80;
+        font-size: rem(12);
+        position: absolute;
+        right: rem(20);
+        display: none;
+
+        @media (max-width: $screen-sm-max) {
+            display: inline-block;
         }
     }
 }

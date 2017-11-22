@@ -17,7 +17,7 @@ let navbarHandler = () => {
     let elem = $('.navbar-nav'),
         $this;
 
-    elem.on('click', '.nav-link', (e) => {
+    $(document).on('click', '.nav-link', function(e) {
         $this = $(this);
 
         if (isSmallDevice() && !$this.parent().hasClass('active')) {
@@ -27,24 +27,24 @@ let navbarHandler = () => {
         }
     });
 
-    elem.on('mouseover', '.nav-link', (e) => {
+    $(document).on('mouseover', '.nav-link', function(e) {
         $this = $(this);
 
         $this.closest('.navbar-nav').find('.hover').removeClass('hover');
         $this.parent().addClass('hover');
         if (!$('.navbar-nav__backdrop').is(':visible')) {
             $('<div class="navbar-nav__backdrop"></div>').insertAfter(navbar.parents('.navbar'));
-            $('.navbar-nav__backdrop').fadeIn(100);
+            $('.navbar-nav__backdrop').fadeIn(150);
         }
     });
 
-    elem.on('mouseleave', '.nav-link', (e) => {
+    $(document).on('mouseleave', '.nav-link', function(e) {
         if (!$(this).parent().hasClass('hover')) {
             navbar.parents('.navbar').next('.navbar-nav__backdrop').fadeOut(50).remove();
         }
     });
 
-    navbar.on('mouseleave', (e) => {
+    navbar.on('mouseleave', function(e) {
         $('.active', navbar).removeClass('active');
         $('.hover', navbar).removeClass('hover');
         $(this).parents('.navbar').next('.navbar-nav__backdrop').fadeOut(50).remove();
@@ -60,14 +60,14 @@ let navbarHandler = () => {
 let toggleClassOnElement = () => {
     let toggleAttribute = $('*[data-toggle-class]');
 
-    toggleAttribute.each(function () {
+    toggleAttribute.each(function() {
         let $this = $(this);
         let toggleClass = $this.attr('data-toggle-class');
         let outsideElement;
         let toggleElement;
         typeof $this.attr('data-toggle-target') !== 'undefined' ? toggleElement = $($this.attr('data-toggle-target')) : toggleElement = $this;
 
-        $this.on('click', function (e) {
+        $this.on('click', function(e) {
             if ($this.attr('data-toggle-type') !== 'undefined' && $this.attr('data-toggle-type') == 'on') {
                 toggleElement.addClass(toggleClass);
             } else if ($this.attr('data-toggle-type') !== 'undefined' && $this.attr('data-toggle-type') == 'off') {
@@ -145,33 +145,45 @@ let filterSlider = {
 let modalSearch = () => {
     let elem = $('.modal-search');
 
-    $(document).on('click', '.js-modal-search', () => {
-        $('body').addClass('modal-open');
-        elem.addClass('fade');
+    $(document).on('click', '.js-modal-search', function() {
+        $('body').addClass('modal-open').addClass('modal-visible');
+        elem.addClass('fade-in').show();
     });
 
-    $(document).on('click', '.js-modal-search-close', () => {
-        elem.removeClass('fade').find('.form-control').val('');
-        $('body').removeClass('modal-open');
+    $(document).on('click', '.js-modal-search-close', function() {
+        elem.removeClass('fade-in').addClass('fade-out').find('.form-control').val('');
+        $('body').removeClass('modal-open').removeClass('modal-visible').addClass('modal-hidden');
+
+        setTimeout(function(){
+            $('body').removeClass('modal-hidden');
+            elem.removeClass('fade-out').hide();
+        }, 300);
     });
 };
 
 let modalFilter = () => {
     let elem = $('.modal-filter');
 
-    $(document).on('click', '.js-modal-filter', () => {
+    $(document).on('click', '.js-modal-filter', function() {
         $('html, body').animate({
             scrollTop: $('html').offset().top
         }, 300);
-        elem.addClass('fade');
+        $('body').addClass('modal-visible');
+        elem.addClass('fade-in').show();
         filterSlider.elem = $('#filter-slider');
         filterSlider.init(filterSlider.elem);
         spollerMobile.hiddenSpoller.call();
     });
 
-    $(document).on('click', '.js-modal-filter-close', () => {
-        elem.removeClass('fade');
+    $(document).on('click', '.js-modal-filter-close', function() {
+        elem.removeClass('fade-in').addClass('fade-out');
+        $('body').removeClass('modal-visible').addClass('modal-hidden');
         filterSlider.destroy(filterSlider.elem);
+
+        setTimeout(function(){
+            $('body').removeClass('modal-hidden');
+            elem.removeClass('fade-out').hide();
+        }, 300);
     });
 };
 
@@ -189,7 +201,7 @@ let spollerMobile = {
 
     init: () => {
 
-        $(document).on('click', '.js-drop-mobile-handler', () => {
+        $(document).on('click', '.js-drop-mobile-handler', function() {
             if (isSmallDevice()) {
                 $(this).toggleClass('is-opened').closest('.js-drop-mobile').toggleClass('is-opened').find('.js-drop-mobile-content').filter(':first').stop().slideToggle(200);
                 if (typeof ($.fn.bootstrapSlider) != "undefined" && typeof (filterSlider.elem) !== "null") {
@@ -198,7 +210,7 @@ let spollerMobile = {
             }
         });
 
-        $(window).on('resize', () => {
+        $(window).on('resize', function() {
             spollerMobile.hiddenSpoller.call();
         });
     }
@@ -243,12 +255,12 @@ let sendRequest = {
 
 
     init: () => {
-        $(document).on('click', '.js-send-request', (e) => {
+        $(document).on('click', '.js-send-request', function(e) {
             e.preventDefault();
             sendRequest.toShow($(this));
         });
 
-        $win.on('resize', () => {
+        $win.on('resize', function() {
             if (sendRequest.elem.is(':visible')) {
                 sendRequest.toClose();
             }
@@ -285,7 +297,11 @@ let mainSlider = {
             focusOnSelect: false,
             arrows: true,
             dots: true,
-            speed: 500
+            speed: 500,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            fade: true,
+            cssEase: 'linear'
         }
     },
     init: () => {

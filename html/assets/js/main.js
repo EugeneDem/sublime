@@ -27,32 +27,32 @@ MEDIAQUERY = {
 var navbarHandler = function navbarHandler() {
 	var elem = $('.navbar-nav'),
 		$this = void 0;
-	elem.on('click', '.nav-link', function(e) {
-		$this = $(undefined);
+	$(document).on('click', '.nav-link', function(e) {
+		$this = $(this);
 		if (isSmallDevice() && !$this.parent().hasClass('active')) {
 			e.preventDefault();
 			$this.closest('.navbar-nav').find('.active').removeClass('active');
 			$this.parent().addClass('active');
 		}
 	});
-	elem.on('mouseover', '.nav-link', function(e) {
-		$this = $(undefined);
+	$(document).on('mouseover', '.nav-link', function(e) {
+		$this = $(this);
 		$this.closest('.navbar-nav').find('.hover').removeClass('hover');
 		$this.parent().addClass('hover');
 		if (!$('.navbar-nav__backdrop').is(':visible')) {
 			$('<div class="navbar-nav__backdrop"></div>').insertAfter(navbar.parents('.navbar'));
-			$('.navbar-nav__backdrop').fadeIn(100);
+			$('.navbar-nav__backdrop').fadeIn(150);
 		}
 	});
-	elem.on('mouseleave', '.nav-link', function(e) {
-		if (!$(undefined).parent().hasClass('hover')) {
+	$(document).on('mouseleave', '.nav-link', function(e) {
+		if (!$(this).parent().hasClass('hover')) {
 			navbar.parents('.navbar').next('.navbar-nav__backdrop').fadeOut(50).remove();
 		}
 	});
 	navbar.on('mouseleave', function(e) {
 		$('.active', navbar).removeClass('active');
 		$('.hover', navbar).removeClass('hover');
-		$(undefined).parents('.navbar').next('.navbar-nav__backdrop').fadeOut(50).remove();
+		$(this).parents('.navbar').next('.navbar-nav__backdrop').fadeOut(50).remove();
 	});
 	$win.on('resize', function() {
 		if (!isSmallDevice()) {
@@ -133,12 +133,16 @@ var filterSlider = {
 var modalSearch = function modalSearch() {
 	var elem = $('.modal-search');
 	$(document).on('click', '.js-modal-search', function() {
-		$('body').addClass('modal-open');
-		elem.addClass('fade');
+		$('body').addClass('modal-open').addClass('modal-visible');
+		elem.addClass('fade-in').show();
 	});
 	$(document).on('click', '.js-modal-search-close', function() {
-		elem.removeClass('fade').find('.form-control').val('');
-		$('body').removeClass('modal-open');
+		elem.removeClass('fade-in').addClass('fade-out').find('.form-control').val('');
+		$('body').removeClass('modal-open').removeClass('modal-visible').addClass('modal-hidden');
+		setTimeout(function() {
+			$('body').removeClass('modal-hidden');
+			elem.removeClass('fade-out').hide();
+		}, 300);
 	});
 };
 var modalFilter = function modalFilter() {
@@ -147,14 +151,20 @@ var modalFilter = function modalFilter() {
 		$('html, body').animate({
 			scrollTop: $('html').offset().top
 		}, 300);
-		elem.addClass('fade');
+		$('body').addClass('modal-visible');
+		elem.addClass('fade-in').show();
 		filterSlider.elem = $('#filter-slider');
 		filterSlider.init(filterSlider.elem);
 		spollerMobile.hiddenSpoller.call();
 	});
 	$(document).on('click', '.js-modal-filter-close', function() {
-		elem.removeClass('fade');
+		elem.removeClass('fade-in').addClass('fade-out');
+		$('body').removeClass('modal-visible').addClass('modal-hidden');
 		filterSlider.destroy(filterSlider.elem);
+		setTimeout(function() {
+			$('body').removeClass('modal-hidden');
+			elem.removeClass('fade-out').hide();
+		}, 300);
 	});
 };
 var spollerMobile = {
@@ -171,7 +181,7 @@ var spollerMobile = {
 	init: function init() {
 		$(document).on('click', '.js-drop-mobile-handler', function() {
 			if (isSmallDevice()) {
-				$(undefined).toggleClass('is-opened').closest('.js-drop-mobile').toggleClass('is-opened').find('.js-drop-mobile-content').filter(':first').stop().slideToggle(200);
+				$(this).toggleClass('is-opened').closest('.js-drop-mobile').toggleClass('is-opened').find('.js-drop-mobile-content').filter(':first').stop().slideToggle(200);
 				if (typeof $.fn.bootstrapSlider != "undefined" && typeof filterSlider.elem !== "null") {
 					filterSlider.elem.slider('relayout');
 				}
@@ -216,7 +226,7 @@ var sendRequest = {
 	init: function init() {
 		$(document).on('click', '.js-send-request', function(e) {
 			e.preventDefault();
-			sendRequest.toShow($(undefined));
+			sendRequest.toShow($(this));
 		});
 		$win.on('resize', function() {
 			if (sendRequest.elem.is(':visible')) {
@@ -251,7 +261,11 @@ var mainSlider = {
 			focusOnSelect: false,
 			arrows: true,
 			dots: true,
-			speed: 500
+			speed: 500,
+			autoplay: true,
+			autoplaySpeed: 5000,
+			fade: true,
+			cssEase: 'linear'
 		};
 	},
 	init: function init() {

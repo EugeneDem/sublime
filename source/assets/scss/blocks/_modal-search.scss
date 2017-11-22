@@ -1,3 +1,11 @@
+.modal-visible .modal-search {
+    animation-name: modal-open;
+}
+
+.modal-hidden .modal-search {
+    animation-name: modal-close;
+}
+
 .modal-search {
     background-color: rgba(#813700, 0.98);
     position: fixed;
@@ -9,14 +17,11 @@
     overflow: hidden;
     outline: 0;
     display: none;
-    transition: opacity .3s .3s;
-    visibility: hidden;
-    opacity: 0;
 
-    &.fade {
-        visibility: visible;
-        opacity: 1;
-        display: block;
+    &.fade-in,
+    &.fade-out {
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
     }
 
     &__close {

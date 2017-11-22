@@ -118,11 +118,17 @@
         font-size: rem(18);
         line-height: rem(20);
         padding: rem(4) rem(32) rem(4) 0;
+        color: #000;
+        display: block;
 
         @media (max-width: $screen-sm-max) {
             font-size: rem(12);
             line-height: rem(14);
             padding-right: rem(16);
+        }
+
+        &:hover {
+            color: inherit;
         }
 
         &:after {
@@ -224,6 +230,15 @@
 
         @media (max-width: $screen-xs-min) {
             margin-bottom: 0;
+        }
+
+        a {
+            color: #000;
+            display: inline-block;
+
+            &:hover {
+                color: inherit;
+            }
         }
     }
 

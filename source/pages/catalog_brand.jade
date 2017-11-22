@@ -37,12 +37,13 @@ block content
 					span Фильтры
 				.filter__tags
 					input(type="hidden" value="")
-					.filter__tags-inner
+					.filter__tags-counter Выбрано <span class="js-filter-count">15 фильтров</span>
+					.filter__tags-inner.hidden-sm-down
 		.catalog__content
 			.catalog-list
 				.row
 					each value in CATALOG_BRAND.catalogList
-						.catalog-list__item.col-12.col-sm-6.col-lg-4
+						.catalog-list__item.col-6.col-lg-4
 							.catalog-item
 								a.catalog-item__link(href=value.url)
 									.catalog-item__media

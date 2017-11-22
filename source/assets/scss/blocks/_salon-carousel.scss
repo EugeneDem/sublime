@@ -159,7 +159,12 @@
     }
 
     &__state {
+        min-height: rem(320);
         height: 46vw;
         max-height: rem(600);
+    }
+
+    .catalog__content & {
+        margin-bottom: -1 * rem(110);
     }
 }

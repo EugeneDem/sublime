@@ -173,6 +173,10 @@ body {
         margin-left: -13px;
         box-sizing: border-box;
 
+        @media (max-width: $screen-xs-min) {
+            margin-left: -10px;
+        }
+
         &:after {
             content: "";
             background-color: #d0ac80;

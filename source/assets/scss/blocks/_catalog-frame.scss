@@ -12,6 +12,28 @@
         min-height: 150px;
     }
 
+    &:before,
+    &:after {
+        content: "";
+        display: block;
+        width: 20%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    &:before {
+        background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%,rgba(0, 0, 0, .8) 60%,rgba(0, 0, 0, 0) 100%);
+        left: 0;
+    }
+
+    &:after {
+        background: linear-gradient(to left, rgba(0, 0, 0, 1) 0%,rgba(0, 0, 0, .8) 60%,rgba(0, 0, 0, 0) 100%);
+        right: 0;
+    }
+
     &__wrap {
         max-width: 1060px;
         display: flex;

@@ -29,8 +29,9 @@ block content
 						+svg('filters')
 					span Фильтры
 				.filter__tags
-					input(type="hidden" value="chanel, кольца, серьги, желтое золото, белое золото, бриллианты, изысканный стиль")
-					.filter__tags-inner
+					input(type="hidden" value="")
+					.filter__tags-counter Выбрано <span class="js-filter-count">15 фильтров</span>
+					.filter__tags-inner.hidden-sm-down
 
 		.catalog__header
 			h2.catalog__title Мужские часы
@@ -38,7 +39,7 @@ block content
 			.catalog-list
 				.row
 					each value in CATALOG_WATCH.catalogList
-						.catalog-list__item.col-12.col-sm-6.col-lg-4
+						.catalog-list__item.col-6.col-lg-4
 							.catalog-item
 								a.catalog-item__link(href=value.url)
 									.catalog-item__media

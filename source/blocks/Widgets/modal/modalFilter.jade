@@ -5,9 +5,10 @@
 		.modal-filter__content
 			ul.modal-filter__column
 				each value in MODALFILTER.filterBrands
-					li.modal-filter__column-group.modal-filter__column-group_brands
+					li.modal-filter__column-group.modal-filter__column-group_brands.js-smartfilter-group
 						.modal-filter__column-item.js-drop-mobile
 							.modal-filter__column-title.js-drop-mobile-handler!= value.title
+								span.modal-filter__column-title-counter.js-smartfilter-group-counter 3
 							.modal-filter__column-list.js-drop-mobile-content
 								if (value.list.length)
 									.modal-filter__column-list-item
@@ -23,9 +24,10 @@
 												i.checkbox-line__icon
 												span.checkbox-line__text!= value.list[i].name
 				each value in MODALFILTER.filterCategories
-					li.modal-filter__column-group.modal-filter__column-group_categories
+					li.modal-filter__column-group.modal-filter__column-group_categories.js-smartfilter-group
 						.modal-filter__column-item.js-drop-mobile
 							.modal-filter__column-title.js-drop-mobile-handler!= value.title
+								span.modal-filter__column-title-counter.js-smartfilter-group-counter 4
 							.modal-filter__column-list.js-drop-mobile-content
 								each item, index in value.list
 									label.checkbox-line
@@ -33,10 +35,11 @@
 										i.checkbox-line__icon
 										span.checkbox-line__text!= item.name
 				if (MODALFILTER.filterAdvanced.length > 1)
-					li.modal-filter__column-group.modal-filter__column-group_advanced
+					li.modal-filter__column-group.modal-filter__column-group_advanced.js-smartfilter-group
 						each value in MODALFILTER.filterAdvanced
 							.modal-filter__column-item.js-drop-mobile
 								.modal-filter__column-title.js-drop-mobile-handler!= value.title
+									span.modal-filter__column-title-counter.js-smartfilter-group-counter 3
 								.modal-filter__column-list.js-drop-mobile-content
 									each item, index in value.list
 										label.checkbox-line

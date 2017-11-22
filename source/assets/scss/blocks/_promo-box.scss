@@ -62,7 +62,7 @@
 
     &__item:hover &__bg {
         transform: scale(1.1);
-        transition: transform 4s cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+        transition: transform 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
     }
 
     &__title {
