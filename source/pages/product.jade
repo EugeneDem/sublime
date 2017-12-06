@@ -17,7 +17,7 @@ block content
 					a(href="#") Cartier
 				li.breadcrumb-item.active
 					span Panthère de&nbsp;Cartier
-			a.product__wishlist.hidden-sm-up(href="#")
+			a.product__wishlist.hidden-sm-up.js-add-wishlist-single(href="#")
 				i.product__wishlist-icon
 					+svg('wishlist')
 			a.product__navbar-back(href="catalog.html")
@@ -27,14 +27,14 @@ block content
 					.product-zoom
 						.product-zoom__state.js-product-zoom
 							figure
-								a.product-zoom__item(data-size="2000x2000")
-									img.img-fluide(src="content/images/product/big/img-4.jpg" data-thumb="content/images/product/thumb/img-4.jpg" alt="Приблизить - Браслет - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Браслет - Вид спереди - Уменьшенное изображение")
-							figure
-								a.product-zoom__item(data-size="2000x2000")
-									img.img-fluide(src="content/images/product/big/img-5.jpg" data-thumb="content/images/product/thumb/img-5.jpg" alt="Приблизить - Браслет - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Браслет - Вид спереди - Уменьшенное изображение")
-							figure
 								a.product-zoom__item(href="content/images/product/big/img-6_b.png" zoom="true" role="button" data-size="2000x2000" data-alt-zoom="Отобразить - Браслет - Вид спереди - Масштаб")
-									img.img-fluide(src="content/images/product/big/img-6.jpg" data-thumb="content/images/product/thumb/img-6.jpg" alt="Приблизить - Браслет - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Браслет - Вид спереди - Уменьшенное изображение")
+									img.img-fluide(src="content/images/product/big/img-6.jpg" data-thumb="content/images/product/thumb/img-6.jpg" data-size="520x520" alt="Приблизить - Браслет - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Браслет - Вид спереди - Уменьшенное изображение")
+							figure
+								a.product-zoom__item(data-size="2000x2000")
+									img.img-fluide(src="content/images/product/big/img-4.jpg" data-thumb="content/images/product/thumb/img-4.jpg" data-size="520x520" alt="Приблизить - Браслет - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Браслет - Вид спереди - Уменьшенное изображение")
+							figure
+								a.product-zoom__item(data-size="2000x2000")
+									img.img-fluide(src="content/images/product/big/img-5.jpg" data-thumb="content/images/product/thumb/img-5.jpg" data-size="520x520" alt="Приблизить - Браслет - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Браслет - Вид спереди - Уменьшенное изображение")
 				.col-12.col-lg-6
 					.product-info
 						h1.product-info__title БРАСЛЕТ Panthère de&nbsp;Cartier
@@ -49,7 +49,7 @@ block content
 									span 5 300 000
 									span.currency
 								a.btn.btn-outline-gold.js-send-request(href="#") Сделать запрос
-							a.product__wishlist.hidden-xs-down(href="#")
+							a.product__wishlist.hidden-xs-down.js-add-wishlist-single(href="#")
 								i.product__wishlist-icon
 									+svg('wishlist')
 						.product-info__property

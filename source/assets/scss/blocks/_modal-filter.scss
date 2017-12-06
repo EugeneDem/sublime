@@ -79,17 +79,17 @@
     }
 
     &__footer-item {
+        &:last-child {
+            .btn-outline-gold {
+                color: #fff;
+            }
+        }
+
         @media (max-width: $screen-xs-min) {
             width: 100%;
 
             &:first-child {
                 margin-top: 10px;
-            }
-
-            &:last-child {
-                .btn-outline-gold {
-                    color: #fff;
-                }
             }
         }
 

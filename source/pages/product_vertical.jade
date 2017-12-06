@@ -17,7 +17,7 @@ block content
 					a(href="#") Chanel
 				li.breadcrumb-item.active
 					span J12 white
-			a.product__wishlist.hidden-sm-up(href="#")
+			a.product__wishlist.hidden-sm-up.js-add-wishlist-single(href="#")
 				i.product__wishlist-icon
 					+svg('wishlist')
 			a.product__navbar-back(href="catalog.html")
@@ -26,12 +26,15 @@ block content
 				.col-12.col-lg-6
 					.product-zoom.product-zoom_vertical
 						.product-zoom__state.js-product-zoom
-							.product-zoom__item(data-src="" zoom="true" data-size="2000x2000" data-alt-zoom="Отобразить-Часы-Вид спереди - Масштаб" tabindex="0")
-								img.img-fluide(src="content/images/product/big/img-1.jpg" data-thumb="content/images/product/thumb/img-1.jpg" alt="Приблизить - Часы - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Часы - Вид спереди - Уменьшенное изображение")
-							.product-zoom__item(data-src="" zoom="true" data-size="2000x2000" data-alt-zoom="Отобразить - Часы - Вид спереди - Масштаб" tabindex="1")
-								img.img-fluide(src="content/images/product/big/img-2.jpg" data-thumb="content/images/product/thumb/img-2.jpg" alt="Приблизить - Часы - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Часы - Вид спереди - Уменьшенное изображение")
-							.product-zoom__item(data-src="" zoom="true" data-size="2000x2000" data-alt-zoom="Отобразить - Часы - Вид спереди - Масштаб" tabindex="2")
-								img.img-fluide(src="content/images/product/big/img-3.jpg" data-thumb="content/images/product/thumb/img-3.jpg" alt="Приблизить - Часы - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Часы - Вид спереди - Уменьшенное изображение")
+							figure
+								a.product-zoom__item(href="content/images/product/big/img-1_b.jpg" zoom="true" data-size="1000x1000" data-alt-zoom="Отобразить-Часы-Вид спереди - Масштаб")
+									img.img-fluide(src="content/images/product/big/img-1.jpg" data-thumb="content/images/product/thumb/img-1.jpg" data-size="700x1144" alt="Приблизить - Часы - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Часы - Вид спереди - Уменьшенное изображение")
+							figure
+								a.product-zoom__item(href="content/images/product/big/img-2_b.jpg" zoom="true" data-size="1400x1400" data-alt-zoom="Отобразить - Часы - Вид спереди - Масштаб")
+									img.img-fluide(src="content/images/product/big/img-2.jpg" data-thumb="content/images/product/thumb/img-2.jpg" data-size="700x1144" alt="Приблизить - Часы - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Часы - Вид спереди - Уменьшенное изображение")
+							figure
+								a.product-zoom__item(href="content/images/product/big/img-3_b.jpg" zoom="true" data-size="900x900" data-alt-zoom="Отобразить - Часы - Вид спереди - Масштаб")
+									img.img-fluide(src="content/images/product/big/img-3.jpg" data-thumb="content/images/product/thumb/img-3.jpg" data-size="700x1144" alt="Приблизить - Часы - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Часы - Вид спереди - Уменьшенное изображение")
 				.col-12.col-lg-6
 					.product-info.product-info_vertical
 						h1.product-info__title Часы J12 white
@@ -46,7 +49,7 @@ block content
 									span 56 500
 									span.currency
 								a.btn.btn-outline-gold.js-send-request(href="#") Сделать запрос
-							a.product__wishlist.hidden-xs-down(href="#")
+							a.product__wishlist.hidden-xs-down.js-add-wishlist-single(href="#")
 								i.product__wishlist-icon
 									+svg('wishlist')
 						.product-info__property

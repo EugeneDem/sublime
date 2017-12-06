@@ -68,6 +68,12 @@
             content: "";
             display: none;
         }
+
+        &.slick-disabled {
+            opacity: 0.3;
+            cursor: default;
+            pointer-events: none;
+        }
     }
     
     .slick-next {

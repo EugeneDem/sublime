@@ -239,7 +239,7 @@
                         <div class="catalog-item__description">Сталь, керамика</div>
                         <div class="catalog-item__price">235 000<span class="currency"></span></div>
                       </div></a>
-                    <div class="catalog-item__wishlist"><i class="catalog-item__wishlist-icon">
+                    <div class="catalog-item__wishlist js-add-wishlist"><i class="catalog-item__wishlist-icon">
                         <svg>
                           <use xlink:href="assets/images/sprites.svg#wishlist"></use>
                         </svg></i></div>
@@ -254,7 +254,7 @@
                         <div class="catalog-item__description">Сталь, платина</div>
                         <div class="catalog-item__price">215 800<span class="currency"></span></div>
                       </div></a>
-                    <div class="catalog-item__wishlist"><i class="catalog-item__wishlist-icon">
+                    <div class="catalog-item__wishlist js-add-wishlist"><i class="catalog-item__wishlist-icon">
                         <svg>
                           <use xlink:href="assets/images/sprites.svg#wishlist"></use>
                         </svg></i></div>
@@ -269,7 +269,7 @@
                         <div class="catalog-item__description">Керамика</div>
                         <div class="catalog-item__price">199 500<span class="currency"></span></div>
                       </div></a>
-                    <div class="catalog-item__wishlist"><i class="catalog-item__wishlist-icon">
+                    <div class="catalog-item__wishlist js-add-wishlist"><i class="catalog-item__wishlist-icon">
                         <svg>
                           <use xlink:href="assets/images/sprites.svg#wishlist"></use>
                         </svg></i></div>
@@ -284,7 +284,7 @@
                         <div class="catalog-item__description">Сталь, керамика</div>
                         <div class="catalog-item__price">204 000<span class="currency"></span></div>
                       </div></a>
-                    <div class="catalog-item__wishlist"><i class="catalog-item__wishlist-icon">
+                    <div class="catalog-item__wishlist js-add-wishlist"><i class="catalog-item__wishlist-icon">
                         <svg>
                           <use xlink:href="assets/images/sprites.svg#wishlist"></use>
                         </svg></i></div>
@@ -299,7 +299,7 @@
                         <div class="catalog-item__description">Сталь</div>
                         <div class="catalog-item__price">412 000<span class="currency"></span></div>
                       </div></a>
-                    <div class="catalog-item__wishlist"><i class="catalog-item__wishlist-icon">
+                    <div class="catalog-item__wishlist js-add-wishlist"><i class="catalog-item__wishlist-icon">
                         <svg>
                           <use xlink:href="assets/images/sprites.svg#wishlist"></use>
                         </svg></i></div>
@@ -314,7 +314,7 @@
                         <div class="catalog-item__description">Сталь, белое золото</div>
                         <div class="catalog-item__price">415 000<span class="currency"></span></div>
                       </div></a>
-                    <div class="catalog-item__wishlist"><i class="catalog-item__wishlist-icon">
+                    <div class="catalog-item__wishlist js-add-wishlist"><i class="catalog-item__wishlist-icon">
                         <svg>
                           <use xlink:href="assets/images/sprites.svg#wishlist"></use>
                         </svg></i></div>
@@ -766,12 +766,23 @@
             <div class="pswp__top-bar">
               <div class="pswp__counter"></div>
               <button title="Закрыть увеличенный вид, стрелки клавиатуры позволяют перемещать увеличенное изображение" class="pswp__button pswp__button--close"></button>
+              <button title="Share" class="pswp__button pswp__button--share"></button>
+              <button title="Toggle fullscreen" class="pswp__button pswp__button--fs"></button>
+              <button title="Zoom in/out" class="pswp__button pswp__button--zoom"></button>
               <div class="pswp__preloader">
                 <div class="pswp__preloader__icn">
                   <div class="pswp__preloader__cut">
                     <div class="pswp__preloader__donut"></div>
                   </div>
                 </div>
+              </div>
+              <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+              </div>
+              <button title="Previous (arrow left)" class="pswp__button pswp__button--arrow--left"></button>
+              <button title="Next (arrow right)" class="pswp__button pswp__button--arrow--right"></button>
+              <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
               </div>
             </div>
           </div>

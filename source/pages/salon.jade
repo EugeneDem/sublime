@@ -37,9 +37,14 @@ block content
 			.catalog__subtitle Москва, Красная площадь,&nbsp;3<br />Ежедневно с&nbsp;10:00 до&nbsp;22:00<br /><span class="text-nowrap">+7 (495) 788-4343</span>
 		.catalog__content
 			.salon-carousel
-				.salon-carousel__state.js-salon-carousel
-					each value in SALON.salonList
-						a.salon-carousel__item(href=value.url)
-							img.salon-carousel__img(src=value.img alt="")
+				.salon-carousel__state.js-salon-gallery
+					each value, ind in SALON.salonList
+						figure
+							if(ind % 2 ===0)
+								a.salon-carousel__item(href="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg" role="button" zoom="true" data-size="800x600" data-alt-zoom="")
+									img.salon-carousel__img(src=value.img alt="" data-size="320x320")
+							else
+								a.salon-carousel__item(href="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg" role="button" zoom="true" data-size="800x600" data-alt-zoom="")
+									img.salon-carousel__img(src=value.img alt="" data-size="320x320")
 			.salon-map
 				#salon-map.salon-map__state

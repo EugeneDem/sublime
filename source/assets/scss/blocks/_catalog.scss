@@ -206,13 +206,13 @@
 
         &:hover {
             svg {
-                fill: #d2af84;
+                fill: #f6eee6;
             }
         }
     }
 
     &__wishlist.is-active &__wishlist-icon svg {
-        fill: #d2af84;
+        fill: #f6eee6;
     }
 
     &__fovour-remove {

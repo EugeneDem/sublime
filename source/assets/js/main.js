@@ -13,7 +13,7 @@ MEDIAQUERY = {
     phone: 480
 };
 
-let navbarHandler = () => {
+let navbarHandler = function() {
     let elem = $('.navbar-nav'),
         $this;
 
@@ -45,19 +45,27 @@ let navbarHandler = () => {
     });
 
     navbar.on('mouseleave', function(e) {
-        $('.active', navbar).removeClass('active');
-        $('.hover', navbar).removeClass('hover');
-        $(this).parents('.navbar').next('.navbar-nav__backdrop').fadeOut(50).remove();
-    });
-
-    $win.on('resize', () => {
         if (!isSmallDevice()) {
             $('.active', navbar).removeClass('active');
+            $('.hover', navbar).removeClass('hover');
+            $(this).parents('.navbar').next('.navbar-nav__backdrop').fadeOut(50).remove();
+        }
+    });
+
+    $(document).on('click touchstart', '.navbar-nav__backdrop', function(e) {
+        $('.active', navbar).removeClass('active');
+        $('.hover', navbar).removeClass('hover');
+        $(this).fadeOut(50).remove();
+    });
+
+    $win.on('resize', function() {
+        if (!isSmallDevice()) {
+            $('.active, .hover', navbar).removeClass('active').removeClass('hover');
         }
     });
 };
 
-let toggleClassOnElement = () => {
+let toggleClassOnElement = function() {
     let toggleAttribute = $('*[data-toggle-class]');
 
     toggleAttribute.each(function() {
@@ -65,15 +73,25 @@ let toggleClassOnElement = () => {
         let toggleClass = $this.attr('data-toggle-class');
         let outsideElement;
         let toggleElement;
+        let navbarItem = $('.navbar-nav').children('.nav-item');
         typeof $this.attr('data-toggle-target') !== 'undefined' ? toggleElement = $($this.attr('data-toggle-target')) : toggleElement = $this;
 
         $this.on('click', function(e) {
+            if (!$('.navbar').next('.navbar-nav__backdrop').length) {
+                $('<div class="navbar-nav__backdrop"></div>').insertAfter($('.navbar'));
+                $('.navbar-nav__backdrop').fadeIn(150);
+            } else {
+                $('.navbar').next('.navbar-nav__backdrop').fadeOut(50).remove();
+            }
+            
             if ($this.attr('data-toggle-type') !== 'undefined' && $this.attr('data-toggle-type') == 'on') {
                 toggleElement.addClass(toggleClass);
             } else if ($this.attr('data-toggle-type') !== 'undefined' && $this.attr('data-toggle-type') == 'off') {
                 toggleElement.removeClass(toggleClass);
             } else {
                 toggleElement.toggleClass(toggleClass);
+                navbarItem.removeClass('active').removeClass('hover');
+                navbarItem.eq(0).addClass('active');
             }
             e.preventDefault();
             if ($this.attr('data-toggle-click-outside')) {
@@ -82,7 +100,7 @@ let toggleClassOnElement = () => {
             };
         });
 
-        let toggleOutside = (e) => {
+        let toggleOutside = function(e) {
             if (outsideElement.has(e.target).length === 0 &&
                 !outsideElement.is(e.target) &&
                 !toggleAttribute.is(e.target) && toggleElement.hasClass(toggleClass)) {
@@ -557,225 +575,302 @@ let productZoomCarousel = {
     }
 };
 
-let initPhotoSwipeFromDOM = (gallerySelector) => {
-
-    let parseThumbnailElements = (el) => {
-        let thumbElements = el.childNodes,
-            numNodes = thumbElements.length,
-            items = [],
-            figureEl,
-            linkEl,
-            size,
-            item;
-
-        for (let i = 0; i < numNodes; i++) {
-
-            figureEl = thumbElements[i]; // <figure> element
-
-            // include only element nodes 
-            if (figureEl.nodeType !== 1) {
-                continue;
-            }
-
-            linkEl = figureEl.children[0]; // <a> element
-
-            size = linkEl.getAttribute('data-size').split('x');
-
-            // create slide object
-            item = {
-                src: linkEl.getAttribute('href'),
-                w: parseInt(size[0], 10),
-                h: parseInt(size[1], 10),
-                alt: linkEl.getAttribute("data-alt-zoom")
-            };
-
-
-
-            if (figureEl.children.length > 1) {
-                // <figcaption> content
-                item.title = figureEl.children[1].innerHTML;
-            }
-
-            if (linkEl.children.length > 0) {
-                // <img> thumbnail element, retrieving thumbnail url
-                item.msrc = linkEl.children[0].getAttribute('src');
-            }
-
-            item.el = figureEl; // save link to element for getThumbBoundsFn
-            items.push(item);
+let wishlist = {
+    addList: (e) => {
+        let $this = $(e.currentTarget);
+        if (!$this.hasClass('is-active')) {
+            $this.addClass('is-active');
+            // TODO: add cookie
+        } else {
+            $this.removeClass('is-active');
+            // TODO remove cookie
         }
+    },
 
-        return items;
+    addListCurrent: (e) => {
+        let $this = $(e.currentTarget);
+        let parentEl = $this.parents('.product');
+
+        if ($this.attr('href') !== undefined) {
+            e.preventDefault();
+        }
+        if (!$this.hasClass('is-active')) {
+            $($(e.data.class), parentEl).addClass('is-active');
+            // TODO: add cookie
+        } else {
+            $($(e.data.class), parentEl).removeClass('is-active');
+            // TODO remove cookie
+        }
+    },
+
+    init: () => {
+        $(document).on('click', '.js-add-wishlist', wishlist.addList);
+        $(document).on('click', '.js-add-wishlist-single', {class: '.js-add-wishlist-single'}, wishlist.addListCurrent);
+    }
+};
+
+;(function($){
+    if (!$.IZ) {
+        $.IZ = new Object();
     };
+    $.IZ.ImageZoom = function(el, options) {
+        var self = this;
+        self.$el = $(el);
+        self.el = el;
+        self.$el.data('IZ.ImageZoom', self);
 
-    // find nearest parent element
-    let closest = function closest(el, fn) {
-        return el && (fn(el) ? el : closest(el.parentNode, fn));
+        self.init = function() {
+            if (!$.fn.slick && self.options.useSlick){
+                throw new Error("Slick JS is not installed, but required to use this zoom");
+            }
+            if (typeof PhotoSwipe === 'undefined') {
+                throw new Error('PhotoSwipe is not installed, but required to use this zoom');
+            }
+            self.options = $.extend({}, $.IZ.ImageZoom.defaultOptions, options);
+            self.origImgObjects = self.options.imageObjects != null ? self.options.imageObjects : self.imageObject();
+            self.initialSetup();
+
+            if (self.options.useSlick){
+                self.slick();
+            }
+        };
+
+        self.initialSetup = function() {
+            $('body').append(self.pswpHtml());
+            self.$trueEl = self.$el;
+            self.$trueEl.addClass('image-zoom-hover');
+            self.$trueEl.on('click', 'a', function (event) {
+                event.preventDefault();
+                var currentIndex = self.options.useSlick ? $(this).closest('.slick-slide').data('slick-index') : $(this).parent().index();
+                var link = $(this).attr('href');
+
+                if (currentIndex >= 0 && link !== undefined) {
+                    self.photoSwipe(currentIndex);
+                }
+            });
+        };
+
+        self.photoSwipe = function(index) {
+            var options = $.extend({}, self.options.psOptions, {
+                index: index
+            });
+
+            var pswp = $('.pswp.image-zoom-hover')[0];
+            var zoom = new PhotoSwipe(pswp, PhotoSwipeUI_Default, self.origImgObjects, options);
+            var realViewportWidth,
+                useLargeImages = false,
+                firstResize = true,
+                imageSrcWillChange;
+        
+            zoom.listen('beforeResize', function() {
+                realViewportWidth = zoom.viewportSize.x * window.devicePixelRatio;
+
+                if (useLargeImages && realViewportWidth < 1000) {
+                    useLargeImages = false;
+                    imageSrcWillChange = true;
+                } else if(!useLargeImages && realViewportWidth >= 1000) {
+                    useLargeImages = true;
+                    imageSrcWillChange = true;
+                }
+            
+                if (imageSrcWillChange && !firstResize) {
+                    zoom.invalidateCurrItems();
+                }
+            
+                if (firstResize) {
+                    firstResize = false;
+                }
+            
+                imageSrcWillChange = false;
+            });
+            
+            zoom.listen('gettingData', function(index, item) {
+                if (useLargeImages) {
+                    item.src = item.originalImage.src;
+                    item.w = item.originalImage.w;
+                    item.h = item.originalImage.h;
+                } else {
+                    item.src = item.originalImage.src;
+                    item.w = item.originalImage.w / 2;
+                    item.h = item.originalImage.h / 2;
+                }
+                
+            });
+
+            zoom.listen('afterChange', function() {
+                if (self.options.mouseHover) {
+                    self.mouseHover(zoom.getCurrentIndex(), zoom.options.getNumItemsFn());
+                }
+            });
+            zoom.init();
+        };
+
+        self.imageObject = function() {
+            var imgArray = [];
+            self.$el.children('figure').each(function() {
+                var link = $(this).find('a');
+                var image = $(this).find('img');
+                var sizeLink = link.attr('data-size').split('x');
+                var sizeImage = image.attr('data-size').split('x');
+
+                var imageObj = {
+                    mediumImage: {
+                        src: image.attr('src'),
+                        w: parseInt(sizeImage[0], 10),
+                        h: parseInt(sizeImage[1], 10)
+                    },
+                    originalImage: {
+                        src: link.attr('href'),
+                        w: parseInt(sizeLink[0], 10),
+                        h: parseInt(sizeLink[1], 10)
+                    }
+                };
+                if (link.attr('href') !== undefined) {
+                    imgArray.push(imageObj);
+                }
+            });
+            return imgArray;
+        };
+
+        self.slick = function() {
+            var slickOptions = self.options.slickOptions;
+            var slick = self.$trueEl.slick(slickOptions);
+            return slick;
+        };
+
+        self.pswpHtml = function() {
+            var pswpHtml = '<div class="pswp image-zoom-hover" tabindex="-1" role="dialog" aria-hidden="true"> \
+                                <div class="pswp__bg"></div> \
+                                <div class="pswp__scroll-wrap"> \
+                                    <div class="pswp__container"> \
+                                        <div class="pswp__item"></div> \
+                                        <div class="pswp__item"></div> \
+                                        <div class="pswp__item"></div> \
+                                    </div> \
+                                    <div class="pswp__ui pswp__ui--hidden"> \
+                                        <div class="pswp__top-bar"> \
+                                            <div class="pswp__counter"></div> \
+                                            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button> \
+                                            <button class="pswp__button pswp__button--share" title="Share"></button> \
+                                            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> \
+                                            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button> \
+                                            <div class="pswp__preloader"> \
+                                                <div class="pswp__preloader__icn"> \
+                                                    <div class="pswp__preloader__cut"> \
+                                                        <div class="pswp__preloader__donut"></div> \
+                                                    </div> \
+                                                </div> \
+                                            </div> \
+                                        </div> \
+                                        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"> \
+                                            <div class="pswp__share-tooltip"></div> \
+                                        </div> \
+                                        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> \
+                                        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button> \
+                                        <div class="pswp__caption"> \
+                                            <div class="pswp__caption__center"></div> \
+                                        </div> \
+                                    </div> \
+                                </div> \
+                            </div>';
+            if (self.options.pswpHtml !== ''){
+                pswpHtml = self.options.pswpHtml;
+            }
+            return pswpHtml;
+        };
+
+        self.mouseHover = function(index, counts) {
+            var curIndex = (index + 1 < counts) ? index + 1 : 0;
+
+            $('.pswp.image-zoom-hover').on('mousemove', function(e) {
+                var currentEl = $('.pswp.image-zoom-hover .pswp__item').eq(curIndex);
+                var image = currentEl.find('img.pswp__img');
+                var widthImage = image.width();
+                var heightImage = image.height();
+                var scale = currentEl.find('.pswp__zoom-wrap').css('transform').split(',')[3];
+    
+                // var image = $(this).find('.pswp__item').eq(index).find('img.pswp__img');
+                // var widthImage = image.width();
+                // var heightImage = image.height();
+                // var scale = $(this).find('.pswp__item').eq(index).find('.pswp__zoom-wrap').css('transform').split(',')[3];
+                var mouseX = event.x;
+                var mouseY = event.y;
+                var pageX, pageY;
+
+                console.log('scale= ', scale);
+
+                if (scale > 1) {
+                    pageX = ((mouseX * scale) - (widthImage * scale)) / 2;
+                    pageY = ((mouseY * scale) - (heightImage * scale)) / 2;
+                } else {
+                    pageX = (mouseX * scale) - (widthImage / 2 * scale);
+                    pageY = (mouseY * scale) - (heightImage / 2 * scale);
+                }
+
+                $(this).find('.pswp__zoom-wrap').css({"transform": "translate3d("+ pageX + "px, " + pageY + "px, 0px) scale(" + scale + ")"});
+            });
+        }
+
+        self.init();
     };
-
-    // triggers when user clicks on thumbnail
-    let onThumbnailsClick = (e) => {
-        e = e || window.event;
-        e.preventDefault ? e.preventDefault() : e.returnValue = false;
-
-        let eTarget = e.target || e.srcElement;
-
-        // find root element of slide
-        let clickedListItem = closest(eTarget, function (el) {
-            return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
-        });
-
-        if (!clickedListItem) {
-            return;
-        }
-
-        // find index of clicked item by looping through all child nodes
-        // alternatively, you may define index via data- attribute
-        let clickedGallery = clickedListItem.parentNode,
-            childNodes = clickedListItem.parentNode.childNodes,
-            numChildNodes = childNodes.length,
-            nodeIndex = 0,
-            index;
-
-        for (let i = 0; i < numChildNodes; i++) {
-            if (childNodes[i].nodeType !== 1) {
-                continue;
-            }
-
-            if (childNodes[i] === clickedListItem) {
-                index = nodeIndex;
-                break;
-            }
-            nodeIndex++;
-        }
-
-
-        let link = $(clickedListItem).find("a").attr("href");
-        if (index >= 0 && link !== undefined) {
-            // open PhotoSwipe if valid index found
-            openPhotoSwipe(index, clickedGallery);
-        }
-        return false;
-    };
-
-    // parse picture index and gallery index from URL (#&pid=1&gid=2)
-    let photoswipeParseHash = () => {
-        var hash = window.location.hash.substring(1),
-            params = {};
-
-        if (hash.length < 5) {
-            return params;
-        }
-
-        let vars = hash.split('&');
-        for (let i = 0; i < vars.length; i++) {
-            if (!vars[i]) {
-                continue;
-            }
-            let pair = vars[i].split('=');
-            if (pair.length < 2) {
-                continue;
-            }
-            params[pair[0]] = pair[1];
-        }
-
-        if (params.gid) {
-            params.gid = parseInt(params.gid, 10);
-        }
-
-        return params;
-    };
-
-    let openPhotoSwipe = (index, galleryElement, disableAnimation, fromURL) => {
-        let pswpElement = document.querySelectorAll('.pswp')[0],
-            gallery,
-            options,
-            items;
-
-        items = parseThumbnailElements(galleryElement);
-
-        // define options (if needed)
-        options = {
+    $.IZ.ImageZoom.defaultOptions = {
+        pswpHtml: '',
+        psOptions: {
+            bgOpacity: 1,
+            showHideOpacity: true,
+            clickToCloseNonZoomable: false,
             barsSize: {
                 top: 0,
                 bottom: 0
             },
+            shareEl: false,
+            fullscreenEl: false,
+            closeOnScroll: false,
             closeEl: true,
             captionEl: false,
-            fullscreenEl: false,
-            shareEl: false,
             tapToToggleControls: false,
             history: false,
             zoomEl: false,
+            pinchToClose: false,
+            loop: false,
             counterEl: false,
             arrowEl: false,
-            scaleMode: "orig",
-            // define gallery index (for URL)
-            galleryUID: galleryElement.getAttribute('data-pswp-uid'),
-
-            getThumbBoundsFn: function (index) {
-                // See Options -> getThumbBoundsFn section of documentation for more info
-                let thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
-                    pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-                    rect = thumbnail.getBoundingClientRect();
-
-                return {
-                    x: rect.left,
-                    y: rect.top + pageYScroll,
-                    w: rect.width
-                };
-            }
-
-        };
-
-        // PhotoSwipe opened from URL
-        if (fromURL) {
-            if (options.galleryPIDs) {
-                // parse real index when custom PIDs are used 
-                // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
-                for (let j = 0; j < items.length; j++) {
-                    if (items[j].pid == index) {
-                        options.index = j;
-                        break;
+            scaleMode: "orig"
+        },
+        slickOptions: {
+            dots: true,
+            arrows: false,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            focusOnSelect: false,
+            lazyLoad: "ondemand",
+            cssEase: "linear",
+            adaptiveHeight: true,
+            mobileFirst: true,
+            centerMode: true,
+            responsive: [{
+                breakpoint: 767,
+                settings: {
+                    arrows: false,
+                    dots: true,
+                    customPaging: (slider, i) => {
+                        let item = $(slider.$slides[i]).find("img");
+                        return '<button class="product-zoom__tab"><img class="img-thumbnail" src="' + item.attr("data-thumb") + '" alt="' + item.attr("data-alt-thumb") + '"></button>'
                     }
                 }
-            } else {
-                // in URL indexes start from 1
-                options.index = parseInt(index, 10) - 1;
-            }
-        } else {
-            options.index = parseInt(index, 10);
-        }
-
-        // exit if index not found
-        if (isNaN(options.index)) {
-            return;
-        }
-
-        if (disableAnimation) {
-            options.showAnimationDuration = 0;
-        }
-
-        // Pass data to PhotoSwipe and initialize it
-        gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
-        window.gallery = gallery;
-        gallery.init();
+            }]
+        },
+        imageObjects: null,
+        useSlick: true,
+        mouseHover: true
     };
-
-    // loop through all gallery elements and bind events
-    var galleryElements = document.querySelectorAll(gallerySelector);
-
-    for (let i = 0, l = galleryElements.length; i < l; i++) {
-        galleryElements[i].setAttribute('data-pswp-uid', i + 1);
-        galleryElements[i].onclick = onThumbnailsClick;
+    $.fn.iz_hover = function(options){
+        return this.each(function(){
+            (new $.IZ.ImageZoom(this, options));
+        })
     }
-
-    // Parse URL and open gallery if it contains #&pid=3&gid=1
-    let hashData = photoswipeParseHash();
-    if (hashData.pid && hashData.gid) {
-        openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
-    }
-};
+})(jQuery);
 
 $(function () {
     svg4everybody();
@@ -788,9 +883,73 @@ $(function () {
     mainSlider.init();
     promoBox.init();
     productCarousel.init();
-    salonCarousel.init();
     brandsCarousel.init();
     recommendedCarousel.init();
-    productZoomCarousel.init();
-    initPhotoSwipeFromDOM('.product-zoom');
+    wishlist.init();
+    // salonCarousel.init();
+    // productZoomCarousel.init();
+    $('.js-product-zoom').iz_hover();
+    let counts = $('.js-salon-gallery').children().length;
+    counts = counts > 6 ? 6 : counts;
+    $('.js-salon-gallery').iz_hover({
+        psOptions: {
+            bgOpacity: 0.9,
+            barsSize: {
+                top: 0,
+                bottom: 0
+            },
+            showHideOpacity: true,
+            shareEl:false,
+            fullscreenEl:false,
+            closeOnScroll:false,
+            clickToCloseNonZoomable: false,
+            closeEl: true,
+            captionEl: false,
+            tapToToggleControls: false,
+            history: false,
+            zoomEl: false,
+            counterEl: false
+        },
+        slickOptions: {
+            infinite: false,
+            slidesToShow: counts,
+            slidesToScroll: 1,
+            infinite: false,
+            focusOnSelect: false,
+            dots: false,
+            arrows: true,
+            speed: 300,
+            responsive: [
+                {
+                    breakpoint: 1199,
+                    settings: {
+                        variableWidth: false,
+                        slidesToShow: 5,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 991,
+                    settings: {
+                        variableWidth: false,
+                        slidesToShow: 4,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        variableWidth: false,
+                        arrows: false,
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        dots: true
+                    }
+                }
+            ]
+        },
+        imageObjects: null,
+        useSlick: true,
+        mouseHover: false
+    });
 });

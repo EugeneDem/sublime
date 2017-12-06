@@ -17,7 +17,7 @@ block content
 					a(href="#") Chanel
 				li.breadcrumb-item.active
 					span Camèlia
-			a.product__wishlist.hidden-sm-up(href="#")
+			a.product__wishlist.hidden-sm-up.js-add-wishlist-single(href="#")
 				i.product__wishlist-icon
 					+svg('wishlist')
 			a.product__navbar-back(href="catalog.html")
@@ -26,10 +26,12 @@ block content
 				.col-12
 					.product-zoom.product-zoom_horizontal
 						.product-zoom__state.js-product-zoom
-							.product-zoom__item(data-src="" zoom="true" data-size="2000x2000" data-alt-zoom="Отобразить-Браслет-Вид спереди - Масштаб" tabindex="0")
-								img.img-fluide(src="content/images/product/big/img-7.jpg" data-thumb="content/images/product/thumb/img-7.jpg" alt="Приблизить - Браслет - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Браслет - Вид спереди - Уменьшенное изображение")
-							.product-zoom__item(data-src="" zoom="true" data-size="2000x2000" data-alt-zoom="Отобразить - Браслет - Вид спереди - Масштаб" tabindex="1")
-								img.img-fluide(src="content/images/product/big/img-8.jpg" data-thumb="content/images/product/thumb/img-8.jpg" alt="Приблизить - Браслет - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Браслет - Вид спереди - Уменьшенное изображение")
+							figure
+								a.product-zoom__item(href="content/images/product/big/img-7_b.jpg" zoom="true" data-size="2000x1200" data-alt-zoom="Отобразить-Браслет-Вид спереди - Масштаб")
+									img.img-fluide(src="content/images/product/big/img-7.jpg" data-thumb="content/images/product/thumb/img-7.jpg" data-size="960x400" alt="Приблизить - Браслет - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Вид спереди - Уменьшенное изображение")
+							figure
+								a.product-zoom__item(zoom="true" data-size="2000x1200" data-alt-zoom="Отобразить - Вид спереди - Масштаб")
+									img.img-fluide(src="content/images/product/big/img-8.jpg" data-thumb="content/images/product/thumb/img-8.jpg" data-size="960x400" alt="Приблизить - Вид спереди - Стандартное изображение" data-alt-thumb="Приблизить - Вид спереди - Уменьшенное изображение")
 				.col-12
 					.product-info.product-info_horizontal
 						h1.product-info__title Браслет Camèlia
@@ -41,7 +43,7 @@ block content
 									span 217 850
 									span.currency
 								a.btn.btn-outline-gold.js-send-request(href="#") Сделать запрос
-							a.product__wishlist.hidden-xs-down(href="#")
+							a.product__wishlist.hidden-xs-down.js-add-wishlist-single(href="#")
 								i.product__wishlist-icon
 									+svg('wishlist')
 						.product-info__description

@@ -68,14 +68,14 @@
         height: 23px;
         display: inline-block;
         vertical-align: middle;
-        fill: #f6eee6;
+        fill: none;
         stroke: #d0ac80;
         transition: all 0.3s ease 0s;
     }
 
-    &__wishlist.is-active &__form-wishlist-icon svg,
-    &__wishlist:hover &__form-wishlist-icon svg {
-        fill: #d0ac80;
+    &__wishlist.is-active &__wishlist-icon svg,
+    &__wishlist:hover &__wishlist-icon svg {
+        fill: #f6eee6;
     }
 }
 
